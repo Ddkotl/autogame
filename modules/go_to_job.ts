@@ -6,7 +6,7 @@ export async function goToJob(page: Page) {
     await page.goto("https://mvoo.ru/game/staff/?lair", {
       waitUntil: "domcontentloaded",
     });
-    await sleep(1000);
+    await sleep(3000);
     const isActive = await page.getByText("Активен:").innerText();
     if (isActive !== "Активен:") {
       await page.goto(

@@ -7,6 +7,7 @@ export async function swithGoldToDiamond(page: Page) {
       waitUntil: "domcontentloaded",
     });
     await sleep(1000);
+    await page.locator("li > span.value > span").waitFor({ state: "visible" });
     const gold_to_swith = await page
       .locator("li > span.value > span")
       .nth(0)
@@ -14,6 +15,7 @@ export async function swithGoldToDiamond(page: Page) {
     if (gold_to_swith) {
       await page.fill('input[id="ValueDiamond"]', gold_to_swith);
       await sleep(1000);
+      await page.locator(".button_small").waitFor({ state: "visible" });
       await page.locator(".button_small").click();
     }
   } catch (error) {

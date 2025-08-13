@@ -7,6 +7,7 @@ export async function trainAgent(page: Page) {
       waitUntil: "domcontentloaded",
     });
     for (let i = 0; i < 10; i++) {
+      await page.locator(".button_small").nth(0).waitFor({ state: "visible" });
       await page.locator(".button_small").nth(0).click();
       await page.locator(".button_small").nth(3).click();
       await page.locator(".button_small").nth(1).click();

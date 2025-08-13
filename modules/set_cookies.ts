@@ -6,6 +6,9 @@ export async function setCookies(
   url: string = "https://mvoo.ru",
 ) {
   try {
+    await page.goto("https://mvoo.ru", {
+      waitUntil: "domcontentloaded",
+    });
     await page.context().addCookies([
       {
         name: name,
