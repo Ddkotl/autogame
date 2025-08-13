@@ -1,9 +1,9 @@
-import { chromium } from "playwright";
+import { chromium } from "patchright";
 
 export async function initPage(videoRecord: boolean) {
   try {
     const browser = await chromium.launch({
-      channel: "camoufox",
+      channel: "chromium",
       headless: true,
       args: ["--disable-blink-features=AutomationControlled"],
     });
