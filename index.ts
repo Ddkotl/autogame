@@ -5,6 +5,7 @@ import { LoadAccaunts } from "./utils/accaunt-manager";
 import {
   atackZombie,
   checkFreeFights,
+  checkJob,
   goToJob,
   mineGold,
   setCookies,
@@ -21,12 +22,16 @@ export async function StartGreend() {
       let context: BrowserContext | null = null;
       let page: Page | null = null;
       try {
-        const data = await initPage(false);
+        const data = await initPage(true);
         browser = data.browser;
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
-        for (let i = 0; i < 30; i++) {
+        const on_job = await checkJob(page);
+        for (let i = 0; i < 40; i++) {
+          if (on_job) {
+            break;
+          }
           await atackZombie(page);
           await mineGold(page);
           const check_free_fights = await checkFreeFights(page);
@@ -35,9 +40,11 @@ export async function StartGreend() {
           }
           await sleep(16000);
         }
-        await goToJob(page);
-        await swithGoldToDiamond(page);
+        if (!on_job) {
+          await goToJob(page);
+        }
         await trainAgent(page);
+        await swithGoldToDiamond(page);
       } catch (error) {
         console.error(error);
       } finally {

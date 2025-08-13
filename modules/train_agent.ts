@@ -1,8 +1,10 @@
 import { Page } from "patchright";
-import { sleep } from "../utils/sleep";
 
 export async function trainAgent(page: Page) {
   try {
+    await page.goto("https://mvoo.ru/user/cache/pets/?buy=2&confirm=true", {
+      waitUntil: "domcontentloaded",
+    });
     await page.goto("https://mvoo.ru/user/cache/training/?sorting=pets", {
       waitUntil: "domcontentloaded",
     });
@@ -14,6 +16,6 @@ export async function trainAgent(page: Page) {
       await page.locator(".button_small").nth(2).click();
     }
   } catch (error) {
-    console.error("Тренировка не удалась");
+    console.error("Тренировка не удалась", error);
   }
 }

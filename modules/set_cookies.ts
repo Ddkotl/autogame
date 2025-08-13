@@ -18,6 +18,6 @@ export async function setCookies(
     ]);
     await page.reload();
   } catch (error) {
-    console.error("Не удалось установить куки");
+    console.error("Не удалось установить куки", error);
   }
 }

@@ -1,0 +1,425 @@
+[
+  
+ 
+
+  {
+    "login": "frost_warlock",
+    "password": "Frozen@rt1f@ct!",
+    "SESSION_ID": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7"
+  },
+  {
+    "login": "crimson_viper",
+    "password": "V3n0m0us$tr!ke",
+    "SESSION_ID": "c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2"
+  },
+  {
+    "login": "nova_centurion",
+    "password": "St@rF0rce!9xQ&",
+    "SESSION_ID": "e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4"
+  },
+  {
+    "login": "iron_panther",
+    "password": "W@kand@F0rev3r",
+    "SESSION_ID": "5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+  },
+  {
+    "login": "silver_samurai",
+    "password": "K@t@n@M@st3r#1",
+    "SESSION_ID": "b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8"
+  },
+  {
+    "login": "phantom_thief",
+    "password": "Gh0stH3!st@2023",
+    "SESSION_ID": "d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1"
+  },
+  {
+    "login": "lunar_guardian",
+    "password": "M00nBe@m$5h!ne",
+    "SESSION_ID": "f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
+  },
+  {
+    "login": "steel_titan",
+    "password": "1nvinc!ble@rm0r",
+    "SESSION_ID": "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4"
+  },
+  {
+    "login": "ember_dragon",
+    "password": "F1reBr3@th#2023",
+    "SESSION_ID": "4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6"
+  },
+  {
+    "login": "void_walker",
+    "password": "D@rkM@tt3r!9xP",
+    "SESSION_ID": "6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8"
+  },
+  {
+    "login": "solar_flare",
+    "password": "SunBurst$5h0ck",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0"
+  },
+  {
+    "login": "cobalt_strider",
+    "password": "Futur3T3ch!2023",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2"
+  },
+  {
+    "login": "neural_ghost",
+    "password": "H@ckTh3M@tr!x#",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
+  },
+  {
+    "login": "quantum_leaper",
+    "password": "T!m3H0p@2023!",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+  },
+  {
+    "login": "crimson_raider",
+    "password": "Bl00dM00n$R!se",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8"
+  },
+  {
+    "login": "azure_knight",
+    "password": "SkyF0rtress@123",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0"
+  },
+  {
+    "login": "nebula_corsair",
+    "password": "Sp@ceP!r@t3$#1",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1"
+  },
+  {
+    "login": "vortex_sentinel",
+    "password": "T0rn@d0Sh!3ld#",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4"
+  },
+  {
+    "login": "onyx_assassin",
+    "password": "Sh@d0wSt@lk3r!",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+  },
+  {
+    "login": "sapphire_mage",
+    "password": "Myst!cOrb$2023",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8"
+  },
+  {
+    "login": "pixel_nomad",
+    "password": "D!g1t@lDr!ft3r",
+    "SESSION_ID": "8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0"
+  },
+  {
+    "login": "chaos_engineer",
+    "password": "Entr0pyG3n!us#",
+    "SESSION_ID": "1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3"
+  },
+  {
+    "login": "infinity_warden",
+    "password": "T!m3l3ssGu@rd@",
+    "SESSION_ID": "3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+  },
+  {
+    "login": "binary_reaver",
+    "password": "0n3s&Z3r0s!2023",
+    "SESSION_ID": "5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7"
+  },
+  {
+    "login": "quantum_rogue",
+    "password": "Unc3rt@!ntyPr!nc",
+    "SESSION_ID": "7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9"
+  },
+  {
+    "login": "neon_shogun",
+    "password": "T0ky0N!ght$@2023",
+    "SESSION_ID": "9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1"
+  },
+  {
+    "login": "crimson_cyborg",
+    "password": "M3ch@S0u!@2023",
+    "SESSION_ID": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3"
+  },
+  {
+    "login": "lunar_outlaw",
+    "password": "M00nL!ght$H@ck3r",
+    "SESSION_ID": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5"
+  },
+  {
+    "login": "static_phantom",
+    "password": "El3ctr0Gh0st!23",
+    "SESSION_ID": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7"
+  },
+  {
+    "login": "blitz_commando",
+    "password": "L!ghtn!ngStr!ke#",
+    "SESSION_ID": "f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9"
+  },
+  {
+    "login": "vapor_trader",
+    "password": "Cl0udM@rk3t!ng",
+    "SESSION_ID": "9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2"
+  },
+  {
+    "login": "zero_gravitas",
+    "password": "W31ghtl3ss@2023",
+    "SESSION_ID": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5"
+  },
+  {
+    "login": "cipher_agent",
+    "password": "3ncrypt!0nM@st3r",
+    "SESSION_ID": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7"
+  },
+  {
+    "login": "quantum_jester",
+    "password": "Schr0d!ng3r$C@t",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9"
+  },
+  {
+    "login": "nebula_hunter",
+    "password": "D@rkM@tt3rHunt3r",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1"
+  },
+  {
+    "login": "crimson_spectre",
+    "password": "Ph@nt0mFl@m3$2023",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3"
+  },
+  {
+    "login": "cyber_samurai",
+    "password": "N30-T0ky0$@mUr@1",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5"
+  },
+  {
+    "login": "lunar_pioneer",
+    "password": "M00nB@$3!Alpha#",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7"
+  },
+  {
+    "login": "vector_overlord",
+    "password": "M@th3m@t!c@lD0m",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9"
+  },
+  {
+    "login": "quantum_mechanic",
+    "password": "Str@ng3Qu@rk$!23",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1"
+  },
+  {
+    "login": "neon_drifter",
+    "password": "Synthw@v3Dr!ft#",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3"
+  },
+  {
+    "login": "frostbite_king",
+    "password": "Gl@c!@lD0m!n@t0r",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5"
+  },
+  {
+    "login": "terraformer",
+    "password": "Pl@n3tSh@p3r!23",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7"
+  },
+  {
+    "login": "quantum_pioneer",
+    "password": "W@rpDr!v3P!0n33r",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0"
+  },
+  {
+    "login": "neural_netrunner",
+    "password": "Cyb3rSp@c3J0ck3y",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2"
+  },
+  {
+    "login": "crimson_marksman",
+    "password": "Bull3tDr@gon!2023",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
+  },
+  {
+    "login": "lunar_wayfinder",
+    "password": "Cr@t3rN@v!g@t0r",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+  },
+  {
+    "login": "quantum_architect",
+    "password": "Mult!v3rs3Bu!ld3r",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8"
+  },
+  {
+    "login": "neon_gladiator",
+    "password": "H0l0Gr@d!@t0rA3n@",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0"
+  },
+  {
+    "login": "frost_warden",
+    "password": "P3rm@fr0stG@rd!@n",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2"
+  },
+  {
+    "login": "terra_guardian",
+    "password": "G@!@K33p3r!2023",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4"
+  },
+  {
+    "login": "quantum_sentinel",
+    "password": "Sup3rp0s!t!0nW@tch",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+  },
+  {
+    "login": "neural_dominator",
+    "password": "Br@!nH@ckL0rd!23",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8"
+  },
+  {
+    "login": "crimson_corsair",
+    "password": "Bl00dSe@R@v3n!",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1"
+  },
+  {
+    "login": "lunar_explorer",
+    "password": "M00nR0v3r@2023",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3"
+  },
+  {
+    "login": "quantum_guardian",
+    "password": "Qub!tD3f3nd3r!23",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5"
+  },
+  {
+    "login": "neon_avenger",
+    "password": "L@s3rV3ng3@nc3!",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7"
+  },
+  {
+    "login": "frost_reaver",
+    "password": "Gl@c!@lH@rv3st3r",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9"
+  },
+  {
+    "login": "terra_engineer",
+    "password": "G3oF0rg3M@st3r#",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1"
+  },
+  {
+    "login": "quantum_mechanist",
+    "password": "H!ggsF!3ldT3ch#",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3"
+  },
+  {
+    "login": "neural_architect",
+    "password": "M!ndP@l@c3Bu!ld3r",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5"
+  },
+  {
+    "login": "crimson_chieftain",
+    "password": "W@rCh!3f0fF!r3#",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7"
+  },
+  {
+    "login": "lunar_scientist",
+    "password": "S3l3n!t3R3s3@rch",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9"
+  },
+  {
+    "login": "quantum_explorer",
+    "password": "W0rmh0l3Tr@v3l3r",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2"
+  },
+  {
+    "login": "neon_sorcerer",
+    "password": "H0l0M@g!c!@n#2023",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
+  },
+  {
+    "login": "frost_alchemist",
+    "password": "1c3Tr@nsmut@t!0n",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+  },
+  {
+    "login": "terra_shaper",
+    "password": "Pl@t3T3ct0n!c$h@p3",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8"
+  },
+  {
+    "login": "quantum_chrononaut",
+    "password": "T!m3P@r@d0xH0pp3r",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1"
+  },
+  {
+    "login": "neural_prophet",
+    "password": "Pr3c0gN!t!0nS33r",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3"
+  },
+  {
+    "login": "crimson_legionnaire",
+    "password": "Sc@rl3tPh@l@nx!23",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5"
+  },
+  {
+    "login": "lunar_astrologer",
+    "password": "St@rCh@rtR3@d3r#",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7"
+  },
+  {
+    "login": "quantum_astrophysicist",
+    "password": "Bl@ckH0l3Th30r!st",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9"
+  },
+  {
+    "login": "neon_technomancer",
+    "password": "D!g!t@lS0rcer3r#",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1"
+  },
+  {
+    "login": "frost_biologist",
+    "password": "Cr!0g3n!c$L!f3F0rm",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3"
+  },
+  {
+    "login": "terra_ecologist",
+    "password": "G@!@H@rm0nyW@rd3n",
+    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+  },
+  {
+    "login": "quantum_cosmologist",
+    "password": "Mult!v3rs3M@pp3r",
+    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8"
+  },
+  {
+    "login": "neural_linguist",
+    "password": "T0ngu3$0fTh3G0d$",
+    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0"
+  },
+  {
+    "login": "crimson_centurion",
+    "password": "R0m@nEl!t3!2023",
+    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2"
+  },
+  {
+    "login": "lunar_cartographer",
+    "password": "M00nM@pM@k3r!23",
+    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4"
+  },
+  {
+    "login": "quantum_metallurgist",
+    "password": "Str@ng3M@tt3rF0rg3",
+    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
+  },
+  {
+    "login": "neon_illusionist",
+    "password": "H0l0gr@mM@st3r!",
+    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8"
+  },
+  {
+    "login": "frost_geologist",
+    "password": "Gl@c!@lStr@t@gr@ph",
+    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0"
+  },
+  {
+    "login": "terra_hydrologist",
+    "password": "W@t3rCycl3M@st3r",
+    "SESSION_ID": "e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2"
+  },
+  {
+    "login": "quantum_nanotechnologist",
+    "password": "@t0m!c@ss3mb!3r#",
+    "SESSION_ID": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4"
+  }
+]

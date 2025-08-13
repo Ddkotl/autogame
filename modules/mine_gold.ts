@@ -8,6 +8,6 @@ export async function mineGold(page: Page) {
     await page.locator("a.button_small").nth(0).waitFor({ state: "visible" });
     await page.locator("a.button_small").nth(0).click();
   } catch (error) {
-    console.error("Не удалось копать золото");
+    console.error("Не удалось копать золото", error);
   }
 }
