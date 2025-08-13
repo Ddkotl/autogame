@@ -29,7 +29,7 @@ export async function initPage(videoRecord: boolean) {
       httpCredentials: undefined,
     });
     const page = await context.newPage();
-    return page;
+    return { page, context, browser };
   } catch (e) {
     console.error(e);
   }
