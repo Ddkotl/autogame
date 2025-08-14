@@ -28,5 +28,20 @@
     "login": "quantum_ranger",
     "password": "Qu@ntumL3ap&8r",
     "SESSION_ID": "411dd1f47ccf12fd1c00b87a8fd16ad9c9074d47a02bbe74421b32fb93ecff81"
+  },
+   {
+    "login": "frost_warlock",
+    "password": "Frozen@rt1f@ct!",
+    "SESSION_ID": "b7d4c4c2b8d5ea5f3e51ec010c572982bce59c8efb5e576491551a24c418502e"
+  },
+   {
+    "login": "crimson_viper",
+    "password": "V3n0m0us$tr!ke",
+    "SESSION_ID": "af3163d7de03c6ea28e24ca1d42f95d256c59137dfacffaf8def5a1a5fdffffa"
+  },
+ {
+    "login": "nova_centurion",
+    "password": "St@rF0rce!9xQ&",
+    "SESSION_ID": "a96188bf095cbffa10501c4342942b1a2f4278d33e2d6eb4d24c8202e8decad4"
   }
 ]

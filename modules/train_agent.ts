@@ -2,9 +2,10 @@ import { Page } from "patchright";
 
 export async function trainAgent(page: Page) {
   try {
-    await page.goto("https://mvoo.ru/user/cache/pets/?buy=2&confirm=true", {
-      waitUntil: "domcontentloaded",
-    });
+    // await page.goto("https://mvoo.ru/user/cache/pets/?buy=2", {
+    //   waitUntil: "domcontentloaded",
+    // });
+    // await page.locator(".button_small").click();
     await page.goto("https://mvoo.ru/user/cache/training/?sorting=pets", {
       waitUntil: "domcontentloaded",
     });
