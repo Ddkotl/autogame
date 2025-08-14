@@ -3,8 +3,7 @@
   "scripts": {
     "prettier": "prettier -w .",
     "build": "rm -rf dist && tsc",
-    "start": "node dist/index.js",
-    "go": "ts-node index.ts"
+    "start": "ts-node index.ts"
   },
   "dependencies": {
     "patchright": "^1.52.5",
