@@ -2,9 +2,9 @@
   "type": "commonjs",
   "scripts": {
     "prettier": "prettier -w .",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && cpx './**/*.{html,css,json,png,jpg}' dist/",
     "start": "node dist/index.js",
-    "go":"ts-node go.ts"
+    "go": "ts-node go.ts"
   },
   "dependencies": {
     "node-cron": "^4.2.1",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.2.0",
+    "cpx": "^1.5.0",
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
