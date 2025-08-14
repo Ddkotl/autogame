@@ -1,4 +1,4 @@
-import { StartGreend } from ".";
+import { StartGreend } from "./main";
 
 (async () => {
   await StartGreend();

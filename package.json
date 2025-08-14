@@ -3,7 +3,7 @@
   "scripts": {
     "prettier": "prettier -w .",
     "build": "rm -rf dist && tsc",
-    "start": "ts-node cron.ts",
+    "start": "node dist/index.js",
     "go":"ts-node go.ts"
   },
   "dependencies": {
