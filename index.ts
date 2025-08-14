@@ -4,7 +4,7 @@ import { StartGreend } from "./main";
 export function setupCron() {
   console.log("⏳ Cron задачи инициализированы...");
 
-  cron.schedule("0 10,20 * * *", async () => {
+  cron.schedule("0,8 10,14,20 * * *", async () => {
     console.log("🚀 Запуск greend...");
     try {
       await StartGreend();
