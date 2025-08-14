@@ -2,7 +2,7 @@
   "type": "commonjs",
   "scripts": {
     "prettier": "prettier -w .",
-    "build": "rm -rf dist && tsc && cpx './**/*.{html,css,json,png,jpg}' dist/",
+    "build": "rm -rf dist && tsc ",
     "start": "node dist/index.js",
     "go": "ts-node go.ts"
   },
