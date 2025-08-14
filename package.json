@@ -3,10 +3,11 @@
   "scripts": {
     "prettier": "prettier -w .",
     "build": "rm -rf dist && tsc",
-    "start": "ts-node index.ts"
-    
+    "start": "ts-node cron.ts",
+    "go":"ts-node go.ts"
   },
   "dependencies": {
+    "node-cron": "^4.2.1",
     "patchright": "^1.52.5",
     "playwright": "^1.54.2"
   },
