@@ -4,6 +4,7 @@
     "prettier": "prettier -w .",
     "build": "rm -rf dist && tsc",
     "start": "ts-node index.ts"
+    
   },
   "dependencies": {
     "patchright": "^1.52.5",
