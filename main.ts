@@ -29,7 +29,7 @@ export async function StartGreend() {
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
         const on_job = await checkJob(page);
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 26; i++) {
           if (on_job) {
             break;
           }
