@@ -12,6 +12,7 @@ import {
   swithGoldToDiamond,
   trainAgent,
 } from "./modules";
+import { getResursesToSquad } from "./modules/get_resurses_to_squad";
 
 export async function StartGreend() {
   const accaunts = LoadAccaunts();
@@ -38,11 +39,12 @@ export async function StartGreend() {
           if (check_free_fights === "0/24") {
             break;
           }
-          await sleep(16000);
+          await sleep(60000);
         }
         if (!on_job) {
           await goToJob(page);
         }
+        await getResursesToSquad(page);
         await trainAgent(page);
         await swithGoldToDiamond(page);
       } catch (error) {
