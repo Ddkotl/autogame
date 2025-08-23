@@ -13,6 +13,8 @@ import {
   trainAgent,
 } from "./modules";
 import { getResursesToSquad } from "./modules/get_resurses_to_squad";
+import { checkWerwolfs } from "./modules/check_werwolfs";
+import { atackWerwolfs } from "./modules/atack_werwolfs";
 
 export async function StartGreend() {
   const accaunts = LoadAccaunts();
@@ -28,12 +30,18 @@ export async function StartGreend() {
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
+        await getResursesToSquad(page)
         const on_job = await checkJob(page);
+        const is_wervolfs = await checkWerwolfs(page);
         for (let i = 0; i < 26; i++) {
           if (on_job) {
             break;
           }
-          await atackZombie(page);
+          if(is_wervolfs){
+            await atackWerwolfs(page);
+          }else{
+            await atackZombie(page);
+          }
           await mineGold(page);
           const check_free_fights = await checkFreeFights(page);
           if (check_free_fights === "0/24") {
@@ -44,7 +52,6 @@ export async function StartGreend() {
         if (!on_job) {
           await goToJob(page);
         }
-        await getResursesToSquad(page);
         await trainAgent(page);
         await swithGoldToDiamond(page);
       } catch (error) {
