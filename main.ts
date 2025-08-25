@@ -31,10 +31,10 @@ export async function StartGreend() {
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
-        await getResursesToSquad(page)
+        // await getResursesToSquad(page)
         const on_job = await checkJob(page);
         const is_wervolfs = await checkWerwolfs(page);
-        for (let i = 0; i < 26; i++) {
+        for (let i = 0; i < 100; i++) {
           if (on_job) {
             break;
           }
@@ -48,7 +48,7 @@ export async function StartGreend() {
           if (check_free_fights === "0/24") {
             break;
           }
-          await sleep(60000);
+          await sleep(16000);
         }
         if (!on_job) {
           await goToJob(page);

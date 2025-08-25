@@ -7,16 +7,21 @@ interface Accaunt {
   SESSION_ID: string;
 }
 
-const ACCAUNTS_FILE = path.join(__dirname, "../mvoo-acc.json");
-
+const DEM_ACCAUNTS_FILE = path.join(__dirname, "../mvoo-acc-d.json");
+const ANG_ACCAUNTS_FILE = path.join(__dirname, "../mvoo-acc-a.json");
 export function LoadAccaunts() {
+  let accaunts: Accaunt[] = []
   try {
-    if (fs.existsSync(ACCAUNTS_FILE)) {
-      const data = fs.readFileSync(ACCAUNTS_FILE, "utf-8");
-      const accaunts: Accaunt[] = JSON.parse(data);
-      console.log(`Загружено ${accaunts.length} аккаунтов`);
-      return accaunts;
+    if (fs.existsSync(DEM_ACCAUNTS_FILE)) {
+      const ddata = fs.readFileSync(DEM_ACCAUNTS_FILE, "utf-8");
+       accaunts.push(...JSON.parse(ddata)) 
     }
+     if (fs.existsSync(ANG_ACCAUNTS_FILE)) {
+      const adata = fs.readFileSync(ANG_ACCAUNTS_FILE, "utf-8");
+       accaunts.push(...JSON.parse(adata)) 
+    }
+    console.log(`Загружено ${accaunts.length} аккаунтов`);
+    return accaunts
   } catch (error) {
     console.error("Ошибка загрузки аккаунтов", error);
   }

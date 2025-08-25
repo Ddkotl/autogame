@@ -1,70 +1,7 @@
 [
   
+  
  
-
- 
- 
- 
-  {
-    "login": "iron_panther",
-    "password": "W@kand@F0rev3r",
-    "SESSION_ID": "5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
-  },
-  {
-    "login": "silver_samurai",
-    "password": "K@t@n@M@st3r#1",
-    "SESSION_ID": "b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8"
-  },
-  {
-    "login": "phantom_thief",
-    "password": "Gh0stH3!st@2023",
-    "SESSION_ID": "d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1"
-  },
-  {
-    "login": "lunar_guardian",
-    "password": "M00nBe@m$5h!ne",
-    "SESSION_ID": "f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
-  },
-  {
-    "login": "steel_titan",
-    "password": "1nvinc!ble@rm0r",
-    "SESSION_ID": "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4"
-  },
-  {
-    "login": "ember_dragon",
-    "password": "F1reBr3@th#2023",
-    "SESSION_ID": "4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6"
-  },
-  {
-    "login": "void_walker",
-    "password": "D@rkM@tt3r!9xP",
-    "SESSION_ID": "6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8"
-  },
-  {
-    "login": "solar_flare",
-    "password": "SunBurst$5h0ck",
-    "SESSION_ID": "8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0"
-  },
-  {
-    "login": "cobalt_strider",
-    "password": "Futur3T3ch!2023",
-    "SESSION_ID": "0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2"
-  },
-  {
-    "login": "neural_ghost",
-    "password": "H@ckTh3M@tr!x#",
-    "SESSION_ID": "2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4"
-  },
-  {
-    "login": "quantum_leaper",
-    "password": "T!m3H0p@2023!",
-    "SESSION_ID": "4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
-  },
-  {
-    "login": "crimson_raider",
-    "password": "Bl00dM00n$R!se",
-    "SESSION_ID": "6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8"
-  },
   {
     "login": "azure_knight",
     "password": "SkyF0rtress@123",
