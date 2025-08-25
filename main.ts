@@ -7,6 +7,7 @@ import {
   checkFreeFights,
   checkJob,
   goToJob,
+  goToMeditation,
   mineGold,
   setCookies,
   swithGoldToDiamond,
@@ -51,6 +52,7 @@ export async function StartGreend() {
         }
         if (!on_job) {
           await goToJob(page);
+          await goToMeditation(page)
         }
         await trainAgent(page);
         await swithGoldToDiamond(page);
@@ -58,9 +60,10 @@ export async function StartGreend() {
         console.error(error);
       } finally {
         if (page) {
-          page.close();
-          context.close();
-          browser.close();
+        await  page.close();
+        await context.clearCookies()
+        await  context.close();
+        await  browser.close();
         }
       }
     }),
