@@ -8,6 +8,6 @@ export async function atackWerwolfs(page: Page) {
     await page.locator("a.button_small").waitFor({ state: "visible" });
     await page.locator("a.button_small").click();
   } catch (error) {
-    console.error("Не удалось атаковать оборотня",error);
+    console.error("Не удалось атаковать оборотня", error);
   }
 }
