@@ -35,7 +35,7 @@ export async function StartGreend(mode: "feed" | "farm") {
           await getResursesToSquad(page)
           const on_job = await checkJob(page);
           const is_wervolfs = await checkWerwolfs(page);
-          for (let i = 0; i < 100; i++) {
+          for (let i = 0; i < 25; i++) {
             if (on_job) {
               break;
             }
@@ -49,7 +49,7 @@ export async function StartGreend(mode: "feed" | "farm") {
             if (check_free_fights === "0/24") {
               break;
             }
-            await sleep(16000);
+            await sleep(60000);
           }
           if (!on_job) {
             await goToJob(page);
