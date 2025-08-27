@@ -7,14 +7,17 @@ import {
   checkFreeFights,
   checkJob,
   goToJob,
+  goToMeditation,
   mineGold,
   setCookies,
   swithGoldToDiamond,
   trainAgent,
 } from "./modules";
 import { getResursesToSquad } from "./modules/get_resurses_to_squad";
+import { checkWerwolfs } from "./modules/check_werwolfs";
+import { atackWerwolfs } from "./modules/atack_werwolfs";
 
-export async function StartGreend() {
+export async function StartGreend(mode: "feed" | "farm") {
   const accaunts = LoadAccaunts();
 
   await Promise.all(
@@ -28,32 +31,44 @@ export async function StartGreend() {
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
-        const on_job = await checkJob(page);
-        for (let i = 0; i < 26; i++) {
-          if (on_job) {
-            break;
+        if (mode === "farm") {
+          await getResursesToSquad(page)
+          const on_job = await checkJob(page);
+          const is_wervolfs = await checkWerwolfs(page);
+          for (let i = 0; i < 25; i++) {
+            if (on_job) {
+              break;
+            }
+            if (is_wervolfs) {
+              await atackWerwolfs(page);
+            } else {
+              await atackZombie(page);
+            }
+            await mineGold(page);
+            const check_free_fights = await checkFreeFights(page);
+            if (check_free_fights === "0/24") {
+              break;
+            }
+            await sleep(60000);
           }
-          await atackZombie(page);
-          await mineGold(page);
-          const check_free_fights = await checkFreeFights(page);
-          if (check_free_fights === "0/24") {
-            break;
+          if (!on_job) {
+            await goToJob(page);
+            await goToMeditation(page);
           }
-          await sleep(60000);
+          await trainAgent(page);
+          await swithGoldToDiamond(page);
         }
-        if (!on_job) {
-          await goToJob(page);
+        if (mode === "feed") {
+          console.log("start feed");
         }
-        await getResursesToSquad(page);
-        await trainAgent(page);
-        await swithGoldToDiamond(page);
       } catch (error) {
         console.error(error);
       } finally {
         if (page) {
-          page.close();
-          context.close();
-          browser.close();
+          await page.close();
+          await context.clearCookies();
+          await context.close();
+          await browser.close();
         }
       }
     }),
