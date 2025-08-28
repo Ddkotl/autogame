@@ -16,6 +16,7 @@ import {
 import { getResursesToSquad } from "./modules/get_resurses_to_squad";
 import { checkWerwolfs } from "./modules/check_werwolfs";
 import { atackWerwolfs } from "./modules/atack_werwolfs";
+import { checkMeditation } from "./modules/check_meditation";
 
 export async function StartGreend(mode: "feed" | "farm") {
   const accaunts = LoadAccaunts();
@@ -32,11 +33,12 @@ export async function StartGreend(mode: "feed" | "farm") {
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
         if (mode === "farm") {
-          await getResursesToSquad(page)
+          await getResursesToSquad(page);
+          const on_med = await checkMeditation(page);
           const on_job = await checkJob(page);
           const is_wervolfs = await checkWerwolfs(page);
           for (let i = 0; i < 25; i++) {
-            if (on_job) {
+            if (on_job || on_med) {
               break;
             }
             if (is_wervolfs) {
@@ -51,7 +53,7 @@ export async function StartGreend(mode: "feed" | "farm") {
             }
             await sleep(60000);
           }
-          if (!on_job) {
+          if (!on_job && !on_med) {
             await goToJob(page);
             await goToMeditation(page);
           }

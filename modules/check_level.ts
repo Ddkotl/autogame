@@ -1,17 +1,18 @@
 import { Page } from "patchright";
 import { sleep } from "../utils/sleep";
 
-export async function checkFreeFights(page: Page) {
+export async function checkLevel(page: Page) {
   try {
     await sleep(1000);
-    const fights = await page
+    const level = await page
       .locator(".footer_icons  > span ")
-      .nth(8)
+      .nth(0)
       .innerText()
       .then((data) => data.trim());
+    console.log(level);
     await sleep(1000);
-    return fights;
+    return level;
   } catch (error) {
-    console.error("Не удалось узнать количество боев", error);
+    console.error("Не удалось узнать уровень", error);
   }
 }
