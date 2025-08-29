@@ -5,7 +5,9 @@ export async function initPage(videoRecord: boolean) {
     const browser = await chromium.launch({
       channel: "chromium",
       headless: true,
-      args: ["--disable-blink-features=AutomationControlled"],
+      args: [
+        "--disable-blink-features=AutomationControlled",
+      ],
     });
     const context = await browser.newContext({
       ...(videoRecord

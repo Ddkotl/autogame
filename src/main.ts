@@ -19,10 +19,10 @@ import { atackWerwolfs } from "./modules/atack_werwolfs";
 import { checkMeditation } from "./modules/check_meditation";
 
 export async function StartGreend(mode: "feed" | "farm") {
-  const accaunts = LoadAccaunts();
+  const {dem_accaunts,ang_accaunts} = LoadAccaunts();
 
-  await Promise.all(
-    accaunts.map(async (acc) => {
+  await Promise.all([
+    ...dem_accaunts.map(async (acc) => {
       let browser: Browser | null = null;
       let context: BrowserContext | null = null;
       let page: Page | null = null;
@@ -47,7 +47,8 @@ export async function StartGreend(mode: "feed" | "farm") {
               await atackZombie(page);
             }
             await mineGold(page);
-            const check_free_fights = await checkFreeFights(page);
+            const check_free_fights =
+              await checkFreeFights(page);
             if (check_free_fights === "0/24") {
               break;
             }
@@ -74,7 +75,7 @@ export async function StartGreend(mode: "feed" | "farm") {
         }
       }
     }),
-  );
+  ]);
 }
 
 //  https://pixplay.org/?ref=61217

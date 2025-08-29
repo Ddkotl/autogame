@@ -12,6 +12,9 @@ export async function checkFreeFights(page: Page) {
     await sleep(1000);
     return fights;
   } catch (error) {
-    console.error("Не удалось узнать количество боев", error);
+    console.error(
+      "Не удалось узнать количество боев",
+      error,
+    );
   }
 }

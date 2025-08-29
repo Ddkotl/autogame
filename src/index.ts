@@ -10,7 +10,10 @@ export function setupCron() {
       await StartGreend("farm");
       console.log("✅ greend успешно завершён.");
     } catch (error) {
-      console.error("❌ Ошибка при выполнении greend:", error);
+      console.error(
+        "❌ Ошибка при выполнении greend:",
+        error,
+      );
     }
   });
 }
