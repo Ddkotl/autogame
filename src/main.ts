@@ -5,6 +5,7 @@ import {
   setCookies
 } from "./modules";
 import { Farm } from "./mode/farm";
+import { getDayRevard } from "./modules/get_day_revard";
 
 export async function StartGreend(mode: "feed" | "farm") {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
@@ -20,6 +21,7 @@ export async function StartGreend(mode: "feed" | "farm") {
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
+        await getDayRevard(page)
         await Farm(page, true, 30, 60000, "demon");
       } catch (error) {
         console.error(error);

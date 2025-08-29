@@ -10,7 +10,6 @@ export async function checkFreeFights(page: Page) {
       .innerText()
       .then((data) => data.trim());
     await sleep(1000);
-    console.log(fights)
     return fights;
   } catch (error) {
     console.error(
