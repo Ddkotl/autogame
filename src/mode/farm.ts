@@ -15,17 +15,23 @@ import { checkWerwolfs } from "../modules/check_werwolfs";
 import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
 import { checkLevel } from "../modules/check_level";
+import { goToMutation } from "../modules/go_to_mutation";
 
 export async function Farm(
   page: Page,
   res_to_squad: boolean,
   fight_count: number,
   sleep_time: number,
-  fraction: "angel" | "demon"
+  fraction: "angel" | "demon",
 ) {
-  if(fraction==="angel"){
-    const level = await checkLevel(page)
-    console.log(level)
+  if (fraction === "angel") {
+    const level:number = await checkLevel(page);
+    if (level >= 10) {
+      const on_mutation = await goToMutation(page);
+      if (!on_mutation) {
+        return;
+      }
+    }
   }
   if (res_to_squad) {
     await getResursesToSquad(page);

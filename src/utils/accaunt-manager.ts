@@ -34,7 +34,7 @@ export function LoadAccaunts() {
       ang_accaunts.push(...JSON.parse(adata));
     }
     console.log(
-      `Загружено ${dem_accaunts} дем. и ${ang_accaunts} анг.`,
+      `Загружено ${dem_accaunts.length} дем. и ${ang_accaunts.length} анг.`,
     );
     return { dem_accaunts, ang_accaunts };
   } catch (error) {

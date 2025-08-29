@@ -7,10 +7,9 @@ export async function checkLevel(page: Page) {
     const level = await page
       .locator(".footer_icons  > span ")
       .nth(0)
-      .innerText()
-      .then((data) => data.trim());
+      .innerText();
     await sleep(1000);
-    return level;
+    return +level.replace(/^.*\[(\d+)\]$/, "$1");
   } catch (error) {
     console.error("Не удалось узнать уровень", error);
   }
