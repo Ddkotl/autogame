@@ -2,21 +2,8 @@
   
   
  
-  {
-    "login": "azure_knight",
-    "password": "SkyF0rtress@123",
-    "SESSION_ID": "8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0"
-  },
-  {
-    "login": "nebula_corsair",
-    "password": "Sp@ceP!r@t3$#1",
-    "SESSION_ID": "a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1"
-  },
-  {
-    "login": "vortex_sentinel",
-    "password": "T0rn@d0Sh!3ld#",
-    "SESSION_ID": "c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4"
-  },
+ 
+
   {
     "login": "onyx_assassin",
     "password": "Sh@d0wSt@lk3r!",

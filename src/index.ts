@@ -7,10 +7,13 @@ export function setupCron() {
   cron.schedule("0 10,20 * * *", async () => {
     console.log("🚀 Запуск greend...");
     try {
-      await StartGreend();
+      await StartGreend("farm");
       console.log("✅ greend успешно завершён.");
     } catch (error) {
-      console.error("❌ Ошибка при выполнении greend:", error);
+      console.error(
+        "❌ Ошибка при выполнении greend:",
+        error,
+      );
     }
   });
 }

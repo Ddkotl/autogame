@@ -3,9 +3,12 @@ import { sleep } from "../utils/sleep";
 
 export async function goToMeditation(page: Page) {
   try {
-    await page.goto("https://mvoo.ru/game/staff/meditation", {
-      waitUntil: "domcontentloaded",
-    });
+    await page.goto(
+      "https://mvoo.ru/game/staff/meditation",
+      {
+        waitUntil: "domcontentloaded",
+      },
+    );
     await sleep(3000);
     await page.selectOption("select#meditation-time", "8");
     await page.locator(".button_big").click();
