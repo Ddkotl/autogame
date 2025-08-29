@@ -17,9 +17,10 @@ import { getResursesToSquad } from "./modules/get_resurses_to_squad";
 import { checkWerwolfs } from "./modules/check_werwolfs";
 import { atackWerwolfs } from "./modules/atack_werwolfs";
 import { checkMeditation } from "./modules/check_meditation";
+import { Farm } from "./mode/farm";
 
 export async function StartGreend(mode: "feed" | "farm") {
-  const {dem_accaunts,ang_accaunts} = LoadAccaunts();
+  const { dem_accaunts, ang_accaunts } = LoadAccaunts();
 
   await Promise.all([
     ...dem_accaunts.map(async (acc) => {
@@ -33,33 +34,7 @@ export async function StartGreend(mode: "feed" | "farm") {
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
         if (mode === "farm") {
-          await getResursesToSquad(page);
-          const on_med = await checkMeditation(page);
-          const on_job = await checkJob(page);
-          const is_wervolfs = await checkWerwolfs(page);
-          for (let i = 0; i < 25; i++) {
-            if (on_job || on_med) {
-              break;
-            }
-            if (is_wervolfs) {
-              await atackWerwolfs(page);
-            } else {
-              await atackZombie(page);
-            }
-            await mineGold(page);
-            const check_free_fights =
-              await checkFreeFights(page);
-            if (check_free_fights === "0/24") {
-              break;
-            }
-            await sleep(60000);
-          }
-          if (!on_job && !on_med) {
-            await goToJob(page);
-            await goToMeditation(page);
-          }
-          await trainAgent(page);
-          await swithGoldToDiamond(page);
+          await Farm(page,true,30,60000,"demon")
         }
         if (mode === "feed") {
           console.log("start feed");

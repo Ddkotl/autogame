@@ -9,7 +9,6 @@ export async function checkLevel(page: Page) {
       .nth(0)
       .innerText()
       .then((data) => data.trim());
-    console.log(level);
     await sleep(1000);
     return level;
   } catch (error) {

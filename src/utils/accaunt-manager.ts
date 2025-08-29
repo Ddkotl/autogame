@@ -17,7 +17,7 @@ const ANG_ACCAUNTS_FILE = path.join(
 );
 export function LoadAccaunts() {
   let dem_accaunts: Accaunt[] = [];
-  let ang_accaunts:Accaunt[]=[]
+  let ang_accaunts: Accaunt[] = [];
   try {
     if (fs.existsSync(DEM_ACCAUNTS_FILE)) {
       const ddata = fs.readFileSync(
@@ -33,8 +33,10 @@ export function LoadAccaunts() {
       );
       ang_accaunts.push(...JSON.parse(adata));
     }
-    console.log(`Загружено ${dem_accaunts} дем. и ${ang_accaunts} анг.`)
-    return {dem_accaunts,ang_accaunts};
+    console.log(
+      `Загружено ${dem_accaunts} дем. и ${ang_accaunts} анг.`,
+    );
+    return { dem_accaunts, ang_accaunts };
   } catch (error) {
     console.error("Ошибка загрузки аккаунтов", error);
   }
