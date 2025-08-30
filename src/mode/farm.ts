@@ -32,6 +32,9 @@ export async function Farm(
         return;
       }
     }
+    if(level === undefined || level === null){
+      return
+    }
   }
   if (res_to_squad) {
     await getResursesToSquad(page);
