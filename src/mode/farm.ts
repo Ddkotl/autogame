@@ -60,7 +60,10 @@ export async function Farm(
   }
   if (!on_job && !on_med) {
     await goToJob(page);
-    await goToMeditation(page);
+    if(fraction === "demon"){
+
+      await goToMeditation(page);
+    }
   }
   await trainAgent(page);
   await swithGoldToDiamond(page);
