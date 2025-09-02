@@ -4,7 +4,9 @@ import { sleep } from "../utils/sleep";
 export async function checkWerwolfs(page: Page) {
   try {
     await sleep(1000);
-    await page.goto("https://mvoo.ru",{ waitUntil:"domcontentloaded"})
+    await page.goto("https://mvoo.ru", {
+      waitUntil: "domcontentloaded",
+    });
     const text = await page
       .locator("td.notice_content")
       .allInnerTexts();

@@ -1,17 +1,14 @@
 import { Page } from "patchright";
 
-export async function trainHero(page: Page,count:number) {
+export async function trainHero(page: Page, count: number) {
   try {
     // await page.goto("https://mvoo.ru/user/cache/pets/?buy=2", {
     //   waitUntil: "domcontentloaded",
     // });
     // await page.locator(".button_small").click();
-    await page.goto(
-      "https://mvoo.ru/user/cache/training",
-      {
-        waitUntil: "domcontentloaded",
-      },
-    );
+    await page.goto("https://mvoo.ru/user/cache/training", {
+      waitUntil: "domcontentloaded",
+    });
     for (let i = 0; i < count; i++) {
       await page
         .locator(".button_small")

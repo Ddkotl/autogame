@@ -3,7 +3,9 @@ import { sleep } from "../utils/sleep";
 
 export async function checkLevel(page: Page) {
   try {
-    await page.goto("https://mvoo.ru",{waitUntil:"domcontentloaded"})
+    await page.goto("https://mvoo.ru", {
+      waitUntil: "domcontentloaded",
+    });
     await sleep(3000);
     const level = await page
       .locator(".user_link")

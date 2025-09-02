@@ -1,9 +1,7 @@
 import { Browser, BrowserContext, Page } from "patchright";
 import { initPage } from "./utils/initPage";
 import { LoadAccaunts } from "./utils/accaunt-manager";
-import {
-  setCookies
-} from "./modules";
+import { setCookies } from "./modules";
 import { Farm } from "./mode/farm";
 import { getDayRevard } from "./modules/get_day_revard";
 import { sleep } from "./utils/sleep";
@@ -11,9 +9,9 @@ import { trainHero } from "./modules/train_hero";
 
 export async function StartGreend(mode: "feed" | "farm") {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
-if(mode=== "feed"){
-  dem_accaunts.splice(0)
-}
+  if (mode === "feed") {
+    dem_accaunts.splice(0);
+  }
   await Promise.all([
     ...dem_accaunts.map(async (acc) => {
       let browser: Browser | null = null;
@@ -25,7 +23,7 @@ if(mode=== "feed"){
         context = data.context;
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
-        await getDayRevard(page)
+        await getDayRevard(page);
         await Farm(page, true, 30, 60000, "demon");
       } catch (error) {
         console.error(error);
@@ -38,7 +36,7 @@ if(mode=== "feed"){
         }
       }
     }),
-    ...ang_accaunts.map(async (acc,i) => {
+    ...ang_accaunts.map(async (acc, i) => {
       let browser: Browser | null = null;
       let context: BrowserContext | null = null;
       let page: Page | null = null;
@@ -52,15 +50,20 @@ if(mode=== "feed"){
           await Farm(page, false, 30, 60000, "angel");
         }
         if (mode === "feed") {
-          await page.goto("https://mvoo.ru",{waitUntil:"domcontentloaded"})
-          await sleep(i * 5000)
+          await page.goto("https://mvoo.ru", {
+            waitUntil: "domcontentloaded",
+          });
+          await sleep(i * 5000);
           //await trainHero(page,40)
-          for(let i =0; i<=30; i++){
-          await page.goto("https://mvoo.ru/arena/cache/attack/55314/?pages-attackInformationPage=true",{waitUntil:"domcontentloaded"})
-          await page.locator(".button_small").waitFor({state:"visible"})
-          await page.locator(".button_small").click()
-          await sleep(60000)
-            }  }
+          await page.goto(
+            "https://mvoo.ru/arena/cache/attack/55314/?pages-attackInformationPage=true",
+            { waitUntil: "domcontentloaded" },
+          );
+          await page
+            .locator(".button_small")
+            .waitFor({ state: "visible" });
+          await page.locator(".button_small").click();
+        }
       } catch (error) {
         console.error(error);
       } finally {
