@@ -4,7 +4,8 @@
     "prettier": "prettier -w .",
     "build": "tsc ",
     "start": "node dist/index.js",
-    "go": "node dist/go.js"
+    "farm": "node dist/farm.js",
+    "feed": "node dist/feed.js"
   },
   "dependencies": {
     "node-cron": "^4.2.1",
