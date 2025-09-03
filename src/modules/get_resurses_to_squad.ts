@@ -9,11 +9,10 @@ export async function getResursesToSquad(page: Page) {
         waitUntil: "domcontentloaded",
       },
     );
-    await sleep(3000);
+    await page.locator(".button_small").waitFor({state:"visible"})
+    await sleep(5000);
     await page.locator(".button_small").click();
     await sleep(3000);
-    await page.fill('input[name="gold"]', "10");
-    await page.locator(".button_small").click();
   } catch (error) {
     console.error("Не удалось пожертвовать в отряд", error);
   }

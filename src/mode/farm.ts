@@ -25,12 +25,15 @@ export async function Farm(
   fraction: "angel" | "demon",
 ) {
   if (fraction === "angel") {
-    const level:number = await checkLevel(page);
+    const level: number = await checkLevel(page);
     if (level >= 10) {
       const on_mutation = await goToMutation(page);
       if (!on_mutation) {
         return;
       }
+    }
+    if (level === undefined || level === null) {
+      return;
     }
   }
   if (res_to_squad) {
@@ -57,7 +60,9 @@ export async function Farm(
   }
   if (!on_job && !on_med) {
     await goToJob(page);
-    await goToMeditation(page);
+    if (fraction === "demon") {
+      await goToMeditation(page);
+    }
   }
   await trainAgent(page);
   await swithGoldToDiamond(page);

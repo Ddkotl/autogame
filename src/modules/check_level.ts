@@ -3,10 +3,12 @@ import { sleep } from "../utils/sleep";
 
 export async function checkLevel(page: Page) {
   try {
-    await sleep(1000);
+    await page.goto("https://mvoo.ru", {
+      waitUntil: "domcontentloaded",
+    });
+    await sleep(3000);
     const level = await page
-      .locator(".footer_icons  > span ")
-      .nth(0)
+      .locator(".user_link")
       .innerText();
     await sleep(1000);
     return +level.replace(/^.*\[(\d+)\]$/, "$1");
