@@ -9,7 +9,8 @@ export async function getResursesToSquad(page: Page) {
         waitUntil: "domcontentloaded",
       },
     );
-    await sleep(3000);
+    await page.locator(".button_small").waitFor({state:"visible"})
+    await sleep(5000);
     await page.locator(".button_small").click();
     await sleep(3000);
   } catch (error) {

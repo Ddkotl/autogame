@@ -5,7 +5,7 @@ export async function getDayRevard(page: Page) {
     await page.goto("https://mvoo.ru/?take=true", {
       waitUntil: "domcontentloaded",
     });
-    await page.locator(".button_small").click();
+    //await page.locator(".button_small").click();
   } catch (error) {
     console.log("не получилось получить дневную награду");
   }

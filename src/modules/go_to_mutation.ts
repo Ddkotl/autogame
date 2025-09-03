@@ -10,7 +10,7 @@ export async function goToMutation(page: Page) {
     await sleep(3000);
     try {
       await page.locator(".button_small").click();
-      sleep(1000);
+      sleep(5000);
       await page.locator(".button_small").nth(0).click();
     } catch (error) {
       console.log("нет кнопки провести мутацию");

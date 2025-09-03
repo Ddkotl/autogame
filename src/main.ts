@@ -59,6 +59,7 @@ export async function StartGreend(mode: "feed" | "farm") {
             "https://mvoo.ru/arena/cache/attack/55314/?pages-attackInformationPage=true",
             { waitUntil: "domcontentloaded" },
           );
+          await sleep(3000)
           await page
             .locator(".button_small")
             .waitFor({ state: "visible" });
