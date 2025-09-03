@@ -59,8 +59,8 @@ export async function Farm(
     await sleep(sleep_time);
   }
   if (!on_job && !on_med) {
-    await goToJob(page);
     if (fraction === "demon") {
+      await goToJob(page)
       await goToMeditation(page);
     }
   }
