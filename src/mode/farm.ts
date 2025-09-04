@@ -24,6 +24,7 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
+  await trainAgent(page)
   if (fraction === "angel") {
     const level: number = await checkLevel(page);
     if (level >= 10) {
