@@ -54,7 +54,7 @@ export async function StartGreend(mode: "feed" | "farm") {
             waitUntil: "domcontentloaded",
           });
           await sleep(i * 5000);
-          await trainHero(page,3)
+        //  await trainHero(page,3)
           await getDayRevard(page)
           await page.goto(
             "https://mvoo.ru/arena/cache/attack/55314/?pages-attackInformationPage=true",
