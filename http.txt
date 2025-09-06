@@ -1,0 +1,88 @@
+Request URL
+https://mvoo.ru/arena/cache/attack/55314
+Request Method
+GET
+Status Code
+200 OK
+Remote Address
+156.146.59.20:9002
+Referrer Policy
+no-referrer-when-downgrade
+
+
+
+
+accept-ch
+Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA
+
+access-control-allow-origin
+*
+cache-control
+no-store, no-cache, must-revalidate
+connection
+keep-alive
+content-encoding
+gzip
+content-type
+text/html; charset=UTF-8
+date
+Sat, 06 Sep 2025 16:12:42 GMT
+expires
+Thu, 19 Nov 1981 08:52:00 GMT
+feature-policy
+accelerometer 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; usb 'none'
+pragma
+no-cache
+referrer-policy
+no-referrer-when-downgrade
+server
+nginx/1.18.0
+strict-transport-security
+max-age=31536000; includeSubDomains
+transfer-encoding
+chunked
+vary
+Accept-Encoding
+vary
+Sec-CH-UA-Model, Sec-CH-UA-Mobile, Sec-CH-UA-Platform
+x-content-type-options
+nosniff
+x-xss-protection
+1; mode=block
+
+
+
+accept
+text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+ru,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6
+connection
+keep-alive
+cookie
+PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4
+host
+mvoo.ru
+referer
+https://mvoo.ru/user/cache/profile/55314
+sec-ch-ua
+"Not;A=Brand";v="99", "Google Chrome";v="139", "Chromium";v="139"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-model
+""
+sec-ch-ua-platform
+"Windows"
+sec-fetch-dest
+document
+sec-fetch-mode
+navigate
+sec-fetch-site
+same-origin
+sec-fetch-user
+?1
+upgrade-insecure-requests
+1
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36
