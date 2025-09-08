@@ -6,7 +6,7 @@
     "farm": "node dist/farm.js",
     "feed": "node dist/feed.js",
     "test": "tsx src/test.ts",
-    "http":"tsx src/http_parse.ts"
+    "http": "tsx src/http_parse.ts"
   },
   "dependencies": {
     "patchright": "^1.52.5",
