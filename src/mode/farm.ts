@@ -24,6 +24,9 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
+  
+  await swithGoldToDiamond(page)
+  await trainAgent(page)
   if (fraction === "angel") {
     const level: number = await checkLevel(page);
     if (level >= 10) {
@@ -59,11 +62,10 @@ export async function Farm(
     await sleep(sleep_time);
   }
   if (!on_job && !on_med) {
-    await goToJob(page);
     if (fraction === "demon") {
+      await goToJob(page)
       await goToMeditation(page);
     }
   }
   await trainAgent(page);
-  await swithGoldToDiamond(page);
 }

@@ -3,20 +3,18 @@
   "scripts": {
     "prettier": "prettier -w .",
     "build": "tsc ",
-    "start": "node dist/index.js",
     "farm": "node dist/farm.js",
-    "feed": "node dist/feed.js"
+    "feed": "node dist/feed.js",
+    "test":"tsx src/test.ts"
   },
   "dependencies": {
-    "node-cron": "^4.2.1",
     "patchright": "^1.52.5",
     "playwright": "^1.54.2"
   },
   "devDependencies": {
     "@types/node": "^24.2.0",
-    "cpx": "^1.5.0",
     "prettier": "^3.6.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
 }
