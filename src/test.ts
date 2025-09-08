@@ -1,19 +1,30 @@
-
 async function main() {
+  await fetch("https://mvoo.ru/?take=true", {
+        headers: {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+                    "Cookie": "PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4",
+                          "Referer": "https://mvoo.ru",
+                              }
+                                });
   // 1. Получаем страницу боя
-  const pageUrl = "https://mvoo.ru/arena/cache/attack/55314";
+  const pageUrl =
+    "https://mvoo.ru/arena/cache/attack/55314";
   const res = await fetch(pageUrl, {
     headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
-      "Cookie": "PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4",
-      "Referer": "https://mvoo.ru/arena/",
-    }
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      Cookie:
+        "PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4",
+      Referer: "https://mvoo.ru/arena/",
+    },
   });
 
   const html = await res.text();
-console.log(html)
+  console.log(html);
   // 2. Находим ссылку на атаку в HTML
-  const match = html.match(/href="(\/arena\/cache\/attack\/\d+\?cache=[^"]+)"/);
+  const match = html.match(
+    /href="(\/arena\/cache\/attack\/\d+\?cache=[^"]+)"/,
+  );
   if (!match) {
     console.error("Ссылка на атаку не найдена!");
     return;
