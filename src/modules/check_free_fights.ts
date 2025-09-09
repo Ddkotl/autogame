@@ -2,7 +2,7 @@ import { JSDOM } from "jsdom";
 import { php_session_id } from "../const/constants";
 export async function checkFreeFights(session_id: string) {
   try {
-    const pageUrl = "https://mvoo.ru/game/city";
+    const pageUrl = "https://mvoo.ru";
     const res = await fetch(pageUrl, {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
