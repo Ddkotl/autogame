@@ -19,7 +19,6 @@ async function main() {
       battles = e.textContent;
     }
   });
-  
 }
 
 main();

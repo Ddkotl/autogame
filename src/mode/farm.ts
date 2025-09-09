@@ -55,7 +55,7 @@ export async function Farm(
       await atackZombie(page);
     }
     await mineGold(page);
-    const check_free_fights = await checkFreeFights(page);
+    const check_free_fights = await checkFreeFights(session_id);
     if (check_free_fights === "0/24") {
       break;
     }
