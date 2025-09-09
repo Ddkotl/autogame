@@ -1,11 +1,12 @@
-import { Page } from "patchright";
+import { php_session_id } from "../const/constants";
 
-export async function getDayRevard(page: Page) {
+export async function getDayRevard(session_id: string) {
   try {
-    await page.goto("https://mvoo.ru/?take=true", {
-      waitUntil: "domcontentloaded",
+    await fetch("https://mvoo.ru/?take=true", {
+      headers: {
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      },
     });
-    //await page.locator(".button_small").click();
   } catch (error) {
     console.log("не получилось получить дневную награду");
   }

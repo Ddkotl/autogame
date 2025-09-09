@@ -1,18 +1,23 @@
-import { Page } from "patchright";
-import { sleep } from "../utils/sleep";
+import { php_session_id } from "../const/constants";
 
-export async function checkLevel(page: Page) {
+export async function checkLevel(
+  session_id: string,
+): Promise<number> {
   try {
-    await page.goto("https://mvoo.ru", {
-      waitUntil: "domcontentloaded",
+    const pageUrl = "https://mvoo.ru";
+    const res = await fetch(pageUrl, {
+      headers: {
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      },
     });
-    await sleep(3000);
-    const level = await page
-      .locator(".user_link")
-      .innerText();
-    await sleep(1000);
-    return +level.replace(/^.*\[(\d+)\]$/, "$1");
+
+    const html = await res.text();
+    const match = html.match(/\[(\d+)\]/);
+    if (match[1]) {
+      return Number(match[1]);
+    }
   } catch (error) {
     console.error("Не удалось узнать уровень", error);
+    return 25;
   }
 }
