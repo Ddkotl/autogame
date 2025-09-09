@@ -46,7 +46,7 @@ export async function StartGreend(mode: "feed" | "farm") {
     }),
     ...ang_accaunts.map(async (acc, i) => {
       if (mode === "feed") {
-        await sleep(1000);
+        await sleep(i * 100);
         await startFeed(acc.SESSION_ID);
       } else {
         let browser: Browser | null = null;

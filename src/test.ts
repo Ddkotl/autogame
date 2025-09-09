@@ -15,7 +15,9 @@ async function main() {
   const is_button_exist = dom.window.document.querySelector(
     'a[href="/game/city/laboratory/?view=4&conduct=4"]',
   );
-  const is_activ = dom.window.document.querySelector("ul").textContent.includes("Технология активна")
+  const is_activ = dom.window.document
+    .querySelector("ul")
+    .textContent.includes("Технология активна");
   if (is_button_exist) {
     const res = await fetch(
       "https://mvoo.ru/game/city/laboratory/?view=4&conduct=4&confirm=true",
