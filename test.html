@@ -1,0 +1,603 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+  <head>
+    <meta
+      http-equiv="Content-Type"
+      content="text/html; charset=UTF-8"
+    />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge,chrome=1"
+    />
+    <meta
+      http-equiv="x-dns-prefetch-control"
+      content="on"
+    />
+    <link rel="dns-prefetch" href="https://mvoo.ru/" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="description"
+      content="Игра для настоящих воинов! Собирай друзей, побеждай оборотней, поднимай свою славу!"
+    />
+    <meta
+      name="keywords"
+      content="война, ангелы, демоны, мобильный, онлайн игра, игра, играть с телефона"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="1 weeks" />
+    <meta name="theme-color" content="#252525" />
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes"
+    />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=0"
+    />
+    <meta
+      name="yandex-verification"
+      content="aece626c2b0475cf"
+    />
+    <meta
+      name="google-site-verification"
+      content="qOHXbu44gBlR63Txb4ibQmcbmyeE_8S7En62-4caXpU"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon.gif"
+      type="image/x-icon"
+    />
+    <title>Война: Ангелы vs Демоны</title>
+    <script
+      type="text/javascript"
+      src="/assets/js/time.js?v=2"
+    ></script>
+    <link
+      href="/assets/style/web.css?v=67633e117ba2b"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/style/ui.css?v=21"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <!-- HEADER -->
+  <body>
+    <div class="notifications">
+      <div
+        id="notifications_block"
+        class="notifications_block"
+      >
+        <table cellspacing="0">
+          <tbody>
+            <tr class="notification">
+              <td valign="top" class="n_icon">
+                <img alt="." src="/assets/star.png" />
+              </td>
+              <td class="notice_content">
+                Произошли новые события (11).
+                <a href="/user/cache/events">Проверь!</a>
+                <a href="/?events=closed">[закрыть]</a>
+              </td>
+            </tr>
+            <tr class="notification">
+              <td valign="top" class="n_icon">
+                <img
+                  alt="."
+                  height="16"
+                  src="/assets/inbox.png"
+                  width="16"
+                />
+              </td>
+              <td class="notice_content">
+                Пришла новая почта (1) в папку 'общая'.
+                <a href="/?general=read">[прочитать]</a>
+                <a href="/?general=ignore"
+                  >[игнорировать]</a
+                >
+                <a href="/?general=closed">[закрыть]</a>
+              </td>
+            </tr>
+            <tr class="notification">
+              <td valign="top" class="n_icon">
+                <img
+                  alt="."
+                  height="16"
+                  src="/assets/top_new_tasks.png"
+                  width="16"
+                />
+              </td>
+              <td class="notice_content">
+                Появились новые миссии.
+                <a href="/task">Проверь.</a>
+                <a href="/?task=closed">[закрыть]</a>
+              </td>
+            </tr>
+            <tr class="notification">
+              <td valign="top" class="n_icon">
+                <img
+                  alt="."
+                  height="16"
+                  src="/assets/weekly_legend_fight.png"
+                  width="16"
+                />
+              </td>
+              <td class="notice_content">
+                Можно
+                <a href="/arena/cache/attack/55314"
+                  >продолжить бой</a
+                >. <a href="/?attack=closed">[Закрыть]</a>
+              </td>
+            </tr>
+            <!-- ALLIANCE -->
+            <div id="notification">
+              <tr class="notification">
+                <td valign="top" class="n_icon">
+                  <img
+                    alt="."
+                    height="16"
+                    src="/assets/stash.png"
+                    width="16"
+                  />
+                </td>
+                <td class="notice_content">
+                  Ты у следующего тайника.
+                  <a href="/surroundings/?sorting=stash"
+                    >Взламывать дальше.</a
+                  >
+                  <a href="/?work=stash">[закрыть]</a>
+                </td>
+              </tr>
+            </div>
+            <tr class="notification">
+              <td valign="top" class="n_icon">
+                <img
+                  alt="."
+                  height="16"
+                  src="/assets/runas.png"
+                  width="16"
+                />
+              </td>
+              <td class="notice_content">
+                Акция 'Ларцы' подробности
+                <a href="/game/city/chests">тут</a>.
+                <a href="/?chest=true">[закрыть]</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-bottom: -4px"></div>
+    <!-- HEADER END -->
+    <!-- CONTENT -->
+    <div id="content">
+      <div class="page">
+        <div class="page_game">
+          <div class="page_game_index">
+            <div class="head-bottom"></div>
+            <div id="header">
+              <a href="/">
+                <img
+                  src="/assets/logo-e12edbef19959a5ee1ba09e7fda2d5f3.png?v=8"
+                  class="logo-size"
+                  width="131"
+                  height="38"
+                />
+              </a>
+            </div>
+            <div class="header"></div>
+            <div style="margin-bottom: -9px"></div>
+            <div class="footer_icons">
+              <span
+                ><span class="user_link"
+                  ><a href="/user/cache/profile/57223"
+                    ><img
+                      alt="."
+                      height="16"
+                      src="/assets/sex/1/1.png"
+                      width="16"
+                    />assassin[8]</a
+                  ></span
+                ></span
+              >
+              <span
+                ><a href="/user/cache/equipment"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/equipment.png"
+                    title="Снаряжение"
+                    width="16" /></a
+              ></span>
+              <span
+                ><a href="/user/cache/training"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/sex/1/1-health.png"
+                    title="Здоровье"
+                    width="16"
+                  />2 792</a
+                ></span
+              >
+              <span>
+                <a
+                  href="/user/cache/pets/?activation=cache::update=pets&csrf=d1ea3f342c5502673dfc799b0a7415e031d24b3abe1cea26bda4d507d6b7ebea6b6099"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/agent-0.png"
+                    title="Агент"
+                    width="16" /></a
+                ><a href="/user/cache/pets">2 984</a>
+              </span>
+              <span
+                ><a href="/exchanger"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/silver.png"
+                    title="Мана"
+                    width="16"
+                  />30 682</a
+                ></span
+              >
+              <span
+                ><a href="/surroundings/?sorting=stash"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/gold.png"
+                    title="Золото"
+                    width="16"
+                  />1 269</a
+                ></span
+              >
+              <span
+                ><a href="/game/staff"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/diamond.png"
+                    title="Алмазы"
+                    width="16"
+                  />1 111</a
+                ></span
+              >
+              <span
+                ><a href="/game/city/chests/?summary=true"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/runas.png"
+                    title="Руны соулу"
+                    width="16"
+                  />209</a
+                ></span
+              >
+              <span>
+                <a href="/arena/main"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/fights.png"
+                    title="Кол-во боев"
+                    width="16" /></a
+                ><a href="/arena/cache/attack/55314"
+                  >24/24</a
+                >
+              </span>
+              <span
+                ><a href="/game/staff/meditation"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/time.png"
+                    title="Таймер"
+                    width="16"
+                  />00:00</a
+                ></span
+              >
+              <span
+                ><a href="/online/cache/?search::user"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/find_users.png"
+                    title="Поиск"
+                    width="16" /></a
+              ></span>
+              <span
+                ><a href="/user/cache/events"
+                  ><img
+                    alt="."
+                    height="16"
+                    src="/assets/events.png"
+                    title="Факты "
+                    width="16"
+                  />(11)</a
+                ></span
+              >
+            </div>
+            <div style="margin-bottom: 2px"></div>
+            <link
+              href="/assets/style/blue.css?v=6"
+              media="all"
+              rel="stylesheet"
+              type="text/css"
+            />
+            <div style="margin-bottom: 6px"></div>
+            <div id="location">
+              <img
+                alt="."
+                src="/assets/location/game_home_a-e72f2c3eb52a594072367c9decd27045.jpg"
+                width="100%"
+              />
+            </div>
+            <div>
+              <div class="desc">
+                <h1>Готов к бою?</h1>
+                <img
+                  alt="."
+                  src="/assets/avatar/npc/description_image_angel_d-9c310353a1abf4fc41344c421c30fcb7.gif"
+                  width="60"
+                  height="60"
+                /><b><a href="#">Архангел</a>:</b> С
+                возвращением, ангел assassin! Сражайся
+                сегодня так, как в последний раз!
+                Соотношение сил на данный момент:
+                <a href="/online/cache/?side=demon"
+                  >демоны - 806</a
+                >,<br />
+                <a href="/online/cache/?side=angel"
+                  >ангелы - 795</a
+                >.
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="block">
+              <div style="margin-bottom: 6px"></div>
+              <span class="font-13">
+                Силы ангелов и демонов в стране
+                <a
+                  href="/online/cache/?sorting=city"
+                  style="
+                    color: hsl(0deg 16% 92%) !important;
+                  "
+                  >Ямайка</a
+                >
+                равны, ведется война.
+              </span>
+              <div style="margin-bottom: 4px"></div>
+              <ul class="block">
+                <li class="pad-4">
+                  <span class="greyscale"
+                    ><img
+                      alt="."
+                      height="16"
+                      src="/assets/dmg_today_a.png"
+                      width="16"
+                    />Потери ангелов:</span
+                  >
+                  0
+                </li>
+                <li class="pad-4">
+                  <span class="greyscale"
+                    ><img
+                      alt="."
+                      height="16"
+                      src="/assets/dmg_today_d.png"
+                      width="16"
+                    />Потери демонов:</span
+                  >
+                  0
+                </li>
+              </ul>
+              <div class="center">
+                <a
+                  href="/arena/main/?sorting=city"
+                  class="button"
+                  style="
+                    color: #e1e1e1 !important;
+                    font-size: 13.8px;
+                    width: 160px;
+                    text-decoration: none;
+                  "
+                  >Сражение за контроль в стране</a
+                >
+              </div>
+            </div>
+            <div style="margin-bottom: 15px"></div>
+            <style>
+              .links__menu,
+              .links__menu-footer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 6px -5px -5px -5px;
+              }
+              .links__menu a {
+                background: url(/assets/main_bg_left_blue2.png)
+                  no-repeat scroll left top #1d96f5;
+                background-size: 100% 100%;
+                text-decoration: none;
+              }
+              .links__menu a:hover {
+                background: #1d96f5;
+              }
+              #content div.block a {
+                color: hsl(0deg 16% 92%);
+              }
+            </style>
+            <div style="margin-bottom: -10px"></div>
+            <div class="index-main">
+              <div class="block center">
+                <div class="links__menu">
+                  <a href="/user/cache/events"
+                    ><img
+                      src="/assets/3.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Факты</span></a
+                  >
+                  <a href="/arena/main"
+                    ><img
+                      src="/assets/1.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Бой</span></a
+                  >
+                  <a href="/game/staff"
+                    ><img
+                      src="/assets/4.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Штаб</span></a
+                  >
+                  <a href="/game/city"
+                    ><img
+                      src="/assets/2.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Город</span></a
+                  >
+                  <a href="/user/cache/pets"
+                    ><img
+                      src="/assets/6.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Агент</span></a
+                  >
+                  <a href="/hall/fame"
+                    ><img
+                      src="/assets/5.png"
+                      width="50"
+                      height="50"
+                    />
+                    <div></div>
+                    <span>Рейтинг</span></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom: 2px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <div>
+          <div class="navigation_body">
+            <div>
+              <div class="nav_link_gr">
+                <div class="link_bg">
+                  <span class="right"
+                    ><a href="/" class="home_back"
+                      >Главная</a
+                    ></span
+                  >
+                </div>
+              </div>
+              <div class="nav_link_gr">
+                <div class="link_bg">
+                  <span class="right"
+                    ><a href="/chat">Чат</a></span
+                  >
+                </div>
+              </div>
+              <div class="nav_link_gr">
+                <div class="link_bg">
+                  <span class="right"
+                    ><a href="/user/cache/message"
+                      >Почта</a
+                    ></span
+                  >
+                </div>
+              </div>
+              <div class="nav_link_gr">
+                <div class="link_bg">
+                  <span class="right"
+                    ><a href="/payment">Ресурсы</a></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER -->
+      <div id="footer">
+        <div class="footer_redline"></div>
+        <div class="separator"></div>
+        <div class="links">
+          <a href="/online/cache/?search::user">Поиск</a
+          >&nbsp; <a href="/hall/fame">Рейтинг</a>&nbsp;
+          <a href="/forum/?category=2">Форум</a>&nbsp;
+          <a href="/user/cache/support">Поддержка</a>&nbsp;
+          <a href="/settings">Настройки</a>&nbsp;
+        </div>
+        <div class="links">
+          <a href="/wall">Стена (130)</a>
+        </div>
+        <div class="foot-bottom"></div>
+        <a href="/chat/?agreement=true">Соглашение</a>
+        <br />
+        <br />
+      </div>
+    </div>
+    <div id="footer">
+      <div
+        style="
+          text-align: center;
+          margin-bottom: -4px;
+          padding-top: 6px;
+          margin: 6px 14px;
+        "
+      ></div>
+      Игроков: 330159&nbsp;&nbsp;
+      <a href="/online/cache">Онлайн: 1601</a> <br />
+      <span>
+        Сейчас:
+        <img
+          alt="."
+          height="16"
+          src="/assets/clock.png"
+          title="Время"
+          width="16"
+        />13:21:44
+      </span>
+      <div class="margin-4"></div>
+      <a href="https://ru.pixplay.org">Другие игры</a>
+      <br />
+      <div class="text" style="border-top: 0">
+        <div class="footer_links"></div>
+      </div>
+    </div>
+    <div class="footCopy">
+      <div style="margin-bottom: -6px"></div>
+      © 2025, PixPlay. Все права защищены.
+    </div>
+    8
+  </body>
+</html>

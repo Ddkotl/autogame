@@ -5,8 +5,7 @@
     "build": "tsc ",
     "farm": "node dist/farm.js",
     "feed": "node dist/feed.js",
-    "test": "tsx src/test.ts",
-    "http": "tsx src/http_parse.ts"
+    "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
   },
   "dependencies": {
     "patchright": "^1.52.5",
