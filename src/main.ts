@@ -25,7 +25,14 @@ export async function StartGreend(mode: "feed" | "farm") {
         page = data.page;
         await setCookies(page, acc.SESSION_ID);
         await getDayRevard(acc.SESSION_ID);
-        await Farm(page, true, 30, 60000, "demon");
+        await Farm(
+          acc.SESSION_ID,
+          page,
+          true,
+          30,
+          60000,
+          "demon",
+        );
       } catch (error) {
         console.error(error);
       } finally {
@@ -52,7 +59,14 @@ export async function StartGreend(mode: "feed" | "farm") {
           page = data.page;
           await setCookies(page, acc.SESSION_ID);
           if (mode === "farm") {
-            await Farm(page, false, 30, 60000, "angel");
+            await Farm(
+              acc.SESSION_ID,
+              page,
+              false,
+              30,
+              60000,
+              "angel",
+            );
           }
           // if (mode === "feed") {
           //  await page.goto("https://mvoo.ru", {

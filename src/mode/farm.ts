@@ -18,6 +18,7 @@ import { checkLevel } from "../modules/check_level";
 import { goToMutation } from "../modules/go_to_mutation";
 
 export async function Farm(
+  session_id: string,
   page: Page,
   res_to_squad: boolean,
   fight_count: number,
@@ -27,7 +28,7 @@ export async function Farm(
   await swithGoldToDiamond(page);
   await trainAgent(page);
   if (fraction === "angel") {
-    const level: number = await checkLevel(page);
+    const level: number = await checkLevel(session_id);
     if (level >= 10) {
       const on_mutation = await goToMutation(page);
       if (!on_mutation) {
