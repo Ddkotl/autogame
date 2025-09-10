@@ -11,6 +11,7 @@ async function main() {
     },
   });
   const html = await res.text();
+  console.log(html);
   const dom = new JSDOM(html);
   const is_button_exist = dom.window.document.querySelector(
     'a[href="/game/city/laboratory/?view=4&conduct=4"]',
@@ -29,6 +30,7 @@ async function main() {
       },
     );
     const html = await res.text();
+    console.log(html);
   }
 }
 

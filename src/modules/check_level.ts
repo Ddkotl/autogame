@@ -1,5 +1,5 @@
 import { php_session_id } from "../const/constants";
-
+import {JSDOM} from "jsdom"
 export async function checkLevel(
   session_id: string,
 ): Promise<number> {
@@ -12,7 +12,9 @@ export async function checkLevel(
     });
 
     const html = await res.text();
-    const match = html.match(/\[(\d+)\]/);
+    const dom = new JSDOM(html)
+    const user_name =dom.window.document.querySelector('a[href*="/user/cache/profile"]').textContent
+    const match = user_name.match(/\[(\d+)\]/);
     if (match[1]) {
       return Number(match[1]);
     }
