@@ -1,26 +1,46 @@
 import { Page } from "patchright";
+import { php_session_id } from "../const/constants";
+import { sleep } from "../utils/sleep";
 
-export async function trainAgent(page: Page) {
+export async function trainAgent(session_id: string) {
   try {
-    // await page.goto("https://mvoo.ru/user/cache/pets/?buy=2", {
-    //   waitUntil: "domcontentloaded",
-    // });
-    // await page.locator(".button_small").click();
-    await page.goto(
-      "https://mvoo.ru/user/cache/training/?sorting=pets",
-      {
-        waitUntil: "domcontentloaded",
-      },
-    );
-    for (let i = 0; i < 10; i++) {
-      await page
-        .locator(".button_small")
-        .nth(0)
-        .waitFor({ state: "visible" });
-      await page.locator(".button_small").nth(0).click();
-      await page.locator(".button_small").nth(3).click();
-      await page.locator(".button_small").nth(1).click();
-      await page.locator(".button_small").nth(2).click();
+    for (let i = 0; i < 5; i++) {
+      await sleep(1000)
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?sorting=pets&improve=power",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000)
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?sorting=pets&improve=protection",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000)
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?sorting=pets&improve=speed",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000)
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?sorting=pets&improve=skill",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
     }
   } catch (error) {
     console.error("Тренировка не удалась", error);

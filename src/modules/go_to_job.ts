@@ -21,7 +21,7 @@ export async function goToJob(page: Page) {
     });
     await page.selectOption(
       "select#meditation-time",
-      "480",
+      "160",
     );
     await page.locator(".button_big").click();
   } catch (error) {
