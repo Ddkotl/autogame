@@ -1,4 +1,4 @@
-import { Page } from "patchright";
+import { Page } from "playwright";
 import {  goToJob, swithGoldToDiamond } from "../modules";
 import { getResursesToSquad } from "../modules/get_resurses_to_squad";
 

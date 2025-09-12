@@ -1,4 +1,4 @@
-import {  Page } from "patchright";
+import {  Page } from "playwright";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { setCookies } from "./modules";
 import { Farm } from "./mode/farm";
