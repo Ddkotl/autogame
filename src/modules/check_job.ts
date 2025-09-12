@@ -1,16 +1,20 @@
-import { Page } from "patchright";
-import { sleep } from "../utils/sleep";
-
-export async function checkJob(page: Page) {
+import { JSDOM } from "jsdom";
+import { php_session_id } from "../const/constants";
+export async function checkJob(
+  session_id: string,
+): Promise<boolean> {
   try {
-    await sleep(1000);
-    const text = await page
-      .locator("td.notice_content")
-      .allInnerTexts();
-    const on_job = text
-      .join(",")
-      .includes("Ты сейчас на службе");
-    await sleep(1000);
+    const res = await fetch("https://mvoo.ru/", {
+      headers: {
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      },
+    });
+    const html = await res.text();
+    const dom = new JSDOM(html);
+    const on_job = dom.window.document
+      .querySelector("div.notifications_block")
+      .textContent.includes("Ты сейчас на службе");
+
     return on_job;
   } catch (error) {
     console.error("Не удалось проверить службу", error);

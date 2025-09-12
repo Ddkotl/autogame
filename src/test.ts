@@ -1,37 +1,27 @@
 import { JSDOM } from "jsdom";
+import { php_session_id } from "./const/constants";
 
-async function main() {
-  const pageUrl =
-    "https://mvoo.ru/game/city/laboratory/?view=4";
-
-  const res = await fetch(pageUrl, {
-    headers: {
-      Cookie:
-        "PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4",
-    },
-  });
-  const html = await res.text();
-  console.log(html);
-  const dom = new JSDOM(html);
-  const is_button_exist = dom.window.document.querySelector(
-    'a[href="/game/city/laboratory/?view=4&conduct=4"]',
-  );
-  const is_activ = dom.window.document
-    .querySelector("ul")
-    .textContent.includes("Технология активна");
-  if (is_button_exist) {
+async function main(session_id: string) {
+  try {
     const res = await fetch(
-      "https://mvoo.ru/game/city/laboratory/?view=4&conduct=4&confirm=true",
+      "https://mvoo.ru/exchanger/?sorting=gold",
       {
         headers: {
-          Cookie:
-            "PHPSESSID=dac8081b678bd7c2abdc5950372948af; SESSION_ID=d5bb55604e65f19f4f7f0b532c5dcc0f90caf98d89ed59c1bf8ae004779da3a4",
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
         },
       },
     );
     const html = await res.text();
-    console.log(html);
+    const dom = new JSDOM(html);
+    const gold_to_swith = dom.window.document.querySelector(
+      "span.value > span",
+    ).textContent;
+    console.log(gold_to_swith);
+  } catch (error) {
+    console.error("не удалось обменятб на алмазы", error);
   }
 }
 
-main();
+main(
+  "18fe3b892de1ebd19236564b60ed53d4076017b72eb1ae52a48d5b35db2ad35a",
+);

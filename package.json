@@ -5,6 +5,7 @@
     "build": "tsc ",
     "farm": "node dist/farm.js",
     "feed": "node dist/feed.js",
+    "logistic": "node dist/logistic.js",
     "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
   },
   "dependencies": {

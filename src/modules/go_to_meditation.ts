@@ -10,7 +10,7 @@ export async function goToMeditation(page: Page) {
       },
     );
     await sleep(3000);
-    await page.selectOption("select#meditation-time", "8");
+    await page.selectOption("select#meditation-time", "3");
     await page.locator(".button_big").click();
   } catch (error) {
     console.error("Не удалось сходить на медитацию", error);

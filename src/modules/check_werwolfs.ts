@@ -1,19 +1,20 @@
-import { Page } from "patchright";
-import { sleep } from "../utils/sleep";
-
-export async function checkWerwolfs(page: Page) {
+import { php_session_id } from "../const/constants";
+import { JSDOM } from "jsdom";
+export async function checkWerwolfs(
+  session_id: string,
+): Promise<boolean> {
   try {
-    await sleep(1000);
-    await page.goto("https://mvoo.ru", {
-      waitUntil: "domcontentloaded",
+    const res = await fetch("https://mvoo.ru/", {
+      headers: {
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      },
     });
-    const text = await page
-      .locator("td.notice_content")
-      .allInnerTexts();
-    const is_wervolfs = text
-      .join(",")
-      .includes("Оборотни прорвались в страны");
-    await sleep(1000);
+    const html = await res.text();
+    const dom = new JSDOM(html);
+    const is_wervolfs = dom.window.document
+      .querySelector("div.notifications_block")
+      .textContent.includes("Оборотни прорвались в страны");
+
     return is_wervolfs;
   } catch (error) {
     console.error("Не удалось проверить оборотней", error);
