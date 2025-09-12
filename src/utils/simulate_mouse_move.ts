@@ -1,4 +1,4 @@
-import { Page } from "patchright";
+import { Page } from "playwright";
 
 // Функция для генерации случайного числа в диапазоне [min, max]
 const getRandomCoordinate = (min: number, max: number) => {

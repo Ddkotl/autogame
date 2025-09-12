@@ -1,4 +1,4 @@
-import { Page } from "patchright";
+import { Page } from "playwright";
 export async function setCookies(
   page: Page,
   value: string,

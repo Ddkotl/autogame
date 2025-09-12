@@ -1,4 +1,3 @@
-import { Page } from "patchright";
 import { php_session_id } from "../const/constants";
 import { sleep } from "../utils/sleep";
 

@@ -1,4 +1,4 @@
-import { Page } from "patchright";
+import { Page } from "playwright";
 import { sleep } from "../utils/sleep";
 
 export async function swithGoldToDiamond(page: Page) {

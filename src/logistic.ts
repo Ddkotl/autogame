@@ -1,4 +1,4 @@
-import { Browser, BrowserContext, Page } from "patchright";
+import { Browser, BrowserContext, Page } from "playwright";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { initPage } from "./utils/initPage";
 import { setCookies } from "./modules";

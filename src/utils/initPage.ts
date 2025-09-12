@@ -1,4 +1,4 @@
-import { chromium } from "patchright";
+import { chromium } from "playwright";
 
 export async function initPage(videoRecord: boolean) {
   try {
