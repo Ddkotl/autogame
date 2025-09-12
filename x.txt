@@ -7,21 +7,9 @@
 
 
 
-  {
-    "login": "infinity_warden",
-    "password": "T!m3l3ssGu@rd@",
-    "SESSION_ID": "3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6"
-  },
-  {
-    "login": "binary_reaver",
-    "password": "0n3s&Z3r0s!2023",
-    "SESSION_ID": "5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7"
-  },
-  {
-    "login": "quantum_rogue",
-    "password": "Unc3rt@!ntyPr!nc",
-    "SESSION_ID": "7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9"
-  },
+  
+ 
+
   {
     "login": "neon_shogun",
     "password": "T0ky0N!ght$@2023",

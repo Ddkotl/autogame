@@ -67,26 +67,41 @@
   {
     "login": "vortex_sentinel",
     "password": "T0rn@d0Sh!3ld#",
-    "SESSION_ID": "878e6036a06d0f54d205604595c0f1640e630602d147d72e8d4c095c7d6fdf7b"
+    "SESSION_ID": "e611e01f96cc62ed483aff0e2c70eb7782105b6f2adb3c3ff3714ae7706709e5"
   },
   {
     "login": "onyx_assassin",
     "password": "Sh@d0wSt@lk3r!",
-    "SESSION_ID": "1a8ac263a33c37fe94246752f7e070caa97853420c5c132ae9b10052ca43536d"
+    "SESSION_ID": "11abfec1907511ab80640a0d4d6f10e95821b089e74cfd018618fe88bf0c31aa"
   },
   {
     "login": "sapphire_mage",
     "password": "Myst!cOrb$2023",
-    "SESSION_ID": "6d44110b63c775e26189ad4c19228734ef2d47a11a337178daeaae1df92690d4"
+    "SESSION_ID": "88ab03720f3756fb84e2f4e9456d40c4d010eca571de5ad0fbba9c8b5fc84045"
   },
   {
     "login": "pixel_nomad",
     "password": "D!g1t@lDr!ft3r",
-    "SESSION_ID": "f3da9020c72ada6950fdccb28e4deea420c7843c262466d83e5cf1fe3b9af393"
+    "SESSION_ID": "7ee190f2f33f2585b0715b3cc788926ad9e43693efcdd544cad787e297da544d"
   },
   {
     "login": "chaos_engineer",
     "password": "Entr0pyG3n!us#",
-    "SESSION_ID": "09229e959b4baf9316ded3d87a155cc2368573a27142bb6b94078ab8e5904441"
+    "SESSION_ID": "716752662d9088ef8c694d024c15e5207259863d7347bbdd0688f4f331ddd7cb"
+  },
+  {
+    "login": "infinity_warden",
+    "password": "T!m3l3ssGu@rd@",
+    "SESSION_ID": "f9b01b86b83edc03fb94f535e880433bf66f33547b0aa961668792f9803ae95a"
+  },
+   {
+    "login": "binary_reaver",
+    "password": "0n3s&Z3r0s!2023",
+    "SESSION_ID": "9c8026d6075c7be3db6f4aa20f0d39b881c657f5ff6ad100520b29927a0caf3e"
+  },
+  {
+    "login": "quantum_rogue",
+    "password": "Unc3rt@!ntyPr!nc",
+    "SESSION_ID": "c32d041b03794da6769b97c22cc1a0eebe8199e330a4e5fc7d8da77d7fb77cbf"
   }
 ]

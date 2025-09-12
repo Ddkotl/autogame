@@ -1,12 +1,10 @@
-import {  Page } from "playwright";
 import { LoadAccaunts } from "./utils/accaunt-manager";
-import { setCookies } from "./modules";
 import { Farm } from "./mode/farm";
 import { getDayRevard } from "./modules/get_day_revard";
 import { sleep } from "./utils/sleep";
 import { startFeed } from "./mode/start_feed";
 
-export async function StartGreend(mode: "feed" | "farm") {
+export async function StartGreend(mode: "feed" | "farm",sleep_time:number) {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
   if (mode === "feed") {
     dem_accaunts.splice(0);
@@ -19,7 +17,7 @@ export async function StartGreend(mode: "feed" | "farm") {
         await Farm(
           acc.SESSION_ID,
           30,
-          61000,
+          sleep_time,
           "demon",
         );
       } catch (error) {
@@ -38,7 +36,7 @@ export async function StartGreend(mode: "feed" | "farm") {
             await Farm(
               acc.SESSION_ID,
               30,
-              61000,
+              sleep_time,
               "angel",
             );
           }
