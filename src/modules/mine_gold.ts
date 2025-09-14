@@ -17,7 +17,10 @@ export async function mineGold(session_id: string) {
       "a.button_small",
     );
     for (const el of btn_els) {
-      if (el.textContent?.includes("Пропустить") || el.textContent?.includes("Взломaть")) {
+      if (
+        el.textContent?.includes("Пропустить") ||
+        el.textContent?.includes("Взломaть")
+      ) {
         const href = el.getAttribute("href");
         const url = "https://mvoo.ru" + href;
         await fetch(url, {
@@ -25,7 +28,7 @@ export async function mineGold(session_id: string) {
             Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
           },
         });
-        break
+        break;
       }
     }
   } catch (error) {

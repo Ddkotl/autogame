@@ -11,6 +11,7 @@ import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
 import { checkLevel } from "../modules/check_level";
 import { goToMutation } from "../modules/go_to_mutation";
+import { ByeGrene } from "../modules/bye_grene";
 
 export async function Farm(
   session_id: string,
@@ -20,10 +21,10 @@ export async function Farm(
 ) {
   await trainAgent(session_id);
   if (fraction === "angel") {
-    await sleep(1000)
+    await sleep(1000);
     const level: number = await checkLevel(session_id);
     if (level >= 10) {
-      await sleep(1000)
+      await sleep(1000);
       const on_mutation = await goToMutation(session_id);
       if (!on_mutation) {
         return;
@@ -33,25 +34,27 @@ export async function Farm(
       return;
     }
   }
-  await sleep(1000)
+  await sleep(1000);
   const on_med = await checkMeditation(session_id);
-  await sleep(1000)
+  await sleep(1000);
   const on_job = await checkJob(session_id);
-  await sleep(1000)
+  await sleep(1000);
   const is_wervolfs = await checkWerwolfs(session_id);
+  await ByeGrene(session_id);
   for (let i = 0; i < fight_count; i++) {
     if (on_job || on_med) {
       break;
     }
+    
     if (is_wervolfs) {
       await atackWerwolfs(session_id);
     } else {
-      await sleep(1000)
+      await sleep(1000);
       await atackZombie(session_id);
     }
-    await sleep(1000)
+    await sleep(1000);
     await mineGold(session_id);
-    await sleep(1000)
+    await sleep(1000);
     const check_free_fights =
       await checkFreeFights(session_id);
     if (check_free_fights === "0/24") {

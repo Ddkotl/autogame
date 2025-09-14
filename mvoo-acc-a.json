@@ -94,7 +94,7 @@
     "password": "T!m3l3ssGu@rd@",
     "SESSION_ID": "f9b01b86b83edc03fb94f535e880433bf66f33547b0aa961668792f9803ae95a"
   },
-   {
+  {
     "login": "binary_reaver",
     "password": "0n3s&Z3r0s!2023",
     "SESSION_ID": "9c8026d6075c7be3db6f4aa20f0d39b881c657f5ff6ad100520b29927a0caf3e"
@@ -103,5 +103,21 @@
     "login": "quantum_rogue",
     "password": "Unc3rt@!ntyPr!nc",
     "SESSION_ID": "c32d041b03794da6769b97c22cc1a0eebe8199e330a4e5fc7d8da77d7fb77cbf"
+  },
+
+  {
+    "login": "neon_shogun",
+    "password": "T0ky0N!ght$@2023",
+    "SESSION_ID": "98801bcd340977aac22af08307d540bcb03f9dca8a177e39bfbf1e628936d1a0"
+  },
+  {
+    "login": "crimson_cyborg",
+    "password": "M3ch@S0u!@2023",
+    "SESSION_ID": "da28a87a6b4903a879eb47a78ca782e37a9ba6cd1a642f8c1aa91bb4642f3981"
+  },
+  {
+    "login": "lunar_outlaw",
+    "password": "M00nL!ght$H@ck3r",
+    "SESSION_ID": "07dc14c011f18e6616dd5ca286a48b0b11abbbdd39a22f8acec24d299bfd051f"
   }
 ]
