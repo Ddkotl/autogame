@@ -1,5 +1,5 @@
 import { StartGreend } from "./main";
 
 (async () => {
-  await StartGreend("farm",16000);
+  await StartGreend("farm", 16000);
 })();

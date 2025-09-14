@@ -4,7 +4,7 @@ import { sleep } from "../utils/sleep";
 export async function trainAgent(session_id: string) {
   try {
     for (let i = 0; i < 1; i++) {
-      await sleep(1000)
+      await sleep(1000);
       await fetch(
         "https://mvoo.ru/user/cache/training/?sorting=pets&improve=power",
         {
@@ -13,7 +13,7 @@ export async function trainAgent(session_id: string) {
           },
         },
       );
-      await sleep(1000)
+      await sleep(1000);
       await fetch(
         "https://mvoo.ru/user/cache/training/?sorting=pets&improve=protection",
         {
@@ -22,7 +22,7 @@ export async function trainAgent(session_id: string) {
           },
         },
       );
-      await sleep(1000)
+      await sleep(1000);
       await fetch(
         "https://mvoo.ru/user/cache/training/?sorting=pets&improve=speed",
         {
@@ -31,7 +31,7 @@ export async function trainAgent(session_id: string) {
           },
         },
       );
-      await sleep(1000)
+      await sleep(1000);
       await fetch(
         "https://mvoo.ru/user/cache/training/?sorting=pets&improve=skill",
         {

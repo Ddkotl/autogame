@@ -10,21 +10,7 @@
   
  
 
-  {
-    "login": "neon_shogun",
-    "password": "T0ky0N!ght$@2023",
-    "SESSION_ID": "9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1"
-  },
-  {
-    "login": "crimson_cyborg",
-    "password": "M3ch@S0u!@2023",
-    "SESSION_ID": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3"
-  },
-  {
-    "login": "lunar_outlaw",
-    "password": "M00nL!ght$H@ck3r",
-    "SESSION_ID": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5"
-  },
+  
   {
     "login": "static_phantom",
     "password": "El3ctr0Gh0st!23",

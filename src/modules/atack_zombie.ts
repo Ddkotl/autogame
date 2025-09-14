@@ -11,12 +11,13 @@ export async function atackZombie(session_id: string) {
     });
 
     const html = await res.text();
-      const dom = new JSDOM(html);
+    const dom = new JSDOM(html);
     const btn_el = dom.window.document.querySelector(
       "a.button_small",
     );
 
-    const attackUrl = "https://mvoo.ru" + btn_el.getAttribute("href")
+    const attackUrl =
+      "https://mvoo.ru" + btn_el.getAttribute("href");
 
     await fetch(attackUrl, {
       headers: {

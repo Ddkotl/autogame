@@ -4,7 +4,10 @@ import { getDayRevard } from "./modules/get_day_revard";
 import { sleep } from "./utils/sleep";
 import { startFeed } from "./mode/start_feed";
 
-export async function StartGreend(mode: "feed" | "farm",sleep_time:number) {
+export async function StartGreend(
+  mode: "feed" | "farm",
+  sleep_time: number,
+) {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
   if (mode === "feed") {
     dem_accaunts.splice(0);
@@ -22,7 +25,7 @@ export async function StartGreend(mode: "feed" | "farm",sleep_time:number) {
         );
       } catch (error) {
         console.error(error);
-      } 
+      }
     }),
     ...ang_accaunts.map(async (acc, i) => {
       if (mode === "feed") {
@@ -32,7 +35,7 @@ export async function StartGreend(mode: "feed" | "farm",sleep_time:number) {
         try {
           if (mode === "farm") {
             await sleep(i * 5000);
-             await getDayRevard(acc.SESSION_ID);
+            await getDayRevard(acc.SESSION_ID);
             await Farm(
               acc.SESSION_ID,
               30,
@@ -40,10 +43,9 @@ export async function StartGreend(mode: "feed" | "farm",sleep_time:number) {
               "angel",
             );
           }
-        
         } catch (error) {
           console.error(error);
-        } 
+        }
       }
     }),
   ]);

@@ -1,5 +1,5 @@
 import { StartGreend } from "./main";
 
 (async () => {
-  await StartGreend("feed",61000);
+  await StartGreend("feed", 61000);
 })();
