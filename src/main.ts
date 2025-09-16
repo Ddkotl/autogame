@@ -13,16 +13,11 @@ export async function StartGreend(
     dem_accaunts.splice(0);
   }
   await Promise.all([
-    ...dem_accaunts.map(async (acc,i) => {
+    ...dem_accaunts.map(async (acc, i) => {
       try {
         await sleep(i * 5000);
         await getDayRevard(acc.SESSION_ID);
-        await Farm(
-          acc.SESSION_ID,
-          30,
-          sleep_time,
-          "demon",
-        );
+        await Farm(acc.SESSION_ID, 30, sleep_time, "demon");
       } catch (error) {
         console.error(error);
       }

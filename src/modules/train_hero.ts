@@ -1,23 +1,48 @@
-import { Page } from "playwright";
+import { php_session_id } from "../const/constants";
+import { sleep } from "../utils/sleep";
 
-export async function trainHero(page: Page, count: number) {
+export async function trainHero(
+  session_id: string,
+  count: number,
+) {
   try {
-    // await page.goto("https://mvoo.ru/user/cache/pets/?buy=2", {
-    //   waitUntil: "domcontentloaded",
-    // });
-    // await page.locator(".button_small").click();
-    await page.goto("https://mvoo.ru/user/cache/training", {
-      waitUntil: "domcontentloaded",
-    });
     for (let i = 0; i < count; i++) {
-      await page
-        .locator(".button_small")
-        .nth(0)
-        .waitFor({ state: "visible" });
-      await page.locator(".button_small").nth(0).click();
-      await page.locator(".button_small").nth(3).click();
-      await page.locator(".button_small").nth(1).click();
-      await page.locator(".button_small").nth(2).click();
+      await sleep(1000);
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?improve=power",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000);
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?improve=protection",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000);
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?improve=speed",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
+      await sleep(1000);
+      await fetch(
+        "https://mvoo.ru/user/cache/training/?improve=skill",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
+      );
     }
   } catch (error) {
     console.error("Тренировка не удалась", error);

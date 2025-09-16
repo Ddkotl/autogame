@@ -45,7 +45,7 @@ export async function Farm(
     if (on_job || on_med) {
       break;
     }
-    
+
     if (is_wervolfs) {
       await atackWerwolfs(session_id);
     } else {
