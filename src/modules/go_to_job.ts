@@ -21,11 +21,10 @@ export async function goToJob(page: Page) {
     });
     await page.selectOption(
       "select#meditation-time",
-      "160",
+      "480",
     );
     await page.locator(".button_big").click();
   } catch (error) {
     console.error("Не удалось сходить на службу", error);
   }
 }
-// https://mvoo.ru/game/staff/?lair=true&buy=partner

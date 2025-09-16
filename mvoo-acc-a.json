@@ -119,5 +119,25 @@
     "login": "lunar_outlaw",
     "password": "M00nL!ght$H@ck3r",
     "SESSION_ID": "07dc14c011f18e6616dd5ca286a48b0b11abbbdd39a22f8acec24d299bfd051f"
+  },
+  {
+    "login": "static_phantom",
+    "password": "El3ctr0Gh0st!23",
+    "SESSION_ID": "52aec4a04e0df77015d5aa8e5d840eb85ff034dcf4aba8588655e86e5169b032"
+  },
+  {
+    "login": "blitz_commando",
+    "password": "L!ghtn!ngStr!ke#",
+    "SESSION_ID": "096eee65fc8fce805d61856a20310155a72425f6d90a6af887623ea10fe91360"
+  },
+  {
+    "login": "vapor_trader",
+    "password": "Cl0udM@rk3t!ng",
+    "SESSION_ID": "ed433e0a766bcb757ab7afc7a53543c2f2ad4ad25b3256cbeebc19f0c5c4d697"
+  },
+  {
+    "login": "zero_gravitas",
+    "password": "W31ghtl3ss@2023",
+    "SESSION_ID": "da31c4106dec9bd3a7d00091e0a8738bec5f6baa60d39ee1bfa67c4fdca75504"
   }
 ]
