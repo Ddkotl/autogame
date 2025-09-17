@@ -6,6 +6,7 @@
     "farm": "node dist/farm.js",
     "feed": "node dist/feed.js",
     "logistic": "node dist/logistic.js",
+    "boss": "node dist/boss.js",
     "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
   },
   "dependencies": {
