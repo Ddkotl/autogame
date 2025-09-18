@@ -11,7 +11,6 @@ import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
 import { checkLevel } from "../modules/check_level";
 import { goToMutation } from "../modules/go_to_mutation";
-import { ByeGrene } from "../modules/bye_grene";
 
 export async function Farm(
   session_id: string,
@@ -40,7 +39,6 @@ export async function Farm(
   const on_job = await checkJob(session_id);
   await sleep(1000);
   const is_wervolfs = await checkWerwolfs(session_id);
-  await ByeGrene(session_id);
   for (let i = 0; i < fight_count; i++) {
     if (on_job || on_med) {
       break;
