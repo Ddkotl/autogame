@@ -7,6 +7,8 @@
     "feed": "node dist/feed.js",
     "logistic": "node dist/logistic.js",
     "boss": "node dist/boss.js",
+    "create_tower": "node dist/create_tower.js",
+    "atack_tower": "node dist/atack_tower.js",
     "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
   },
   "dependencies": {

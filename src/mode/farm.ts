@@ -18,7 +18,7 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
-  await trainAgent(session_id);
+  await trainAgent(session_id, 3);
   if (fraction === "angel") {
     await sleep(1000);
     const level: number = await checkLevel(session_id);
