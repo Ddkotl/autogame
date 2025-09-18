@@ -1,7 +1,7 @@
 import { boss_id, php_session_id } from "./const/constants";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { JSDOM } from "jsdom";
-async function CreateTower() {
+export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
     for (let i = 0; i < dem_accaunts.length; i++) {
@@ -76,6 +76,6 @@ async function CreateTower() {
   }
 }
 
-(async () => {
-  await CreateTower();
-})();
+// (async () => {
+//   await CreateTower();
+// })();

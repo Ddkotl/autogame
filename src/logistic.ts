@@ -3,6 +3,7 @@ import { LoadAccaunts } from "./utils/accaunt-manager";
 import { initPage } from "./utils/initPage";
 import { setCookies } from "./modules";
 import { Logist } from "./mode/logist";
+import { CreateTower } from "./create_tower";
 
 export async function Logistic() {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
@@ -54,4 +55,5 @@ export async function Logistic() {
 
 (async () => {
   await Logistic();
+  await CreateTower()
 })();
