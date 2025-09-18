@@ -1,9 +1,12 @@
 import { php_session_id } from "../const/constants";
 import { sleep } from "../utils/sleep";
 
-export async function trainAgent(session_id: string) {
+export async function trainAgent(
+  session_id: string,
+  count: number = 1,
+) {
   try {
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < count; i++) {
       await sleep(1000);
       await fetch(
         "https://mvoo.ru/user/cache/training/?sorting=pets&improve=power",
