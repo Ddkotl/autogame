@@ -5,11 +5,11 @@ import { sleep } from "./utils/sleep";
 import { startFeed } from "./mode/start_feed";
 
 export async function StartGreend(
-  mode: "feed" | "farm",
+  mode: "feed" | "farm" | "test",
   sleep_time: number,
 ) {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
-  if (mode === "feed") {
+  if (mode === "feed" || mode === "test") {
     dem_accaunts.splice(0);
   }
   await Promise.all([
@@ -22,13 +22,13 @@ export async function StartGreend(
         console.error(error);
       }
     }),
-    ...ang_accaunts.map(async (acc, i) => {
+    ...ang_accaunts.reverse().map(async (acc, i) => {
       if (mode === "feed") {
         await sleep(i * 5000);
         await startFeed(acc.SESSION_ID);
       } else {
         try {
-          if (mode === "farm") {
+          if (mode === "farm" || mode === "test") {
             await sleep(i * 5000);
             await getDayRevard(acc.SESSION_ID);
             await Farm(
