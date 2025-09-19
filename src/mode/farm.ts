@@ -1,6 +1,5 @@
 import {
   atackZombie,
-  checkFreeFights,
   checkJob,
   mineGold,
   trainAgent,
@@ -18,7 +17,7 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
-  await trainAgent(session_id, 3);
+  await trainAgent(session_id, 1);
   if (fraction === "angel") {
     await sleep(1000);
     const level: number = await checkLevel(session_id);
@@ -44,6 +43,8 @@ export async function Farm(
       break;
     }
 
+    await mineGold(session_id);
+    await sleep(1000);
     if (is_wervolfs) {
       await atackWerwolfs(session_id);
     } else {
@@ -51,13 +52,11 @@ export async function Farm(
       await atackZombie(session_id);
     }
     await sleep(1000);
-    await mineGold(session_id);
-    await sleep(1000);
-    const check_free_fights =
-      await checkFreeFights(session_id);
-    if (check_free_fights === "0/24") {
-      break;
-    }
+    // const check_free_fights =
+    //   await checkFreeFights(session_id);
+    // if (check_free_fights === "0/24") {
+    //   break;
+    // }
     await sleep(sleep_time);
   }
   // if (!on_job && !on_med) {

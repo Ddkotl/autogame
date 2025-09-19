@@ -3,6 +3,7 @@ import { Farm } from "./mode/farm";
 import { getDayRevard } from "./modules/get_day_revard";
 import { sleep } from "./utils/sleep";
 import { startFeed } from "./mode/start_feed";
+import { trainHero } from "./modules/train_hero";
 
 export async function StartGreend(
   mode: "feed" | "farm" | "test",
@@ -31,6 +32,7 @@ export async function StartGreend(
           if (mode === "farm" || mode === "test") {
             await sleep(i * 5000);
             await getDayRevard(acc.SESSION_ID);
+            await trainHero(acc.SESSION_ID, 3);
             await Farm(
               acc.SESSION_ID,
               30,
