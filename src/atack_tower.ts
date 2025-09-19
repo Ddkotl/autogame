@@ -5,7 +5,7 @@ async function AtackTower() {
     const { dem_accaunts } = LoadAccaunts();
     for (let i = 0; i < dem_accaunts.length; i++) {
       await fetch(
-        "https://mvoo.ru/user/cache/profile/56150/?tower=battle&target=go",
+        "https://mvoo.ru/user/cache/profile/56165/?tower=battle&target=go",
         {
           headers: {
             Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
@@ -14,7 +14,7 @@ async function AtackTower() {
       );
     }
     await fetch(
-      "https://mvoo.ru/user/cache/profile/56150/?tower=battle&target=go",
+      "https://mvoo.ru/user/cache/profile/56165/?tower=battle&target=go",
       {
         headers: {
           Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,

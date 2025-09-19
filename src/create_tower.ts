@@ -1,13 +1,16 @@
 import { boss_id, php_session_id } from "./const/constants";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { JSDOM } from "jsdom";
+
+const tower_owner_login = "viking15"
+const tower_owner_id = 56165
 export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
     for (let i = 0; i < dem_accaunts.length; i++) {
-      if (dem_accaunts[i].login !== "lol33") {
+      if (dem_accaunts[i].login !== tower_owner_login) {
         await fetch(
-          "https://mvoo.ru/user/cache/profile/56150/?tower=battle&send=bid&confirm=go",
+          `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&send=bid&confirm=go`,
           {
             headers: {
               Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
@@ -17,7 +20,7 @@ export async function CreateTower() {
       }
     }
     await fetch(
-      "https://mvoo.ru/user/cache/profile/56150/?tower=battle&send=bid&confirm=go",
+      `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&send=bid&confirm=go`,
       {
         headers: {
           Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
@@ -26,9 +29,9 @@ export async function CreateTower() {
     );
 
     for (let i = 0; i < dem_accaunts.length; i++) {
-      if (dem_accaunts[i].login === "lol33") {
+      if (dem_accaunts[i].login === tower_owner_login) {
         const res = await fetch(
-          "https://mvoo.ru/user/cache/profile/56150/?tower=battle",
+          `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
           {
             headers: {
               Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
@@ -52,7 +55,7 @@ export async function CreateTower() {
           }
         }
         const at_res = await fetch(
-          "https://mvoo.ru/user/cache/profile/56150/?tower=battle&attack=go",
+          `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&attack=go`,
           {
             headers: {
               Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,

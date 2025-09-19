@@ -55,5 +55,5 @@ export async function Logistic() {
 
 (async () => {
   await Logistic();
-  await CreateTower()
+  await CreateTower();
 })();

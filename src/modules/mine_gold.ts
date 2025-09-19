@@ -13,13 +13,12 @@ export async function mineGold(session_id: string) {
     const html = await res.text();
     const dom = new JSDOM(html);
 
-    const btn_els = dom.window.document.querySelectorAll(
-      "a.button_small",
-    );
+    const btn_els =
+      dom.window.document.querySelectorAll("a");
     for (const el of btn_els) {
       if (
-        el.textContent?.includes("Пропустить") ||
-        el.textContent?.includes("Взломaть")
+        el.textContent === "Пропустить" ||
+        el.textContent === "Взломaть"
       ) {
         const href = el.getAttribute("href");
         const url = "https://mvoo.ru" + href;
@@ -28,7 +27,6 @@ export async function mineGold(session_id: string) {
             Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
           },
         });
-        break;
       }
     }
   } catch (error) {
