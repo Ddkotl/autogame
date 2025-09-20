@@ -2,8 +2,8 @@ import { boss_id, php_session_id } from "./const/constants";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { JSDOM } from "jsdom";
 
-const tower_owner_login = "viking15"
-const tower_owner_id = 56165
+const tower_owner_login = "viking15";
+const tower_owner_id = 56165;
 export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
