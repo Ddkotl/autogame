@@ -35,7 +35,7 @@ export async function ByeVirus(session_id: string) {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,//21714
       },
       body: new URLSearchParams({
-        quantity: "1",
+        quantity: "20",
       }),
     });
 
