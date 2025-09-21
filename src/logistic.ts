@@ -5,6 +5,8 @@ import { setCookies } from "./modules";
 import { Logist } from "./mode/logist";
 import { CreateTower } from "./create_tower";
 import { getPristsMana } from "./modules/get_prists_mana";
+import { ByeVirus } from "./modules/bye_virus";
+import { boss_id } from "./const/constants";
 
 export async function Logistic() {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
@@ -18,7 +20,7 @@ export async function Logistic() {
       context = data.context;
       page = data.page;
       await setCookies(page, acc.SESSION_ID);
-      await getPristsMana(acc.SESSION_ID)
+      await getPristsMana(acc.SESSION_ID);
       await Logist(page, true, true);
     } catch (error) {
       console.error(error);
@@ -56,6 +58,7 @@ export async function Logistic() {
 }
 
 (async () => {
+  await ByeVirus(boss_id)
   await Logistic();
   await CreateTower();
 })();
