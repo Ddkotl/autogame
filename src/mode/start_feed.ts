@@ -1,7 +1,6 @@
 import { checkLevel } from "../modules/check_level";
 import { feedMain } from "../modules/feed_main";
 import { getDayRevard } from "../modules/get_day_revard";
-import { trainHero } from "../modules/train_hero";
 import { sleep } from "../utils/sleep";
 
 export async function startFeed(session_id: string) {
@@ -11,6 +10,5 @@ export async function startFeed(session_id: string) {
   if (level >= 8) {
     await sleep(1000);
     await feedMain(session_id);
-    await trainHero(session_id, 3);
   }
 }

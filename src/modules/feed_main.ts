@@ -1,4 +1,9 @@
 import { php_session_id } from "../const/constants";
+import fetch from "node-fetch";
+import { SocksProxyAgent } from "socks-proxy-agent";
+
+const SOCKS_PROXY = "socks5h://127.0.0.1:9050";
+const socksAgent = new SocksProxyAgent(SOCKS_PROXY);
 
 export async function feedMain(session_id: string) {
   try {
@@ -8,6 +13,7 @@ export async function feedMain(session_id: string) {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       },
+      agent:socksAgent
     });
 
     const html = await res.text();
@@ -25,6 +31,7 @@ export async function feedMain(session_id: string) {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       },
+      agent:socksAgent
     });
   } catch (error) {
     console.error("Не получилось нафидить");
