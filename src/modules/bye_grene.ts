@@ -3,7 +3,7 @@ import { php_session_id } from "../const/constants";
 
 export async function ByeGrene(session_id: string) {
   try {
-    await fetch("https://mvoo.ru/shop/buyMany/1004", {
+    await fetch("https://mvoo.ru/shop/buyMany/689", {
       method: "POST",
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
@@ -29,7 +29,7 @@ export async function ByeGrene(session_id: string) {
       const img = el.querySelector("img");
       if (!img) continue;
       const img_title = img.getAttribute("title");
-      if (img_title === "Дымовая граната") {
+      if (img_title === "Осколочная граната") {
         await fetch(
           `https://mvoo.ru${el.getAttribute("href")}`,
           {
