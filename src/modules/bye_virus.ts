@@ -32,7 +32,7 @@ export async function ByeVirus(session_id: string) {
     await fetch("https://mvoo.ru/shop/buyMany/1011", {
       method: "POST",
       headers: {
-        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,//21714
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`, //21714
       },
       body: new URLSearchParams({
         quantity: "20",
@@ -40,7 +40,7 @@ export async function ByeVirus(session_id: string) {
     });
 
     for (let i = 0; i < sacrefises_of_virus.length; i++) {
-      await sleep(2000)
+      await sleep(2000);
       const res = await fetch(
         `https://mvoo.ru/user/cache/profile/${sacrefises_of_virus[i]}/?presents=viruses`,
         {
@@ -51,19 +51,15 @@ export async function ByeVirus(session_id: string) {
       );
       const html = await res.text();
       const dom = new JSDOM(html);
-      const send_virus_linc =
-        dom.window.document.querySelector(
-          "a[href*='viruses&send']",
-        ).getAttribute("href");
-        console.log(send_virus_linc)
-      await fetch(
-        `https://mvoo.ru${send_virus_linc}`,
-        {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          },
+      const send_virus_linc = dom.window.document
+        .querySelector("a[href*='viruses&send']")
+        .getAttribute("href");
+      console.log(send_virus_linc);
+      await fetch(`https://mvoo.ru${send_virus_linc}`, {
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
         },
-      );
+      });
     }
   } catch (error) {
     console.error("bye virus error", error);

@@ -8,6 +8,7 @@
     "logistic": "node dist/logistic.js",
     "boss": "node dist/boss.js",
     "create_tower": "node dist/create_tower.js",
+    "virus": "node dist/virus.js",
     "atack_tower": "node dist/atack_tower.js",
     "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
   },
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
     "@types/node": "^24.2.0",
+    "@types/node-fetch": "^2.6.13",
     "prettier": "^3.6.2",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"

@@ -1,11 +1,11 @@
 import { php_session_id } from "../const/constants";
 import fetch from "node-fetch";
-import { SocksProxyAgent } from "socks-proxy-agent";
+import { socksAgent } from "../utils/proxy";
 
-const SOCKS_PROXY = "socks5h://127.0.0.1:9050";
-const socksAgent = new SocksProxyAgent(SOCKS_PROXY);
-
-export async function feedMain(session_id: string,proxy:boolean) {
+export async function feedMain(
+  session_id: string,
+  proxy: boolean = false,
+) {
   try {
     const pageUrl =
       "https://mvoo.ru/arena/cache/attack/55314";
@@ -13,8 +13,7 @@ export async function feedMain(session_id: string,proxy:boolean) {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       },
-     agent:proxy ? socksAgent : false
-    
+      agent: proxy ? socksAgent : false,
     });
 
     const html = await res.text();
@@ -32,7 +31,7 @@ export async function feedMain(session_id: string,proxy:boolean) {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       },
-      agent:proxy ? socksAgent : false
+      agent: proxy ? socksAgent : false,
     });
   } catch (error) {
     console.error("Не получилось нафидить");
