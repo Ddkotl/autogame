@@ -1,7 +1,10 @@
 import { php_session_id } from "../const/constants";
 import { JSDOM } from "jsdom";
+import { socksAgent } from "../utils/proxy";
+import fetch from "node-fetch";
 export async function checkLevel(
   session_id: string,
+  proxy: boolean = false,
 ): Promise<number> {
   try {
     const pageUrl = "https://mvoo.ru";
@@ -9,6 +12,7 @@ export async function checkLevel(
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       },
+      agent: proxy ? socksAgent : false,
     });
 
     const html = await res.text();

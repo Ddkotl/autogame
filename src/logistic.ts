@@ -5,8 +5,6 @@ import { setCookies } from "./modules";
 import { Logist } from "./mode/logist";
 import { CreateTower } from "./create_tower";
 import { getPristsMana } from "./modules/get_prists_mana";
-import { ByeVirus } from "./modules/bye_virus";
-import { boss_id } from "./const/constants";
 
 export async function Logistic() {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
@@ -58,7 +56,6 @@ export async function Logistic() {
 }
 
 (async () => {
-  await ByeVirus(boss_id)
   await Logistic();
   await CreateTower();
 })();
