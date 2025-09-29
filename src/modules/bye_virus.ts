@@ -38,7 +38,12 @@ export async function ByeVirus(session_id: string) {
         quantity: "20",
       }),
     });
+ 
+    const duration = 30*60*1000
+    const start_time = Date.now()
 
+    while (Date.now() - start_time < duration) {
+    
     for (let i = 0; i < sacrefises_of_virus.length; i++) {
       await sleep(2000);
       const res = await fetch(
@@ -60,7 +65,7 @@ export async function ByeVirus(session_id: string) {
           Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
         },
       });
-    }
+    }}
   } catch (error) {
     console.error("bye virus error", error);
   }
