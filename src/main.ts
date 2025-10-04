@@ -12,7 +12,7 @@ export async function StartGreend(
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
   if (mode === "feed" || mode === "test") {
     dem_accaunts.splice(0);
-    ang_accaunts.splice(7);
+    ang_accaunts.splice(0);
   }
   await Promise.all([
     ...dem_accaunts.map(async (acc, i) => {
