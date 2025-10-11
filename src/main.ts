@@ -33,7 +33,7 @@ export async function StartGreend(
           if (mode === "farm" || mode === "test") {
             await sleep(i * 5000);
             await getDayRevard(acc.SESSION_ID);
-            await trainHero(acc.SESSION_ID, 3);
+            // await trainHero(acc.SESSION_ID, 3);
             await Farm(
               acc.SESSION_ID,
               30,
