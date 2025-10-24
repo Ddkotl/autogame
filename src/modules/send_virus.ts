@@ -1,6 +1,7 @@
 import { JSDOM } from "jsdom";
 import { php_session_id } from "../const/constants";
 import { sleep } from "../utils/sleep";
+import { getDayRevard } from "./get_day_revard";
 
 const sacrefises_of_virus = [
   "32659",
@@ -29,12 +30,13 @@ const sacrefises_of_virus = [
 
 export async function SendVirus(session_id: string) {
   try {
-    const duration = 5 * 60 * 1000;
+    const duration = 3 * 60 * 1000;
     const start_time = Date.now();
 
     while (Date.now() - start_time < duration) {
+      try{
+        await getDayRevard(session_id)
       for (let i = 0; i < sacrefises_of_virus.length; i++) {
-        try {
           await sleep(1000);
           const res = await fetch(
             `https://mvoo.ru/user/cache/profile/${sacrefises_of_virus[i]}/?presents=viruses`,
@@ -54,16 +56,16 @@ export async function SendVirus(session_id: string) {
             headers: {
               Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
             },
-          });
+          });}
         } catch (error) {
           console.error(
-            `Ошибка при обработке пользователя ${sacrefises_of_virus[i]}:`,
+            `Ошибка при обработке wile send virys`,
             error,
           );
 
           continue;
         }
-      }
+      
     }
   } catch (error) {
     console.error("send virus error", error);
