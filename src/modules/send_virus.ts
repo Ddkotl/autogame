@@ -30,14 +30,14 @@ const sacrefises_of_virus = [
 
 export async function SendVirus(session_id: string) {
   try {
-    const duration = 3 * 60 * 1000;
+    const duration = 2 * 60 * 1000;
     const start_time = Date.now();
 
     while (Date.now() - start_time < duration) {
       try{
         await getDayRevard(session_id)
       for (let i = 0; i < sacrefises_of_virus.length; i++) {
-          await sleep(1000);
+          await sleep(500);
           const res = await fetch(
             `https://mvoo.ru/user/cache/profile/${sacrefises_of_virus[i]}/?presents=viruses`,
             {

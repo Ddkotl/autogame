@@ -8,7 +8,7 @@ import { getPristsMana } from "./modules/get_prists_mana";
 
 export async function Logistic() {
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
-  for (const acc of dem_accaunts) {
+  for (const acc of dem_accaunts.concat(ang_accaunts)) {
     let browser: Browser | null = null;
     let context: BrowserContext | null = null;
     let page: Page | null = null;
