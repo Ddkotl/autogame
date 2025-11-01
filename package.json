@@ -11,13 +11,16 @@
     "bue_virus": "node dist/bue_virus.js",
     "send_virus": "node dist/send_virus.js",
     "atack_tower": "node dist/atack_tower.js",
-    "t": "tsx src/test.ts > test.html 2>&1 && npm run prettier"
+    "t": "tsx src/test.ts "
   },
   "dependencies": {
+    "axios": "^1.13.1",
+    "https": "^1.0.0",
     "jsdom": "^26.1.0",
     "node-fetch": "^2.7.0",
     "playwright": "^1.54.2",
-    "socks-proxy-agent": "^8.0.5"
+    "socks-proxy-agent": "^8.0.5",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",

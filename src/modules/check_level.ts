@@ -1,31 +1,48 @@
+import { spawn } from "child_process";
 import { php_session_id } from "../const/constants";
 import { JSDOM } from "jsdom";
-import { socksAgent } from "../utils/proxy";
-import fetch from "node-fetch";
-export async function checkLevel(
-  session_id: string,
-  proxy: boolean = false,
-): Promise<number> {
-  try {
-    const pageUrl = "https://mvoo.ru";
-    const res = await fetch(pageUrl, {
-      headers: {
-        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-      },
-      agent: proxy ? socksAgent : false,
+
+export async function checkLevel(session_id: string): Promise<number> {
+  return new Promise<number>((resolve) => {
+    const args = [
+      "-sS", // тихий режим
+      "-L",  // следовать редиректам
+      "-H", `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36`,
+      "-H", `Cookie: PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      "https://mvoo.ru",
+    ];
+
+    const curl = spawn("curl", args);
+
+    let html = "";
+
+    curl.stdout.on("data", (data) => {
+      html += data.toString();
     });
 
-    const html = await res.text();
-    const dom = new JSDOM(html);
-    const user_name = dom.window.document.querySelector(
-      'a[href*="/user/cache/profile"]',
-    ).textContent;
-    const match = user_name.match(/\[(\d+)\]/);
-    if (match[1]) {
-      return Number(match[1]);
-    }
-  } catch (error) {
-    console.error("Не удалось узнать уровень", error);
-    return 25;
-  }
+    curl.stderr.on("data", (data) => {
+      console.error("curl error:", data.toString());
+    });
+
+    curl.on("close", () => {
+      try {
+        const dom = new JSDOM(html);
+        const userLink = dom.window.document.querySelector(
+          'a[href*="/user/cache/profile"]'
+        );
+        if (!userLink) throw new Error("Не найден пользовательский профиль");
+
+        const userName = userLink.textContent || "";
+        const match = userName.match(/\[(\d+)\]/);
+        if (match && match[1]) {
+          resolve(Number(match[1]));
+        } else {
+          resolve(25); // значение по умолчанию, если не найдено
+        }
+      } catch (error) {
+        console.error("Не удалось узнать уровень", error);
+        resolve(25);
+      }
+    });
+  });
 }
