@@ -1,4 +1,4 @@
 export const php_session_id =
   "dac8081b678bd7c2abdc5950372948af";
 export const boss_id =
-  "00895384972a26392ef3b59621224a9ed3a2ec0b7b5457344d4cd9cc4fe0487c";
+  "1fd42c16b1cd2f95e355ce8d0b350f91a31c620ed51095b4d776472ccb17ec6d";
