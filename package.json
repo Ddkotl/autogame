@@ -11,7 +11,15 @@
     "bue_virus": "node dist/bue_virus.js",
     "send_virus": "node dist/send_virus.js",
     "atack_tower": "node dist/atack_tower.js",
-    "t": "tsx src/test.ts "
+    "t": "tsx src/test.ts ",
+    "grene": "tsx src/var/grene.ts",
+    "hil1": "tsx src/var/hil1.ts",
+    "hil2": "tsx src/var/hil2.ts",
+    "atack": "tsx src/var/atack.ts",
+    "agent": "tsx src/var/use_ag.ts",
+    "position": "tsx src/var/use_position.ts",
+    "uitem": "tsx src/var/use_items.ts",
+    "ulab": "tsx src/var/use_lab.ts"
   },
   "dependencies": {
     "axios": "^1.13.1",

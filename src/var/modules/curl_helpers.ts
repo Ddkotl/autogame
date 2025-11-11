@@ -1,9 +1,7 @@
 import { spawn } from "child_process";
-import { JSDOM } from "jsdom";
-import { php_session_id } from "../const/constants";
-
+import { php_session_id } from "../../const/constants";
 /** Выполнить curl POST с form-urlencoded, вернуть stdout или null */
-function curlPostForm(
+export function curlPostForm(
   url: string,
   session_id: string,
   form: Record<string, string>,
@@ -60,7 +58,7 @@ function curlPostForm(
 }
 
 /** Выполнить curl GET и вернуть stdout или null */
-function curlGet(
+export function curlGet(
   url: string,
   session_id: string,
 ): Promise<string | null> {
@@ -105,7 +103,7 @@ function curlGet(
 }
 
 /** Выполнить curl GET без чтения тела (возвращает true/false по коду) */
-function curlDo(
+export function curlDo(
   url: string,
   session_id: string,
 ): Promise<boolean> {
@@ -143,70 +141,4 @@ function curlDo(
       resolve(false);
     });
   });
-}
-
-export async function ByeGrene(
-  session_id: string,
-): Promise<void> {
-  try {
-    // 1) Купить гранату (POST)
-    const buyUrl = "https://mvoo.ru/shop/buyMany/689";
-    const buyResp = await curlPostForm(buyUrl, session_id, {
-      quantity: "1",
-    });
-    if (buyResp === null) {
-      console.warn(
-        "Покупка гранаты не удалась (curl вернул null)",
-      );
-      // продолжаем — возможно на странице инвентаря граната уже есть
-    } else {
-      console.log(
-        "Покупка гранаты выполнена (ответ length):",
-        buyResp.length,
-      );
-    }
-
-    // 2) Получить страницу инвентаря
-    const equipUrl = "https://mvoo.ru/user/cache/equipment";
-    const html = await curlGet(equipUrl, session_id);
-    if (!html) {
-      console.warn("Не удалось получить инвентарь");
-      return;
-    }
-
-    // 3) Парсинг и поиск предмета "Осколочная граната"
-    const dom = new JSDOM(html);
-    const inv_items = Array.from(
-      dom.window.document.querySelectorAll(
-        "a[href*='/user/cache/equipment']",
-      ),
-    );
-
-    for (const el of inv_items) {
-      const img = el.querySelector("img");
-      if (!img) continue;
-      const img_title = img.getAttribute("title");
-      if (img_title === "Осколочная граната") {
-        const href = el.getAttribute("href");
-        if (!href) continue;
-        const useUrl = href.startsWith("http")
-          ? href
-          : `https://mvoo.ru${href}`;
-        console.log("Использую гранату по URL:", useUrl);
-
-        const ok = await curlDo(useUrl, session_id);
-        if (ok) {
-          console.log("Граната успешно использована");
-        } else {
-          console.warn(
-            "Не удалось использовать гранату по ссылке:",
-            useUrl,
-          );
-        }
-        // если нужно использовать только первую найденную — можно break;
-      }
-    }
-  } catch (error) {
-    console.error("bye grene error", error);
-  }
 }
