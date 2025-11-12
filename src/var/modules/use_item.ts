@@ -3,7 +3,7 @@ import {
   curlDo,
   curlGet,
   curlPostForm,
-} from "./curl_helpers";
+} from "../../utils/curl_helpers";
 
 export async function UseItem({
   session_id,

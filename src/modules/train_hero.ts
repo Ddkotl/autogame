@@ -1,50 +1,45 @@
-import { php_session_id } from "../const/constants";
+import { curlDo } from "../utils/curl_helpers";
 import { sleep } from "../utils/sleep";
 
+/**
+ * Тренировка героя — улучшает power, protection, speed, skill по очереди.
+ * Использует curl spawn для обхода ограничений fetch и имитации браузерных запросов.
+ */
 export async function trainHero(
   session_id: string,
   count: number,
 ) {
   try {
     for (let i = 0; i < count; i++) {
-      await sleep(1000);
-      await fetch(
+      console.log(`🧘‍♂️ Цикл ${i + 1}/${count}`);
+
+      await curlDo(
         "https://mvoo.ru/user/cache/training/?improve=power",
-        {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          },
-        },
+        session_id,
       );
       await sleep(1000);
-      await fetch(
-        "https://mvoo.ru/user/cache/training/?improve=protection",
-        {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          },
-        },
-      );
-      await sleep(1000);
-      await fetch(
-        "https://mvoo.ru/user/cache/training/?improve=speed",
-        {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          },
-        },
-      );
-      await sleep(1000);
-      await fetch(
-        "https://mvoo.ru/user/cache/training/?improve=skill",
-        {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          },
-        },
-      );
+
+      // await curlDo(
+      //   "https://mvoo.ru/user/cache/training/?improve=protection",
+      //   session_id,
+      // );
+      // await sleep(1000);
+
+      // await curlDo(
+      //   "https://mvoo.ru/user/cache/training/?improve=speed",
+      //   session_id,
+      // );
+      // await sleep(1000);
+
+      // await curlDo(
+      //   "https://mvoo.ru/user/cache/training/?improve=skill",
+      //   session_id,
+      // );
+      // await sleep(1000);
     }
+
+    console.log("✅ Тренировка завершена успешно");
   } catch (error) {
-    console.error("Тренировка не удалась", error);
+    console.error("❌ Ошибка при тренировке героя:", error);
   }
 }

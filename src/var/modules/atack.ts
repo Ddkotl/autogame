@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import { curlDo, curlGet } from "./curl_helpers";
+import { curlDo, curlGet } from "../../utils/curl_helpers";
 
 export async function Atack(
   pageUrl: string,

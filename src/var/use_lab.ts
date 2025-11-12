@@ -22,11 +22,6 @@ async function Grene() {
       useUrl:
         "https://mvoo.ru/game/city/laboratory/?view=5&conduct=5&confirm=true",
     });
-
-    await UseLab({
-      session_id: acc.SESSION_ID,
-      useUrl: `https://mvoo.ru/clan/war/?positions=all&take=${index < 3 ? "1" : index < 6 ? "2" : "3"}`,
-    });
   }
 }
 

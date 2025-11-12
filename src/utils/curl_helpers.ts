@@ -1,5 +1,5 @@
 import { spawn } from "child_process";
-import { php_session_id } from "../../const/constants";
+import { php_session_id } from "../const/constants";
 /** Выполнить curl POST с form-urlencoded, вернуть stdout или null */
 export function curlPostForm(
   url: string,
