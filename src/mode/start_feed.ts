@@ -8,7 +8,7 @@ export async function startFeed(session_id: string) {
   await sleep(1000);
   //const level = await checkLevel(session_id);
   //if (level >= 8) {
-    await sleep(1000);
-    await feedMain(session_id, proxy);
+  await sleep(1000);
+  await feedMain(session_id, proxy);
   //}
 }

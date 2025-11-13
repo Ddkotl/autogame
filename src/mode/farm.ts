@@ -22,15 +22,15 @@ export async function Farm(
     await sleep(1000);
     //const level: number = await checkLevel(session_id);
     //if (level >= 10) {
-     // await sleep(1000);
-      //const on_mutation = await goToMutation(session_id);
-     // if (!on_mutation) {
-     //   return;
-     // }
-    }
-    if (level === undefined || level === null) {
-      return;
-    }
+    // await sleep(1000);
+    //const on_mutation = await goToMutation(session_id);
+    // if (!on_mutation) {
+    //   return;
+    // }
+    //  }
+    // if (level === undefined || level === null) {
+    //  return;
+    // }
   }
   await sleep(1000);
   const on_med = await checkMeditation(session_id);
