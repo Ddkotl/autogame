@@ -17,16 +17,16 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
-  await trainAgent(session_id, 5);
+  await trainAgent(session_id, 2);
   if (fraction === "angel") {
     await sleep(1000);
-    const level: number = await checkLevel(session_id);
-    if (level >= 10) {
-      await sleep(1000);
-      const on_mutation = await goToMutation(session_id);
-      if (!on_mutation) {
-        return;
-      }
+    //const level: number = await checkLevel(session_id);
+    //if (level >= 10) {
+     // await sleep(1000);
+      //const on_mutation = await goToMutation(session_id);
+     // if (!on_mutation) {
+     //   return;
+     // }
     }
     if (level === undefined || level === null) {
       return;
