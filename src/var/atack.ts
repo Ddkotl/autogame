@@ -10,17 +10,18 @@ async function Grene() {
   for (let [index, acc] of dem_accaunts.entries()) {
     await sleep(500);
 
-   // await Atack(
-     // "https://mvoo.ru/clan/war/?list=428&sorting=health",
-     // acc.SESSION_ID,
+    // await Atack(
+    // "https://mvoo.ru/clan/war/?list=428&sorting=health",
+    // acc.SESSION_ID,
     //);
-   // await Atack(
-   //   "https://mvoo.ru/clan/war/?shield=all",
-   //   acc.SESSION_ID,
-  //  );
-  await Atack(
-    "https://mvoo.ru/clan/war/?offensive=true",acc.SESSION_ID
-  )
+    // await Atack(
+    //   "https://mvoo.ru/clan/war/?shield=all",
+    //   acc.SESSION_ID,
+    //  );
+    await Atack(
+      "https://mvoo.ru/clan/war/?offensive=true",
+      acc.SESSION_ID,
+    );
   }
 }
 
