@@ -7,9 +7,13 @@ async function Grene() {
   for (let [index, acc] of dem_accaunts.entries()) {
     await sleep(500);
 
-    await UseLab({
+    // await UseLab({
+    //   session_id: acc.SESSION_ID,
+    //   useUrl: `https://mvoo.ru/clan/war/?positions=all&take=${index < 3 ? "1" : index < 6 ? "2" : "3"}`,
+    // });
+     await UseLab({
       session_id: acc.SESSION_ID,
-      useUrl: `https://mvoo.ru/clan/war/?positions=all&take=${index < 3 ? "1" : index < 6 ? "2" : "3"}`,
+      useUrl: `https://mvoo.ru/game/raid/?join=20400`,
     });
   }
 }
