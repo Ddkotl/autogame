@@ -142,3 +142,49 @@ export function curlDo(
     });
   });
 }
+
+export function curlDoWB(
+  url: string,
+  session_id: string,
+): Promise<{ ok: boolean; body: string; error?: string }> {
+  return new Promise((resolve) => {
+    const args = [
+      "-sS",
+      "-L",
+      "--max-redirs", "20",
+      "--compressed",
+      "-H", `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36`,
+      "-H", `Cookie: PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      url,
+    ];
+
+    const curl = spawn("curl", args);
+
+    let body = "";
+    let err = "";
+
+    curl.stdout.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+
+    curl.stderr.on("data", (chunk) => {
+      err += chunk.toString();
+    });
+
+    curl.on("close", (code) => {
+      resolve({
+        ok: code === 0,
+        body,
+        error: code !== 0 ? err : undefined,
+      });
+    });
+
+    curl.on("error", (error) => {
+      resolve({
+        ok: false,
+        body: "",
+        error: error.message,
+      });
+    });
+  });
+}

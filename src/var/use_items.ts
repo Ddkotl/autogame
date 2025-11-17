@@ -9,7 +9,7 @@ async function Grene() {
 
     await UseItem({
       session_id: acc.SESSION_ID,
-      item_name: "Релисса",
+      item_name: "Cветошумовая граната",
     });
   }
 }
