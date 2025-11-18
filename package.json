@@ -12,6 +12,8 @@
     "send_virus": "node dist/send_virus.js",
     "atack_tower": "node dist/atack_tower.js",
     "t": "tsx src/test.ts ",
+     "goraid": "tsx src/go_raid.ts",
+     "byechest":"tsx src/bue_chest.ts",
     "grene": "tsx src/var/grene.ts",
     "hil1": "tsx src/var/hil1.ts",
     "hil2": "tsx src/var/hil2.ts",

@@ -23,7 +23,7 @@ export async function UseItem({
     const dom = new JSDOM(html);
     const inv_items = Array.from(
       dom.window.document.querySelectorAll(
-        "a[href*='/user/cache/equipment']",
+        "a[href*='/user/cache/equipment/?wear']",
       ),
     );
 

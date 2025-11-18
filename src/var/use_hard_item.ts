@@ -4,15 +4,19 @@ import { UseHardItem } from "./modules/use_hard_item";
 import { UseItem } from "./modules/use_item";
 
 async function Fn() {
-  const { dem_accaunts } = LoadAccaunts();
-  for (let acc of dem_accaunts) {
+  const { ang_accaunts, dem_accaunts } = LoadAccaunts();
+  for (let acc of dem_accaunts.concat(ang_accaunts)) {
     await sleep(500);
 
+    //   await UseHardItem({
+    //    session_id: acc.SESSION_ID,
+    //    item_name: "Релисса",
+    // });
     await UseHardItem({
-     session_id: acc.SESSION_ID,
-     item_name: "Релисса",
-  });
-    //     await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Агар-Агар",
+    });
+    // await UseHardItem({
     //   session_id: acc.SESSION_ID,
     //   item_name: "Большой Ларец Соулу",
     // });

@@ -8,8 +8,6 @@ import { checkMeditation } from "../modules/check_meditation";
 import { checkWerwolfs } from "../modules/check_werwolfs";
 import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
-import { checkLevel } from "../modules/check_level";
-import { goToMutation } from "../modules/go_to_mutation";
 
 export async function Farm(
   session_id: string,

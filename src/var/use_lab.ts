@@ -7,25 +7,30 @@ async function Grene() {
   for (let [index, acc] of dem_accaunts.entries()) {
     await sleep(500);
 
-    //await UseLab({
-    //  session_id: acc.SESSION_ID,
-    //  useUrl:
-    // "https://mvoo.ru/game/city/laboratory/?view=7&conduct=7&confirm=true",
-    // });
-    //await UseLab({
-    // session_id: acc.SESSION_ID,
-    // useUrl:
-    //  "https://mvoo.ru/game/city/laboratory/?view=12&conduct=12&confirm=true",
-    //});
-    //await UseLab({
-    // session_id: acc.SESSION_ID,
-    // useUrl:
-    //  "https://mvoo.ru/game/city/laboratory/?view=5&conduct=5&confirm=true",
-    //});
+    await UseLab({
+      session_id: acc.SESSION_ID,
+      useUrl:
+        "https://mvoo.ru/game/city/laboratory/?view=7&conduct=7&confirm=true",
+    });
+    await UseLab({
+      session_id: acc.SESSION_ID,
+      useUrl:
+        "https://mvoo.ru/game/city/laboratory/?view=12&conduct=12&confirm=true",
+    });
+    await UseLab({
+      session_id: acc.SESSION_ID,
+      useUrl:
+        "https://mvoo.ru/game/city/laboratory/?view=5&conduct=5&confirm=true",
+    });
     await UseLab({
       session_id: acc.SESSION_ID,
       useUrl:
         "https://mvoo.ru/game/city/laboratory/?view=2&conduct=2&confirm=true",
+    });
+    await UseLab({
+      session_id: acc.SESSION_ID,
+      useUrl:
+        "https://mvoo.ru/game/city/laboratory/?view=10&conduct=10&confirm=true",
     });
   }
 }
