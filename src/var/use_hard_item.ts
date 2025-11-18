@@ -9,9 +9,9 @@ async function Fn() {
     await sleep(500);
 
     await UseHardItem({
-      session_id: acc.SESSION_ID,
-      item_name: "Релисса",
-    });
+     session_id: acc.SESSION_ID,
+     item_name: "Релисса",
+  });
     //     await UseHardItem({
     //   session_id: acc.SESSION_ID,
     //   item_name: "Большой Ларец Соулу",

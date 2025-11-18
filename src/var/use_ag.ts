@@ -1,7 +1,6 @@
 import { LoadAccaunts } from "../utils/accaunt-manager";
 import { sleep } from "../utils/sleep";
 import { UseAg } from "./modules/use_ag";
-import { UseLab } from "./modules/use_lab";
 
 async function Grene() {
   const { dem_accaunts } = LoadAccaunts();

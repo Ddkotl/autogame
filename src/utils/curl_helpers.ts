@@ -151,10 +151,13 @@ export function curlDoWB(
     const args = [
       "-sS",
       "-L",
-      "--max-redirs", "20",
+      "--max-redirs",
+      "20",
       "--compressed",
-      "-H", `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36`,
-      "-H", `Cookie: PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+      "-H",
+      `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36`,
+      "-H",
+      `Cookie: PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
       url,
     ];
 

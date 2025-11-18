@@ -19,9 +19,9 @@
     "agent": "tsx src/var/use_ag.ts",
     "position": "tsx src/var/use_position.ts",
     "uitem": "tsx src/var/use_items.ts",
-     "uhitem": "tsx src/var/use_hard_item.ts",
+    "uhitem": "tsx src/var/use_hard_item.ts",
     "ulab": "tsx src/var/use_lab.ts",
-    "aukbue":"tsx src/auction/buy_in_auk.ts"
+    "aukbue": "tsx src/auction/buy_in_auk.ts"
   },
   "dependencies": {
     "axios": "^1.13.1",
