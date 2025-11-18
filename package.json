@@ -10,6 +10,8 @@
     "create_tower": "node dist/create_tower.js",
     "bue_virus": "node dist/bue_virus.js",
     "send_virus": "node dist/send_virus.js",
+     "bue_vac": "node dist/bue_vac.js",
+    "send_vac": "node dist/send_vac.js",
     "atack_tower": "node dist/atack_tower.js",
     "t": "tsx src/test.ts ",
      "goraid": "tsx src/go_raid.ts",
@@ -18,12 +20,14 @@
     "hil1": "tsx src/var/hil1.ts",
     "hil2": "tsx src/var/hil2.ts",
     "atack": "tsx src/var/atack.ts",
+    "atackoff": "tsx src/var/atack_offensive.ts",
     "agent": "tsx src/var/use_ag.ts",
     "position": "tsx src/var/use_position.ts",
     "uitem": "tsx src/var/use_items.ts",
     "uhitem": "tsx src/var/use_hard_item.ts",
     "ulab": "tsx src/var/use_lab.ts",
-    "aukbue": "tsx src/auction/buy_in_auk.ts"
+    "aukbue": "tsx src/auction/buy_in_auk.ts",
+    "do" : "tsx src/do.ts"
   },
   "dependencies": {
     "axios": "^1.13.1",

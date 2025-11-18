@@ -9,7 +9,7 @@ export async function Atack(
     const html = await curlGet(pageUrl, session_id);
 
     if (!html) {
-      console.warn("Не удалось получить страницу зомби");
+      console.warn("Не удалось получить страницу");
       return;
     }
 
@@ -32,7 +32,7 @@ export async function Atack(
     const attackUrl = href.startsWith("http")
       ? href
       : `https://mvoo.ru${href}`;
-    console.log("Атакую зомби по ссылке:", attackUrl);
+    console.log("Атакую  по ссылке:", attackUrl);
 
     const ok = await curlDo(attackUrl, session_id);
     if (ok) console.log("Атака  успешно выполнена");
