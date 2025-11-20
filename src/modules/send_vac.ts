@@ -6,13 +6,13 @@ import { getDayRevard } from "./get_day_revard";
 import { curlGet } from "../utils/curl_helpers";
 
 const sacrefises_of_vac = [
-"56165","56203","56201","56200","56170","56174","56150","56176","56142"
+"56165","56203","56201","56200","56170","56174","56150","56176","56142","58259","58511","58500","58505","58504","58506","58381","58502","58493","58503","58496","58509","58499"
 ];
 
 /** Основная функция — использует curlGet/curlRequest вместо fetch */
 export async function SendVac(session_id: string) {
   try {
-    const duration = 2 * 60 * 1000;
+    const duration = 1 * 60 * 1000;
     const start_time = Date.now();
 
     while (Date.now() - start_time < duration) {
