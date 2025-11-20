@@ -12,8 +12,8 @@ export async function ByeVac(session_id: string) {
       "-H",
       `Content-Type: application/x-www-form-urlencoded`,
       "--data",
-      "quantity=20",
-      "https://mvoo.ru/shop/buyMany/623",
+      "quantity=40",
+      "https://mvoo.ru/shop/buyMany/1012",
     ];
 
     const curl = spawn("curl", args, {

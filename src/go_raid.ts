@@ -9,7 +9,7 @@ async function Raid() {
 
     await UseLab({
       session_id: acc.SESSION_ID,
-      useUrl: `https://mvoo.ru/game/raid/?join=20484`,
+      useUrl: `https://mvoo.ru/game/raid/?join=20552`,
     });
   }
 }

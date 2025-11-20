@@ -16,10 +16,16 @@ async function Fn() {
       session_id: acc.SESSION_ID,
       item_name: "Агар-Агар",
     });
-    // await UseHardItem({
-    //   session_id: acc.SESSION_ID,
-    //   item_name: "Большой Ларец Соулу",
-    // });
+    await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Большой Ларец Соулу",
+    });   await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Большой Ларец Соулу",
+    });   await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Большой Ларец Соулу",
+    });
     //    await UseHardItem({
     //   session_id: acc.SESSION_ID,
     //   item_name: "Средний Ларец Соулу",
