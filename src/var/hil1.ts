@@ -11,11 +11,11 @@ async function Grene() {
       buyUrl: "https://mvoo.ru/shop/buyMany/802",
       item_name: "Бериз",
     });
-    //   await ByeAndUse({
-    //   session_id: acc.SESSION_ID,
-    //   buyUrl: "https://mvoo.ru/shop/buyMany/801",
-    //   item_name: "Аквемар",
-    // });
+      await ByeAndUse({
+      session_id: acc.SESSION_ID,
+      buyUrl: "https://mvoo.ru/shop/buyMany/801",
+      item_name: "Аквемар",
+    });
   }
 }
 

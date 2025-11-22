@@ -8,6 +8,8 @@ import { checkMeditation } from "../modules/check_meditation";
 import { checkWerwolfs } from "../modules/check_werwolfs";
 import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
+import { checkLevel } from "../modules/check_level";
+import { goToMutation } from "../modules/go_to_mutation";
 
 export async function Farm(
   session_id: string,
@@ -18,17 +20,17 @@ export async function Farm(
   await trainAgent(session_id, 2);
   if (fraction === "angel") {
     await sleep(1000);
-    //const level: number = await checkLevel(session_id);
-    //if (level >= 10) {
-    // await sleep(1000);
-    //const on_mutation = await goToMutation(session_id);
-    // if (!on_mutation) {
-    //   return;
-    // }
-    //  }
-    // if (level === undefined || level === null) {
-    //  return;
-    // }
+    const level: number = await checkLevel(session_id);
+    if (level >= 15) {
+    await sleep(1000);
+    const on_mutation = await goToMutation(session_id);
+    if (!on_mutation) {
+      return;
+    }
+     }
+    if (level === undefined || level === null) {
+     return;
+    }
   }
   await sleep(1000);
   const on_med = await checkMeditation(session_id);
