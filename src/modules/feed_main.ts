@@ -8,7 +8,7 @@ export async function feedMain(
 ) {
   try {
     const pageUrl =
-      "https://mvoo.ru/arena/cache/attack/55314";
+      "https://mvoo.ru/arena/cache/attack/55314"; // 55314 //22434 
     const res = await fetch(pageUrl, {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
