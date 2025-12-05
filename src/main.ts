@@ -28,6 +28,7 @@ export async function StartGreend(
     ...ang_accaunts.reverse().map(async (acc, i) => {
       if (mode === "feed") {
         await sleep(i * 5000);
+         await getDayRevard(acc.SESSION_ID);
         await startFeed(acc.SESSION_ID);
       } else {
         try {
