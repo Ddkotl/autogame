@@ -1,35 +1,39 @@
-import { Page } from "playwright";
-import { sleep } from "../utils/sleep";
+import { JSDOM } from "jsdom";
+import { php_session_id } from "../const/constants";
 
-export async function swithGoldToDiamond(page: Page) {
+export async function swithGoldToDiamond(
+  session_id: string,
+) {
   try {
-    await page.goto(
+    const res = await fetch(
       "https://mvoo.ru/exchanger/?sorting=gold",
       {
-        waitUntil: "domcontentloaded",
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+        },
       },
     );
-    await sleep(1000);
-    await page
-      .locator("li > span.value > span")
-      .nth(0)
-      .waitFor({ state: "visible" });
-    const gold_to_swith = await page
-      .locator("li > span.value > span")
-      .nth(0)
-      .innerHTML();
-    const text = await page.locator("form").innerText();
-    if (gold_to_swith && text) {
-      await page.fill(
-        'input[id="ValueDiamond"]',
-        gold_to_swith,
-      );
-      await sleep(1000);
-      await page
-        .locator(".button_small")
-        .waitFor({ state: "visible" });
-      await page.locator(".button_small").click();
-    }
+    const html = await res.text();
+    const dom = new JSDOM(html);
+
+    const gold_to_swith = dom.window.document.querySelector(
+      "li > span.value > span",
+    ).innerHTML;
+    console.log(gold_to_swith);
+    const formData = new URLSearchParams();
+    formData.append("cost", gold_to_swith);
+    await fetch(
+      "https://mvoo.ru/exchanger/add/gold",
+      {
+        method: "POST",
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          "Content-Type":
+            "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
+      },
+    );
   } catch (error) {
     console.error("Не удалось обменять золото", error);
   }

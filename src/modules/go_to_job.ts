@@ -1,29 +1,34 @@
-import { Page } from "playwright";
-import { sleep } from "../utils/sleep";
+import { JSDOM } from "jsdom";
+import { php_session_id } from "../const/constants";
 
-export async function goToJob(page: Page) {
+export async function goToJob(session_id: string) {
   try {
-    await page.goto("https://mvoo.ru/game/staff/?lair", {
-      waitUntil: "domcontentloaded",
-    });
-    await sleep(3000);
-    const isActive = (
-      await page.locator("#partner").innerText()
-    ).includes("Активен:");
+    const res = await fetch(
+      "https://mvoo.ru/game/staff/?lair",
+      {
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+        },
+      },
+    );
+    const text = await res.text();
+    const dom = new JSDOM(text);
+    const isActive = dom.window.document
+      .querySelector("#partner")
+      .textContent.includes("Активен");
     if (!isActive) {
-      await page.goto(
+      await fetch(
         "https://mvoo.ru/game/staff/?lair=true&buy=partner&confirm=oll",
-        { waitUntil: "domcontentloaded" },
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+          },
+        },
       );
     }
-    await page.goto("https://mvoo.ru/game/staff/service", {
-      waitUntil: "domcontentloaded",
-    });
-    await page.selectOption(
-      "select#meditation-time",
-      "480",
+    await fetch(
+      "https://mvoo.ru/game/staff/service?serviceTime=480",
     );
-    await page.locator(".button_big").click();
   } catch (error) {
     console.error("Не удалось сходить на службу", error);
   }

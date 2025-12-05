@@ -1,7 +1,6 @@
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { curlDo } from "./utils/curl_helpers";
 import { sleep } from "./utils/sleep";
-import { UseLab } from "./var/modules/use_lab";
 
 async function Do() {
   const { dem_accaunts ,ang_accaunts} = LoadAccaunts();

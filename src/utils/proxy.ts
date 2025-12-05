@@ -1,4 +1,4 @@
 import { SocksProxyAgent } from "socks-proxy-agent";
 
-const SOCKS_PROXY = "socks5h://127.0.0.1:9050";
+const SOCKS_PROXY = "socks5h://127.0.0.1:9055";
 export const socksAgent = new SocksProxyAgent(SOCKS_PROXY);
