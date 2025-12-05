@@ -1,7 +1,6 @@
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { curlDo } from "./utils/curl_helpers";
 import { sleep } from "./utils/sleep";
-import { UseLab } from "./var/modules/use_lab";
 
 async function Do() {
   const { dem_accaunts } = LoadAccaunts();
@@ -9,7 +8,7 @@ async function Do() {
     await sleep(500);
 
     await curlDo(
-      `https://mvoo.ru/user/cache/profile/55314/?friends-add-confirm=`,
+      `https://mvoo.ru/game/raid/?join=20874`,
       acc.SESSION_ID,
     );
   }
