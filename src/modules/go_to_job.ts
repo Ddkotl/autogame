@@ -28,6 +28,11 @@ export async function goToJob(session_id: string) {
     }
     await fetch(
       "https://mvoo.ru/game/staff/service?serviceTime=480",
+      {
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+        },
+      },
     );
   } catch (error) {
     console.error("Не удалось сходить на службу", error);
