@@ -109,7 +109,7 @@ function curlRequest(
 /** Основная функция — использует curlGet/curlRequest вместо fetch */
 export async function SendVirus(session_id: string) {
   try {
-    const duration = 2 * 60 * 1000;
+    const duration = 1 * 60 * 1000;
     const start_time = Date.now();
 
     while (Date.now() - start_time < duration) {
