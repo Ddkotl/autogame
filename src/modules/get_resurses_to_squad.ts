@@ -15,13 +15,13 @@ export async function getResursesToSquad(
     );
     const text = await res.text();
     const dom = new JSDOM(text);
-const formData = new URLSearchParams()
+    const formData = new URLSearchParams();
 
     try {
-     const scrf =  dom.window.document
+      const scrf = dom.window.document
         .querySelector("input[name='csrf']")
         .getAttribute("value");
-        formData.append("csrf",scrf) 
+      formData.append("csrf", scrf);
     } catch (e) {
       console.log("no csrf");
     }
@@ -30,20 +30,22 @@ const formData = new URLSearchParams()
       const silver = dom.window.document
         .querySelector("input[name='silver']")
         .getAttribute("value");
-         formData.append("silver",silver) 
+      formData.append("silver", silver);
     } catch (e) {
       console.log("no mana");
     }
     try {
-     const gold = dom.window.document
+      const gold = dom.window.document
         .querySelector("input[name='gold']")
         .getAttribute("value");
-              formData.append("gold",gold) 
+      formData.append("gold", gold);
     } catch (e) {
       console.log("no gold");
     }
 
-    await fetch("https://mvoo.ru/clan/castle/resources/invest",{
+    await fetch(
+      "https://mvoo.ru/clan/castle/resources/invest",
+      {
         method: "POST",
         headers: {
           Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
@@ -51,7 +53,8 @@ const formData = new URLSearchParams()
             "application/x-www-form-urlencoded",
         },
         body: formData.toString(),
-    })
+      },
+    );
   } catch (error) {
     console.error("Не удалось пожертвовать в отряд", error);
   }
