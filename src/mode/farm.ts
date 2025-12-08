@@ -21,15 +21,19 @@ export async function Farm(
   if (fraction === "angel") {
     await sleep(1000);
     const level: number = await checkLevel(session_id);
-    if (level >= 15) {
-    await sleep(1000);
-    const on_mutation = await goToMutation(session_id);
-    if (!on_mutation) {
+    if (
+      level === undefined ||
+      level === null ||
+      level > 17
+    ) {
       return;
     }
-     }
-    if (level === undefined || level === null) {
-     return;
+    if (level >= 15) {
+      await sleep(1000);
+      const on_mutation = await goToMutation(session_id);
+      if (!on_mutation) {
+        return;
+      }
     }
   }
   await sleep(1000);

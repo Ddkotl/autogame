@@ -8,7 +8,7 @@ async function Do() {
     await sleep(500);
 
     await curlDo(
-      `https://mvoo.ru/game/raid/?join=20679`,
+      `https://mvoo.ru/game/raid/?join=20929`,
       acc.SESSION_ID,
     );
   }
