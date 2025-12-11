@@ -1,4 +1,4 @@
-name: Send Virus Weekday Script
+name: Send Virus Script
 
 on:
   workflow_dispatch:
@@ -14,6 +14,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm ci
+      - run: npm install
       - run: npm run build
       - run: npm run send_virus
