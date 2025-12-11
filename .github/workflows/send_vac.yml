@@ -1,0 +1,19 @@
+name: Send Vac Script
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "1 21 * * 1-6"
+    - cron: "2 21 * * 0"
+
+jobs:
+  send-vac:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm run send_vac
