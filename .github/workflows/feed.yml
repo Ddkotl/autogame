@@ -1,0 +1,18 @@
+name: Feed Script
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 22,7,10,13,16,19 * * *"
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm run feed
