@@ -1,7 +1,10 @@
 import { JSDOM } from "jsdom";
 import { php_session_id } from "../const/constants";
 
-export async function goToJob(session_id: string) {
+export async function goToJob(
+  session_id: string,
+  minutes: number = 480,
+) {
   try {
     const res = await fetch(
       "https://mvoo.ru/game/staff/?lair",
@@ -27,7 +30,7 @@ export async function goToJob(session_id: string) {
       );
     }
     await fetch(
-      "https://mvoo.ru/game/staff/service?serviceTime=480",
+      `https://mvoo.ru/game/staff/service?serviceTime=${minutes}`,
       {
         headers: {
           Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,

@@ -7,15 +7,16 @@
     "feed": "node dist/feed.js",
     "logistic": "node dist/logistic.js",
     "boss": "node dist/boss.js",
+    "boss_farm": "node dist/boss_farm.js",
     "create_tower": "node dist/create_tower.js",
     "bue_virus": "node dist/bue_virus.js",
     "send_virus": "node dist/send_virus.js",
-     "bue_vac": "node dist/bue_vac.js",
+    "bue_vac": "node dist/bue_vac.js",
     "send_vac": "node dist/send_vac.js",
     "atack_tower": "node dist/atack_tower.js",
     "t": "tsx src/test.ts ",
-     "goraid": "tsx src/go_raid.ts",
-     "byechest":"tsx src/bue_chest.ts",
+    "goraid": "tsx src/go_raid.ts",
+    "byechest": "tsx src/bue_chest.ts",
     "grene": "tsx src/var/grene.ts",
     "hil1": "tsx src/var/hil1.ts",
     "hil2": "tsx src/var/hil2.ts",
@@ -27,7 +28,7 @@
     "uhitem": "tsx src/var/use_hard_item.ts",
     "ulab": "tsx src/var/use_lab.ts",
     "aukbue": "tsx src/auction/buy_in_auk.ts",
-    "do" : "tsx src/do.ts"
+    "do": "tsx src/do.ts"
   },
   "dependencies": {
     "axios": "^1.13.1",

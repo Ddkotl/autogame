@@ -19,7 +19,7 @@ export async function StartGreend(
       try {
         await sleep(i * 5000);
         await getDayRevard(acc.SESSION_ID);
-       await trainHero(acc.SESSION_ID, 20);
+        await trainHero(acc.SESSION_ID, 20);
         await Farm(acc.SESSION_ID, 50, sleep_time, "demon");
       } catch (error) {
         console.error(error);
@@ -28,7 +28,7 @@ export async function StartGreend(
     ...ang_accaunts.reverse().map(async (acc, i) => {
       if (mode === "feed") {
         await sleep(i * 5000);
-         await getDayRevard(acc.SESSION_ID);
+        await getDayRevard(acc.SESSION_ID);
         await startFeed(acc.SESSION_ID);
       } else {
         try {

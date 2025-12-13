@@ -1,6 +1,3 @@
-
-
-
 import { LoadAccaunts } from "../utils/accaunt-manager";
 import { sleep } from "../utils/sleep";
 import { UseHardItem } from "./modules/use_hard_item";
@@ -22,12 +19,12 @@ async function Fn() {
     await UseHardItem({
       session_id: acc.SESSION_ID,
       item_name: "Большой Ларец Соулу",
-    });  
-       await UseHardItem({
+    });
+    await UseHardItem({
       session_id: acc.SESSION_ID,
       item_name: "Средний Ларец Соулу",
     });
-         await UseHardItem({
+    await UseHardItem({
       session_id: acc.SESSION_ID,
       item_name: "Малый Ларец Соулу",
     });

@@ -6,7 +6,28 @@ import { getDayRevard } from "./get_day_revard";
 import { curlGet } from "../utils/curl_helpers";
 
 const sacrefises_of_vac = [
-"56165","56203","56201","56200","56170","56174","56150","56176","56142","58259","58511","58500","58505","58504","58506","58381","58502","58493","58503","58496","58509","58499"
+  "56165",
+  "56203",
+  "56201",
+  "56200",
+  "56170",
+  "56174",
+  "56150",
+  "56176",
+  "56142",
+  "58259",
+  "58511",
+  "58500",
+  "58505",
+  "58504",
+  "58506",
+  "58381",
+  "58502",
+  "58493",
+  "58503",
+  "58496",
+  "58509",
+  "58499",
 ];
 
 /** Основная функция — использует curlGet/curlRequest вместо fetch */
@@ -59,10 +80,7 @@ export async function SendVac(session_id: string) {
             ? send_href
             : `https://mvoo.ru${send_href}`;
 
-          console.log(
-            "Отправка vac по ссылке:",
-            sendUrl,
-          );
+          console.log("Отправка vac по ссылке:", sendUrl);
 
           const sendResp = await curlGet(
             sendUrl,

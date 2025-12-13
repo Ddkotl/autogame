@@ -22,18 +22,14 @@ export async function swithGoldToDiamond(
     console.log(gold_to_swith);
     const formData = new URLSearchParams();
     formData.append("cost", gold_to_swith);
-    await fetch(
-      "https://mvoo.ru/exchanger/add/gold",
-      {
-        method: "POST",
-        headers: {
-          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
-          "Content-Type":
-            "application/x-www-form-urlencoded",
-        },
-        body: formData.toString(),
+    await fetch("https://mvoo.ru/exchanger/add/gold", {
+      method: "POST",
+      headers: {
+        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,
+        "Content-Type": "application/x-www-form-urlencoded",
       },
-    );
+      body: formData.toString(),
+    });
   } catch (error) {
     console.error("Не удалось обменять золото", error);
   }
