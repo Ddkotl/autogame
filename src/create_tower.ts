@@ -3,21 +3,34 @@ import { LoadAccaunts } from "./utils/accaunt-manager";
 import { JSDOM } from "jsdom";
 
 const tower_owner_login = "viking15";
+const boss_profile_id = 55314;
 const tower_owner_id = 56165;
 export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
-    for (let i = 0; i < dem_accaunts.length; i++) {
-      if (dem_accaunts[i].login !== tower_owner_login) {
+    const dem_acc_to_boss = dem_accaunts.slice(0, 3);
+    const dem_acc_to_vic = dem_accaunts.slice(3);
+    for (let i = 0; i < dem_acc_to_vic.length; i++) {
+      if (dem_acc_to_vic[i].login !== tower_owner_login) {
         await fetch(
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&send=bid&confirm=go`,
           {
             headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
             },
           },
         );
       }
+    }
+    for (let i = 0; i < dem_acc_to_boss.length; i++) {
+      await fetch(
+        `https://mvoo.ru/user/cache/profile/${boss_profile_id}/?tower=battle&send=bid&confirm=go`,
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_boss[i].SESSION_ID}`,
+          },
+        },
+      );
     }
     await fetch(
       `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&send=bid&confirm=go`,
@@ -28,13 +41,13 @@ export async function CreateTower() {
       },
     );
 
-    for (let i = 0; i < dem_accaunts.length; i++) {
-      if (dem_accaunts[i].login === tower_owner_login) {
+    for (let i = 0; i < dem_acc_to_vic.length; i++) {
+      if (dem_acc_to_vic[i].login === tower_owner_login) {
         const res = await fetch(
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
           {
             headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
             },
           },
         );
@@ -48,7 +61,7 @@ export async function CreateTower() {
               `https://mvoo.ru${e.getAttribute("href")}`,
               {
                 headers: {
-                  Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+                  Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
                 },
               },
             );
@@ -58,7 +71,7 @@ export async function CreateTower() {
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&attack=go`,
           {
             headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
             },
           },
         );
@@ -69,7 +82,7 @@ export async function CreateTower() {
           .getAttribute("href");
         await fetch(`https://mvoo.ru${at_link}`, {
           headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
           },
         });
       }
@@ -79,6 +92,6 @@ export async function CreateTower() {
   }
 }
 
-// (async () => {
-//   await CreateTower();
-// })();
+(async () => {
+  await CreateTower();
+})();

@@ -21,6 +21,24 @@ async function AtackTower() {
         },
       },
     );
+    for (let i = 0; i < dem_accaunts.length; i++) {
+      await fetch(
+        "https://mvoo.ru/user/cache/profile/55314/?tower=battle&target=go",
+        {
+          headers: {
+            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
+          },
+        },
+      );
+    }
+    await fetch(
+      "https://mvoo.ru/user/cache/profile/55314/?tower=battle&target=go",
+      {
+        headers: {
+          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
+        },
+      },
+    );
   } catch (error) {
     console.log("atack tower error", error);
   }
