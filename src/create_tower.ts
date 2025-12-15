@@ -92,6 +92,6 @@ export async function CreateTower() {
   }
 }
 
-(async () => {
-  await CreateTower();
-})();
+//(async () => {
+ // await CreateTower();
+//})();
