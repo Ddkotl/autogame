@@ -41,8 +41,8 @@ export async function CreateTower() {
       },
     );
 
-    for (let i = 0; i < dem_acc_to_vic.length; i++) {
-      if (dem_acc_to_vic[i].login === tower_owner_login) {
+    for (let i = 0; i < dem_accaunts.length; i++) {
+      if (dem_accaunts[i].login === tower_owner_login) {
         const res = await fetch(
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
           {
