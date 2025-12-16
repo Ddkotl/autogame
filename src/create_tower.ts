@@ -53,6 +53,7 @@ export async function CreateTower() {
         );
         const html = await res.text();
         const dom = new JSDOM(html);
+        console.log(html)
         const links =
           dom.window.document.querySelectorAll("a");
         for (const e of links) {
