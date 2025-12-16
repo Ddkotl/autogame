@@ -47,7 +47,7 @@ export async function CreateTower() {
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
           {
             headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
+              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
             },
           },
         );
