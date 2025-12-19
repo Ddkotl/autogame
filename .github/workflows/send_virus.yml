@@ -2,9 +2,6 @@ name: Send Virus Script
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 21 * * 1-6"
-    - cron: "1 21 * * 0"
 
 jobs:
   send-virus-weekday:
