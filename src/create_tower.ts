@@ -8,8 +8,8 @@ const tower_owner_id = 56165;
 export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
-    const dem_acc_to_boss = dem_accaunts.slice(0, 3);
-    const dem_acc_to_vic = dem_accaunts.slice(3);
+    const dem_acc_to_boss = dem_accaunts.slice(0, 5);
+    const dem_acc_to_vic = dem_accaunts.slice(5);
     for (let i = 0; i < dem_acc_to_vic.length; i++) {
       if (dem_acc_to_vic[i].login !== tower_owner_login) {
         await fetch(
