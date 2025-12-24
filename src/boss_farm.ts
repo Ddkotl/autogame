@@ -3,7 +3,7 @@ import { goToJob, mineGold } from "./modules";
 import { sleep } from "./utils/sleep";
 
 (async () => {
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 150; i++) {
     try {
       await goToJob(boss_id, 10);
       await mineGold(boss_id);
