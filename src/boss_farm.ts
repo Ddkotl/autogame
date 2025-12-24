@@ -5,8 +5,9 @@ import { sleep } from "./utils/sleep";
 (async () => {
   for (let i = 0; i < 150; i++) {
     try {
-      await goToJob(boss_id, 10);
+      
       await mineGold(boss_id);
+      await goToJob(boss_id, 10);
     } catch (e) {
       console.error(`error to ${i} try: `, e);
     }
