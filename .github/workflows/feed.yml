@@ -8,6 +8,7 @@ on:
 jobs:
   feed:
     runs-on: ubuntu-latest
+    if: github.actor == 'Ddkotl' 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
