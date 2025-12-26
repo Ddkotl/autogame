@@ -52,7 +52,7 @@ console.log(html)
 
 
 (async()=>{
-  const nikname = "Abbadon"
+  const nikname = "Abaddon"
   const {ang_accaunts,dem_accaunts} = LoadAccaunts()
   const allAccaunts = ang_accaunts.concat(dem_accaunts)
   for(let i = 0; i < allAccaunts.length; i++){
