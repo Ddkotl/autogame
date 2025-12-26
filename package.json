@@ -28,7 +28,8 @@
     "uhitem": "tsx src/var/use_hard_item.ts",
     "ulab": "tsx src/var/use_lab.ts",
     "aukbue": "tsx src/auction/buy_in_auk.ts",
-    "do": "tsx src/do.ts"
+    "do": "tsx src/do.ts",
+    "ne":"tsx src/new_year.ts > ne.log"
   },
   "dependencies": {
     "axios": "^1.13.1",
