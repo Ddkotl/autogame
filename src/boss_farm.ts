@@ -1,11 +1,12 @@
 import { boss_id } from "./const/constants";
 import { goToJob, mineGold } from "./modules";
 import { sleep } from "./utils/sleep";
+import { atackZombie } from "./modules/atack_zombie";
 
 (async () => {
   for (let i = 0; i < 150; i++) {
     try {
-      
+      await atackZombie(boss_id);
       await mineGold(boss_id);
       await goToJob(boss_id, 10);
     } catch (e) {
