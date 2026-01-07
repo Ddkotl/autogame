@@ -4,11 +4,11 @@ import { socksAgent } from "../utils/proxy";
 
 export async function feedMain(
   session_id: string,
-  proxy: boolean = true,
+  proxy: boolean = false,
+  player_id: number,
 ) {
   try {
-    const pageUrl =
-      "https://mvoo.ru/arena/cache/attack/55314"; // 55314 //22434
+    const pageUrl = `https://mvoo.ru/arena/cache/attack/${player_id}`;
     const res = await fetch(pageUrl, {
       headers: {
         Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,

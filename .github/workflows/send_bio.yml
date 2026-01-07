@@ -1,10 +1,12 @@
-name: Boss Farm Script
+name: SendBio Script
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "20 15 * * *"
 
 jobs:
-  boss_farm:
+  sendbio:
     runs-on: ubuntu-latest
     if: github.actor == 'Ddkotl'
     steps:
@@ -14,4 +16,4 @@ jobs:
           node-version: 24
       - run: npm install
       - run: npm run build
-      - run: npm run boss_farm
+      - run: npm run sendbio

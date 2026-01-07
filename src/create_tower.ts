@@ -43,7 +43,7 @@ export async function CreateTower() {
 
     for (let i = 0; i < dem_accaunts.length; i++) {
       if (dem_accaunts[i].login === tower_owner_login) {
-        console.log(JSON.stringify(dem_accaunts[i]))
+        console.log(JSON.stringify(dem_accaunts[i]));
         const res = await fetch(
           `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
           {
@@ -54,7 +54,7 @@ export async function CreateTower() {
         );
         const html = await res.text();
         const dom = new JSDOM(html);
-        console.log(html)
+        console.log(html);
         const links =
           dom.window.document.querySelectorAll("a");
         for (const e of links) {
@@ -95,5 +95,5 @@ export async function CreateTower() {
 }
 
 //(async () => {
- // await CreateTower();
+// await CreateTower();
 //})();

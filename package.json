@@ -14,8 +14,6 @@
     "bue_vac": "node dist/bue_vac.js",
     "send_vac": "node dist/send_vac.js",
     "atack_tower": "node dist/atack_tower.js",
-    "t": "tsx src/test.ts ",
-    "goraid": "tsx src/go_raid.ts",
     "byechest": "tsx src/bue_chest.ts",
     "grene": "tsx src/var/grene.ts",
     "hil1": "tsx src/var/hil1.ts",
@@ -27,9 +25,9 @@
     "uitem": "tsx src/var/use_items.ts",
     "uhitem": "tsx src/var/use_hard_item.ts",
     "ulab": "tsx src/var/use_lab.ts",
-    "aukbue": "tsx src/auction/buy_in_auk.ts",
     "do": "tsx src/do.ts",
-    "ne":"tsx src/new_year.ts > ne.log"
+    "send_msg": "tsx src/send_mesgs.ts",
+    "sendbio": "tsx src/send_bio.ts"
   },
   "dependencies": {
     "axios": "^1.13.1",
