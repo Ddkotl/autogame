@@ -3,12 +3,15 @@ import { curlDo } from "./utils/curl_helpers";
 import { sleep } from "./utils/sleep";
 
 async function Do() {
+  const do_secret = process.env.DO_SECRET;
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
-  for (let [index, acc] of dem_accaunts.entries()) {
+  for (let [index, acc] of dem_accaunts
+    .concat(ang_accaunts)
+    .entries()) {
     await sleep(500);
 
     await curlDo(
-      `https://mvoo.ru/game/raid/?join=21254`,
+      do_secret,
       acc.SESSION_ID,
     );
   }

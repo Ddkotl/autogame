@@ -1,10 +1,10 @@
-name: Boss Farm Script
+name: Do Script
 
 on:
   workflow_dispatch:
 
 jobs:
-  boss_farm:
+  do:
     runs-on: ubuntu-latest
     if: github.actor == 'Ddkotl'
     steps:
@@ -14,4 +14,6 @@ jobs:
           node-version: 24
       - run: npm install
       - run: npm run build
-      - run: npm run boss_farm
+      - run: npm run do
+        env:
+          DO_SECRET: ${{secrets.DO_SECRET}}
