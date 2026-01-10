@@ -1,12 +1,12 @@
 import { JSDOM } from "jsdom";
 import { curlDo, curlGet } from "../utils/curl_helpers";
 
-export async function atackZombie(
+export async function atackRaid(
   session_id: string,
 ): Promise<void> {
   try {
     const pageUrl =
-      "https://mvoo.ru/arena/main/?sorting=zombie";
+      "https://mvoo.ru/game/raid";
     const html = await curlGet(pageUrl, session_id);
 
     if (!html) {
