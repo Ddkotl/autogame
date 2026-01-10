@@ -8,6 +8,8 @@
     "logistic": "node dist/logistic.js",
     "boss": "node dist/boss.js",
     "boss_farm": "node dist/boss_farm.js",
+    "boss_farm_raid": "node dist/boss_farm_raid.js",
+    "boss_farm_zombi": "node dist/boss_farm_zombi.js",
     "create_tower": "node dist/create_tower.js",
     "bue_virus": "node dist/bue_virus.js",
     "send_virus": "node dist/send_virus.js",
