@@ -21,14 +21,6 @@ async function Grene() {
       session_id: acc.SESSION_ID,
       item_name: "Релисса",
     });
-    // await Atack(
-    // "https://mvoo.ru/clan/war/?shield=all",
-    // acc.SESSION_ID,
-    // );
-    //  await Atack(
-    //"https://mvoo.ru/clan/war/?offensive=true",
-    // acc.SESSION_ID,
-    // );
   }
 }
 
