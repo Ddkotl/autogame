@@ -1,4 +1,4 @@
-name: Boss Farm Script
+name: Boss Farm Zombi Script
 
 on:
   workflow_dispatch:
@@ -14,4 +14,4 @@ jobs:
           node-version: 24
       - run: npm install
       - run: npm run build
-      - run: npm run boss_farm
+      - run: npm run boss_farm_zombi
