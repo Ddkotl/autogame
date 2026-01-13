@@ -3,7 +3,7 @@ name: SendBio Script
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 15 * * *"
+    - cron: "00 7 * * *"
 
 jobs:
   sendbio:
