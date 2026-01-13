@@ -14,21 +14,13 @@ async function Grene() {
       item_name: "Cветошумовая граната",
     });
     await Atack(
-      "https://mvoo.ru/clan/war/?list=428&sorting=health",
+      "https://mvoo.ru/clan/war/?list=447&sorting=health",
       acc.SESSION_ID,
     );
     await UseHardItem({
       session_id: acc.SESSION_ID,
       item_name: "Релисса",
     });
-    // await Atack(
-    // "https://mvoo.ru/clan/war/?shield=all",
-    // acc.SESSION_ID,
-    // );
-    //  await Atack(
-    //"https://mvoo.ru/clan/war/?offensive=true",
-    // acc.SESSION_ID,
-    // );
   }
 }
 
