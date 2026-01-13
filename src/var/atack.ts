@@ -14,7 +14,7 @@ async function Grene() {
       item_name: "Cветошумовая граната",
     });
     await Atack(
-      "https://mvoo.ru/clan/war/?list=428&sorting=health",
+      "https://mvoo.ru/clan/war/?list=447&sorting=health",
       acc.SESSION_ID,
     );
     await UseHardItem({
