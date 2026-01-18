@@ -19,23 +19,23 @@ export async function trainHero(
       );
       await sleep(1000);
 
-      // await curlDo(
-      //   "https://mvoo.ru/user/cache/training/?improve=protection",
-      //   session_id,
-      // );
-      // await sleep(1000);
+      await curlDo(
+        "https://mvoo.ru/user/cache/training/?improve=protection",
+        session_id,
+      );
+      await sleep(1000);
 
-      // await curlDo(
-      //   "https://mvoo.ru/user/cache/training/?improve=speed",
-      //   session_id,
-      // );
-      // await sleep(1000);
+      await curlDo(
+        "https://mvoo.ru/user/cache/training/?improve=speed",
+        session_id,
+      );
+      await sleep(1000);
 
-      // await curlDo(
-      //   "https://mvoo.ru/user/cache/training/?improve=skill",
-      //   session_id,
-      // );
-      // await sleep(1000);
+      await curlDo(
+        "https://mvoo.ru/user/cache/training/?improve=skill",
+        session_id,
+      );
+      await sleep(1000);
     }
 
     console.log("✅ Тренировка завершена успешно");

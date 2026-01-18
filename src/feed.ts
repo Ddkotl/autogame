@@ -8,12 +8,12 @@ import { sleep } from "./utils/sleep";
   dem_accaunts.splice(0);
   await Promise.all([
     ...dem_accaunts.map(async (acc, i) => {
-      await sleep(i * 5000);
+      await sleep(i * 2000);
       await getDayRevard(acc.SESSION_ID);
       await startFeed(acc.SESSION_ID, 22434);
     }),
     ...ang_accaunts.map(async (acc, i) => {
-      await sleep(i * 5000);
+      await sleep(i * 2000);
       await getDayRevard(acc.SESSION_ID);
       await startFeed(acc.SESSION_ID, 55314);
     }),
