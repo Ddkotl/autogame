@@ -4,7 +4,7 @@ import { sleep } from "./utils/sleep";
 import { atackPlayer } from "./modules/atack_player";
 import fs from "fs";
 
-const sacrifice_list = JSON.parse(fs.readFileSync("./sacrifice_list.json", "utf-8"));
+const sacrifice_list = JSON.parse(fs.readFileSync("./sacrifice_list.json", "utf-8")).reverse();
 
 (async () => {
   for (let i = 0; i < sacrifice_list.length; i++) {
