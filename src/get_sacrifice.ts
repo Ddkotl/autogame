@@ -3,7 +3,7 @@ import { boss_id, php_session_id } from "./const/constants";
 import { sleep } from "./utils/sleep";
 import fs from "fs";
 (async () => {
-    const removeArray = ["10816", "2838", "40954", "11104"]
+    const removeArray = ["10816", "2838", "40954", "11104","63004","4233","27071","22516"]
     const toRemoveSet = new Set(removeArray)
     const sacrifice_list = []
     for (let i = 0; i < 200; i++) {
