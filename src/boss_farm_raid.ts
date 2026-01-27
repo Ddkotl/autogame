@@ -9,7 +9,7 @@ import { atackRaid } from "./modules/atack_raid";
     } catch (e) {
       console.error(`error to ${i} try: `, e);
     }
-    await sleep(16000);
+    await sleep(15400);
   }
   console.log("boss farm sucsessfuly ended");
 })();
