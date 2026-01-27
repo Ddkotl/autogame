@@ -7,7 +7,7 @@ import fs from "fs";
 const sacrifice_list = JSON.parse(fs.readFileSync("./sacrifice_list.json", "utf-8"));
 //sacrifice_list.splice(0,101)
 (async () => {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 120; i++) {
     try {
       await atackPlayer(boss_id, sacrifice_list[i]);
       await mineGold(boss_id);
