@@ -20,7 +20,7 @@ export async function trainHero(
       await sleep(1000);
 
       await curlDo(
-        "https://mvoo.ru/user/cache/training/?improve=protection",
+        "https://mvoo.ru/user/cache/training/?improve=skill",
         session_id,
       );
       await sleep(1000);
@@ -32,7 +32,7 @@ export async function trainHero(
       await sleep(1000);
 
       await curlDo(
-        "https://mvoo.ru/user/cache/training/?improve=skill",
+        "https://mvoo.ru/user/cache/training/?improve=protection",
         session_id,
       );
       await sleep(1000);
