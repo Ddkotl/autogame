@@ -8,9 +8,9 @@ async function Fn() {
   for (let acc of dem_accaunts.concat(ang_accaunts)) {
     await sleep(500);
 
-      await UseHardItem({
-       session_id: acc.SESSION_ID,
-       item_name: "Релисса",
+    await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Релисса",
     });
     // await UseHardItem({
     //   session_id: acc.SESSION_ID,
@@ -37,6 +37,6 @@ async function Fn() {
 
 (async () => {
   // for (let i = 0; i < 15; i++) {
-    await Fn();
+  await Fn();
   // }
 })();

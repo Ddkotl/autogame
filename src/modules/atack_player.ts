@@ -3,11 +3,10 @@ import { curlDo, curlGet } from "../utils/curl_helpers";
 
 export async function atackPlayer(
   session_id: string,
-  player_id: number
+  player_id: number,
 ): Promise<void> {
   try {
-    const pageUrl =
-      `https://mvoo.ru/arena/cache/attack/${player_id}`;
+    const pageUrl = `https://mvoo.ru/arena/cache/attack/${player_id}`;
     const html = await curlGet(pageUrl, session_id);
 
     if (!html) {
