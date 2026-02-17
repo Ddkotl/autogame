@@ -5,8 +5,7 @@ export async function atackRaid(
   session_id: string,
 ): Promise<void> {
   try {
-    const pageUrl =
-      "https://mvoo.ru/game/raid";
+    const pageUrl = "https://mvoo.ru/game/raid";
     const html = await curlGet(pageUrl, session_id);
 
     if (!html) {

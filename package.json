@@ -32,6 +32,7 @@
     "ulab": "tsx src/var/use_lab.ts",
     "do": "tsx src/do.ts",
     "send_msg": "tsx src/send_mesgs.ts",
+    "battle": "tsx src/battle.ts",
     "sendbio": "tsx src/send_bio.ts"
   },
   "dependencies": {

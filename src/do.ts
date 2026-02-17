@@ -10,10 +10,7 @@ async function Do() {
     .entries()) {
     await sleep(500);
 
-    await curlDo(
-      do_secret,
-      acc.SESSION_ID,
-    );
+    await curlDo(do_secret, acc.SESSION_ID);
   }
 }
 

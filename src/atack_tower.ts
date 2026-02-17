@@ -48,8 +48,12 @@ async function AtackTower() {
 (async () => {
   await AtackTower();
   const { dem_accaunts, ang_accaunts } = LoadAccaunts();
-  const all_accaunts_ids = [...dem_accaunts.map(a => a.SESSION_ID), ...ang_accaunts.map(a => a.SESSION_ID), boss_id];
-  console.log(all_accaunts_ids)
+  const all_accaunts_ids = [
+    ...dem_accaunts.map((a) => a.SESSION_ID),
+    ...ang_accaunts.map((a) => a.SESSION_ID),
+    boss_id,
+  ];
+  console.log(all_accaunts_ids);
   for (let i = 0; i < all_accaunts_ids.length; i++) {
     await getHourGifts(all_accaunts_ids[i]);
   }
