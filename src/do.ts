@@ -11,6 +11,7 @@ async function Do() {
     await sleep(500);
 
     await curlDo(do_secret, acc.SESSION_ID);
+    //  await curlDo("https://mvoo.ru/user/cache/profile/34453/?friends-add-confirm=био", acc.SESSION_ID);
   }
 }
 
