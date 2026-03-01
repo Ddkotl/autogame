@@ -2,7 +2,7 @@ import { sendBio } from "./modules/send_bio";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 
 const send_list = [
-  41638, 55314, 56063, 56481, 22434, 22562,
+ 55314, 22434, 22562,38513,31381, 56063, 56481,41638
 ];
 
 (async () => {
