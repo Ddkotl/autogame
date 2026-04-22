@@ -19,16 +19,16 @@ import fs from "fs";
   ];
   const toRemoveSet = new Set(removeArray);
   const sacrifice_list = [];
-  for (let i = 0; i < 250; i++) {
+  for (let i = 0; i < 350; i++) {
     await sleep(1000);
-    const id15 = await getSacrificeId(15);
+    const id18 = await getSacrificeId(18);
     const id16 = await getSacrificeId(16);
     const id17 = await getSacrificeId(17);
     if (
-      !sacrifice_list.includes(id15) &&
-      !toRemoveSet.has(id15)
+      !sacrifice_list.includes(id18) &&
+      !toRemoveSet.has(id18)
     ) {
-      sacrifice_list.push(id15);
+      sacrifice_list.push(id18);
     }
     if (
       !sacrifice_list.includes(id16) &&
@@ -68,7 +68,7 @@ async function getSacrificeId(lvl: number) {
   const link = dom.window.document.querySelector(
     "#content_block strong a",
   );
-  const href = link.getAttribute("href");
-  const id = href.replace("/user/cache/profile/", "");
+  const href = link?.getAttribute("href");
+  const id = href?.replace("/user/cache/profile/", "");
   return id;
 }
