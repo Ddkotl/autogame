@@ -17,7 +17,7 @@ export async function sendBio(
   const dom = new JSDOM(html);
   const link_item =
     dom.window.document.querySelector(".items a");
-  const link = `https://mvoo.ru${link_item.getAttribute("href")}`;
+  const link = `https://mvoo.ru${link_item?.getAttribute("href")}`;
   await fetch(link, {
     headers: {
       Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${session_id}`,

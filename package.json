@@ -18,6 +18,7 @@
     "send_virus": "node dist/send_virus.js",
     "bue_vac": "node dist/bue_vac.js",
     "send_vac": "node dist/send_vac.js",
+     "sell_items": "node dist/sell_items.js",
     "atack_tower": "node dist/atack_tower.js",
     "byechest": "tsx src/bue_chest.ts",
     "grene": "tsx src/var/grene.ts",

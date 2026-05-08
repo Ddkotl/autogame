@@ -8,18 +8,18 @@ async function Fn() {
   for (let acc of dem_accaunts.concat(ang_accaunts)) {
     await sleep(500);
 
-    await UseHardItem({
-      session_id: acc.SESSION_ID,
-      item_name: "Релисса",
-    });
+    // await UseHardItem({
+    //   session_id: acc.SESSION_ID,
+    //   item_name: "Релисса",
+    // });
     // await UseHardItem({
     //   session_id: acc.SESSION_ID,
     //   item_name: "Агар-Агар",
     // });
-    // await UseHardItem({
-    //   session_id: acc.SESSION_ID,
-    //   item_name: "Большой Ларец Соулу",
-    // });
+    await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Большой Ларец Соулу",
+    });
     // await UseHardItem({
     //   session_id: acc.SESSION_ID,
     //   item_name: "Средний Ларец Соулу",
@@ -28,15 +28,15 @@ async function Fn() {
     //   session_id: acc.SESSION_ID,
     //   item_name: "Малый Ларец Соулу",
     // });
-    //        await UseHardItem({
-    //   session_id: acc.SESSION_ID,
-    //   item_name: "Таинственный реликварий",
-    // });
+           await UseHardItem({
+      session_id: acc.SESSION_ID,
+      item_name: "Таинственный реликварий",
+    });
   }
 }
 
 (async () => {
-  // for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 15; i++) {
   await Fn();
-  // }
+  }
 })();
