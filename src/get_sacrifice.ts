@@ -22,7 +22,7 @@ import fs from "fs";
   for (let i = 0; i < 350; i++) {
     await sleep(1000);
     const id18 = await getSacrificeId(18);
-    const id16 = await getSacrificeId(16);
+    const id19 = await getSacrificeId(19);
     const id17 = await getSacrificeId(17);
     if (
       !sacrifice_list.includes(id18) &&
@@ -31,10 +31,10 @@ import fs from "fs";
       sacrifice_list.push(id18);
     }
     if (
-      !sacrifice_list.includes(id16) &&
-      !toRemoveSet.has(id16)
+      !sacrifice_list.includes(id19) &&
+      !toRemoveSet.has(id19)
     ) {
-      sacrifice_list.push(id16);
+      sacrifice_list.push(id19);
     }
     if (
       !sacrifice_list.includes(id17) &&
