@@ -12,15 +12,17 @@ import { JSDOM } from "jsdom";
       },
     },
   );
-   await sleep(90000);
+  await sleep(150000);
   for (let i = 0; i < 15; i++) {
     try {
-      const html = await curlGet("https://mvoo.ru/game/battle", boss_id);
-      const dom = new JSDOM(html);
-      const btn_el = dom.window.document.querySelector(
-        ".button_big",
+      const html = await curlGet(
+        "https://mvoo.ru/game/battle",
+        boss_id,
       );
-      const href = btn_el.getAttribute("href");
+      const dom = new JSDOM(html);
+      const btn_el =
+        dom.window.document.querySelector(".button_big");
+      const href = btn_el?.getAttribute("href");
       if (!href) {
         console.warn("Ссылка атаки не найдена у кнопки");
         return;
