@@ -12,7 +12,7 @@ import { JSDOM } from "jsdom";
       },
     },
   );
-  await sleep(150000);
+  await sleep(90000);
   for (let i = 0; i < 15; i++) {
     try {
       const html = await curlGet(
@@ -20,8 +20,9 @@ import { JSDOM } from "jsdom";
         boss_id,
       );
       const dom = new JSDOM(html);
-      const btn_el =
-        dom.window.document.querySelector(".button_big");
+      const btn_el = dom.window.document.querySelector(
+        "a.button_small",
+      );
       const href = btn_el?.getAttribute("href");
       if (!href) {
         console.warn("Ссылка атаки не найдена у кнопки");

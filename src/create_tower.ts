@@ -51,7 +51,7 @@ export async function CreateTower() {
     for (let i = 0; i < dem_acc_to_boss.length; i++) {
       const href = await getAtackLink(
         boss_profile_id,
-        dem_acc_to_vic[i].SESSION_ID,
+        dem_acc_to_boss[i].SESSION_ID,
       );
       await fetch(`https://mvoo.ru${href}`, {
         headers: {
@@ -122,6 +122,6 @@ export async function CreateTower() {
   }
 }
 
-//(async () => {
-// await CreateTower();
-//})();
+(async () => {
+  await CreateTower();
+})();

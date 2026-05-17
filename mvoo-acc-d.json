@@ -1,5 +1,10 @@
 [
   {
+    "login": "killer228",
+    "password": "qwe123qweQWE",
+    "SESSION_ID": "7a63faa6d88b1b56da9b17c28327df8e1aeda6ab619c67ec4966d2665b9f13c1"
+  },
+  {
     "login": "lol33",
     "password": "qwe123qweQWE",
     "SESSION_ID": "ebbd0e96265b73dc935f2cd4b3b81038ba670a86ea3485173b3508a8265dfe30"
@@ -38,10 +43,5 @@
     "login": "nova_centurion",
     "password": "St@rF0rce!9xQ&",
     "SESSION_ID": "25b9b1a22ec8a30e89d9bbac521047e5a4588109a8c89d1b8e5349fd6a47bcd1"
-  },
-  {
-    "login": "killer228",
-    "password": "qwe123qweQWE",
-    "SESSION_ID": "7a63faa6d88b1b56da9b17c28327df8e1aeda6ab619c67ec4966d2665b9f13c1"
   }
 ]
