@@ -12,6 +12,7 @@ async function Do() {
 
     await curlDo(do_secret, acc.SESSION_ID);
     //  await curlDo("https://mvoo.ru/user/cache/profile/34453/?friends-add-confirm=био", acc.SESSION_ID);
+    //  await curlDo("https://mvoo.ru/clan/portal/?attack=1146", acc.SESSION_ID);
   }
 }
 
