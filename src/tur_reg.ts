@@ -9,7 +9,7 @@ async function turReg() {
   accs.splice(1);
   
   for (let acc of accs) {
-    const html = await fetch(
+    const res = await fetch(
       "https://mvoo.ru/game/tournament/?tournament=all",
       {
         headers: {
@@ -17,7 +17,8 @@ async function turReg() {
         },
       },
     );
-    const dom = new JSDOM(html);
+    const text = await res.text()
+    const dom = new JSDOM(text);
     const btn_el = dom.window.document.querySelector(
       "a.button_small",
     );
