@@ -23,8 +23,12 @@ async function sellItems() {
       "Серебряный сертификат оснастки",
       "Платиновый сертификат оснастки",
       "Лицензия обмена",
-      "Среднее Храброе сердце","Релисса","Малое Храброе сердце","Ментальное очищение","Нави"  , "Яшмин"
-
+      "Среднее Храброе сердце",
+      "Релисса",
+      "Малое Храброе сердце",
+      "Ментальное очищение",
+      "Нави",
+      "Яшмин",
     ];
     for (let item of items) {
       await sleep(200);
@@ -45,13 +49,16 @@ async function sellItems() {
 
       // 2. Достаем значение именно по ключу 'wear'
       const wearId = params.get("wear");
-      const res = await fetch(`https://mvoo.ru/shop/trade/${wearId}`, {
-        method: "POST",
-        headers: {
-          cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${acc.SESSION_ID}`,
+      const res = await fetch(
+        `https://mvoo.ru/shop/trade/${wearId}`,
+        {
+          method: "POST",
+          headers: {
+            cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${acc.SESSION_ID}`,
+          },
+          body: new URLSearchParams({ quantity: "1" }),
         },
-        body: new URLSearchParams({ quantity: "1" }),
-      });
+      );
     }
   }
 }

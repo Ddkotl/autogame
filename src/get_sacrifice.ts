@@ -15,7 +15,11 @@ import fs from "fs";
     "2861",
     "32984",
     "26406",
-    "60309","29826","2987","4343","12999"
+    "60309",
+    "29826",
+    "2987",
+    "4343",
+    "12999",
   ];
   const toRemoveSet = new Set(removeArray);
   const sacrifice_list = [];

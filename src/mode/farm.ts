@@ -10,6 +10,7 @@ import { atackWerwolfs } from "../modules/atack_werwolfs";
 import { sleep } from "../utils/sleep";
 import { checkLevel } from "../modules/check_level";
 import { goToMutation } from "../modules/go_to_mutation";
+import { trainHero } from "../modules/train_hero";
 
 export async function Farm(
   session_id: string,
@@ -17,6 +18,7 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
+  await trainHero(session_id, 20);
   await trainAgent(session_id, 3);
   if (fraction === "angel") {
     await sleep(1000);

@@ -28,7 +28,7 @@ async function Fn() {
     //   session_id: acc.SESSION_ID,
     //   item_name: "Малый Ларец Соулу",
     // });
-           await UseHardItem({
+    await UseHardItem({
       session_id: acc.SESSION_ID,
       item_name: "Таинственный реликварий",
     });
@@ -37,6 +37,6 @@ async function Fn() {
 
 (async () => {
   for (let i = 0; i < 15; i++) {
-  await Fn();
+    await Fn();
   }
 })();

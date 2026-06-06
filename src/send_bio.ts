@@ -1,9 +1,7 @@
 import { sendBio } from "./modules/send_bio";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 
-const send_list = [
- 55314, 22434, 22562,38513
-];
+const send_list = [55314, 22434, 22562, 38513];
 
 (async () => {
   const { dem_accaunts } = LoadAccaunts();
