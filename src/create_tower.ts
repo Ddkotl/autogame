@@ -1,167 +1,107 @@
 import { boss_id, php_session_id } from "./const/constants";
 import { LoadAccaunts } from "./utils/accaunt-manager";
 import { JSDOM } from "jsdom";
-async function getAtackLink(
-  tower_owner_id: string,
-  player_id: string,
-) {
+
+const TOWER_OWNER_LOGIN = "viking15";
+const BOSS_PROFILE_ID = "55314";
+const TOWER_OWNER_ID = "56165";
+const BASE_URL = "https://mvoo.ru";
+
+// Хелпер для создания заголовков авторизации
+const getHeaders = (playerId: string) => ({
+  headers: {
+    Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${playerId}`,
+  },
+});
+
+// Получение ссылки на атаку
+async function getAttackLink(towerOwnerId: string, playerId: string): Promise<string> {
   try {
-    const res = await fetch(
-      `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&send=bid`,
-      {
-        headers: {
-          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${player_id}`,
-        },
-      },
-    );
+    const res = await fetch(`${BASE_URL}/user/cache/profile/${towerOwnerId}/?tower=battle&send=bid`, getHeaders(playerId));
     const html = await res.text();
     const dom = new JSDOM(html);
-    const btn_el = dom.window.document.querySelector(
-      "a.button_small",
-    );
-    const href = btn_el?.getAttribute("href");
-    if (href === null || href === undefined) return "";
-    return href;
+    const btnEl = dom.window.document.querySelector("a.button_small");
+    return btnEl?.getAttribute("href") ?? "";
   } catch (e) {
-    console.log(e);
+    console.error("Ошибка получения ссылки атаки:", e);
     return "";
   }
 }
-const tower_owner_login = "viking15";
-const boss_profile_id = "55314";
-const tower_owner_id = "56165";
+
+// Подача заявки на атаку
+async function submitBid(towerOwnerId: string, playerId: string) {
+  const href = await getAttackLink(towerOwnerId, playerId);
+  if (!href) return;
+  await fetch(`${BASE_URL}${href}`, getHeaders(playerId));
+}
+
+// Решение бага: цикл запрашивает страницу заново, пока есть кого принимать
+async function acceptAllBids(towerOwnerId: string, playerId: string) {
+  while (true) {
+    const res = await fetch(`${BASE_URL}/user/cache/profile/${towerOwnerId}/?tower=battle`, getHeaders(playerId));
+    const html = await res.text();
+    const dom = new JSDOM(html);
+    
+    // Ищем ПЕРВУЮ ссылку "Принять"
+    const acceptLinkEl = Array.from(dom.window.document.querySelectorAll("a"))
+      .find(e => e.textContent?.trim() === "[Принять]");
+
+    if (!acceptLinkEl) break; // Если ссылок больше нет — выходим из цикла
+
+    const href = acceptLinkEl.getAttribute("href");
+    if (href) {
+      await fetch(`${BASE_URL}${href}`, getHeaders(playerId));
+    }
+  }
+}
+
+// Запуск самой атаки башни
+async function launchAttack(towerOwnerId: string, playerId: string) {
+  const atRes = await fetch(`${BASE_URL}/user/cache/profile/${towerOwnerId}/?tower=battle&attack=go`, getHeaders(playerId));
+  const atHtml = await atRes.text();
+  const atDom = new JSDOM(atHtml);
+  const atLink = atDom.window.document.querySelector(".button_small")?.getAttribute("href");
+  
+  if (atLink) {
+    await fetch(`${BASE_URL}${atLink}`, getHeaders(playerId));
+  }
+}
+
 export async function CreateTower() {
   try {
     const { dem_accaunts } = LoadAccaunts();
-    const dem_acc_to_boss = dem_accaunts.slice(0, 7);
-    const dem_acc_to_vic = dem_accaunts.slice(7);
-    for (let i = 0; i < dem_acc_to_vic.length; i++) {
-      if (dem_acc_to_vic[i].login !== tower_owner_login) {
-        const href = await getAtackLink(
-          tower_owner_id,
-          dem_acc_to_vic[i].SESSION_ID,
-        );
-        await fetch(`https://mvoo.ru${href}`, {
-          headers: {
-            Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_vic[i].SESSION_ID}`,
-          },
-        });
+    const demAccToBoss = dem_accaunts.slice(0, 7);
+    const demAccToVic = dem_accaunts.slice(7);
+
+    // 1. Параллельно отправляем заявки от аккаунтов "vic" и "boss"
+    const vicPromises = demAccToVic
+      .filter(acc => acc.login !== TOWER_OWNER_LOGIN)
+      .map(acc => submitBid(TOWER_OWNER_ID, acc.SESSION_ID));
+
+    const bossPromises = demAccToBoss.map(acc => submitBid(BOSS_PROFILE_ID, acc.SESSION_ID));
+
+    await Promise.all([...vicPromises, ...bossPromises]);
+
+    // 2. Подаем заявку от главного босса
+    await submitBid(TOWER_OWNER_ID, boss_id);
+
+    // 3. Обработка башни владельца (viking15)
+    const ownerAccount = dem_accaunts.find(acc => acc.login === TOWER_OWNER_LOGIN);
+    if (ownerAccount) {
+      try {
+        await acceptAllBids(TOWER_OWNER_ID, ownerAccount.SESSION_ID);
+        await launchAttack(TOWER_OWNER_ID, ownerAccount.SESSION_ID);
+      } catch (e) {
+        console.error("Ошибка на башне владельца:", e);
       }
-    }
-    for (let i = 0; i < dem_acc_to_boss.length; i++) {
-      const href = await getAtackLink(
-        boss_profile_id,
-        dem_acc_to_boss[i].SESSION_ID,
-      );
-      await fetch(`https://mvoo.ru${href}`, {
-        headers: {
-          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_acc_to_boss[i].SESSION_ID}`,
-        },
-      });
-    }
-    const href = await getAtackLink(
-      tower_owner_id,
-      boss_id,
-    );
-    await fetch(`https://mvoo.ru${href}`, {
-      headers: {
-        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
-      },
-    });
-    try {
-      for (let i = 0; i < dem_accaunts.length; i++) {
-        if (dem_accaunts[i].login === tower_owner_login) {
-          const res = await fetch(
-            `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle`,
-            {
-              headers: {
-                Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
-              },
-            },
-          );
-          const html = await res.text();
-          const dom = new JSDOM(html);
-          const links =
-            dom.window.document.querySelectorAll("a");
-          for (const e of links) {
-            if (e.textContent === "[Принять]") {
-              await fetch(
-                `https://mvoo.ru${e.getAttribute("href")}`,
-                {
-                  headers: {
-                    Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
-                  },
-                },
-              );
-            }
-          }
-          const at_res = await fetch(
-            `https://mvoo.ru/user/cache/profile/${tower_owner_id}/?tower=battle&attack=go`,
-            {
-              headers: {
-                Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
-              },
-            },
-          );
-          const at_html = await at_res.text();
-          const at_dom = new JSDOM(at_html);
-          const at_link = at_dom.window.document
-            .querySelector(".button_small")
-            .getAttribute("href");
-          await fetch(`https://mvoo.ru${at_link}`, {
-            headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${dem_accaunts[i].SESSION_ID}`,
-            },
-          });
-        }
-      }
-    } catch (e) {
-      console.log(e);
     }
 
-    const res = await fetch(
-      `https://mvoo.ru/user/cache/profile/${boss_profile_id}/?tower=battle`,
-      {
-        headers: {
-          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
-        },
-      },
-    );
-    const html = await res.text();
-    const dom = new JSDOM(html);
-    const links = dom.window.document.querySelectorAll("a");
-    for (const e of links) {
-      if (e.textContent === "[Принять]") {
-        await fetch(
-          `https://mvoo.ru${e.getAttribute("href")}`,
-          {
-            headers: {
-              Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
-            },
-          },
-        );
-      }
-    }
-    const at_res = await fetch(
-      `https://mvoo.ru/user/cache/profile/${boss_profile_id}/?tower=battle&attack=go`,
-      {
-        headers: {
-          Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
-        },
-      },
-    );
-    const at_html = await at_res.text();
-    const at_dom = new JSDOM(at_html);
-    const at_link = at_dom.window.document
-      .querySelector(".button_small")
-      .getAttribute("href");
-    await fetch(`https://mvoo.ru${at_link}`, {
-      headers: {
-        Cookie: `PHPSESSID=${php_session_id}; SESSION_ID=${boss_id}`,
-      },
-    });
+    // 4. Обработка башни босса
+    await acceptAllBids(BOSS_PROFILE_ID, boss_id);
+    await launchAttack(BOSS_PROFILE_ID, boss_id);
+
   } catch (error) {
-    console.log("go tower error", error);
+    console.error("Главная ошибка CreateTower:", error);
   }
 }
 
