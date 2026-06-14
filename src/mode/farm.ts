@@ -18,7 +18,7 @@ export async function Farm(
   sleep_time: number,
   fraction: "angel" | "demon",
 ) {
-  await trainHero(session_id, 20);
+  await trainHero(session_id, 2);
   await trainAgent(session_id, 3);
   if (fraction === "angel") {
     await sleep(1000);
