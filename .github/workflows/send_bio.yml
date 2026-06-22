@@ -2,8 +2,8 @@ name: SendBio Script
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "00 7 * * *"
+  # schedule:
+  #   - cron: "00 7 * * *"
 
 jobs:
   sendbio:

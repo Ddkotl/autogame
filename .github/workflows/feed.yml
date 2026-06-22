@@ -2,8 +2,8 @@ name: Feed Script
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "10 22,7,10,13,16,19 * * *"
+  # schedule:
+  #   - cron: "10 22,7,10,13,16,19 * * *"
 
 jobs:
   feed:
